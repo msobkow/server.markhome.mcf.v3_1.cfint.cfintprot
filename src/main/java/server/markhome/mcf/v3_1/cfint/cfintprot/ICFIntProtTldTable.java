@@ -56,7 +56,7 @@ public interface ICFIntProtTldTable
 	 *
 	 *	@param	rec	The instance interface to be created.
 	 */
-	ICFIntProtTld createTld( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTld protcreateTld( ICFSecProtAuthorization Authorization,
 		ICFIntProtTld rec );
 
 
@@ -68,7 +68,7 @@ public interface ICFIntProtTldTable
 	 *
 	 *	@param	rec	The instance interface to be updated
 	 */
-	ICFIntProtTld updateTld( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTld protupdateTld( ICFSecProtAuthorization Authorization,
 		ICFIntProtTld rec );
 
 
@@ -79,7 +79,7 @@ public interface ICFIntProtTldTable
 	 *
 	 *	@param	rec	The instance interface to be deleted.
 	 */
-	void deleteTld( ICFSecProtAuthorization Authorization,
+	public void protdeleteTld( ICFSecProtAuthorization Authorization,
 		ICFIntProtTld rec );
 	/**
 	 *	Delete the Tld instance identified by the primary key.
@@ -88,7 +88,7 @@ public interface ICFIntProtTldTable
 	 *
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
-	void deleteTldByIdIdx( ICFSecProtAuthorization Authorization,
+	public void protdeleteTldByIdIdx( ICFSecProtAuthorization Authorization,
 		CFLibDbKeyHash256 argKey );
 	/**
 	 *	Delete the Tld instances identified by the key TenantIdx.
@@ -97,7 +97,7 @@ public interface ICFIntProtTldTable
 	 *
 	 *	@param	TenantId	The Tld key attribute of the instance generating the id.
 	 */
-	void deleteTldByTenantIdx( ICFSecProtAuthorization Authorization,
+	public void protdeleteTldByTenantIdx( ICFSecProtAuthorization Authorization,
 		CFLibDbKeyHash256 argTenantId );
 
 	/**
@@ -107,7 +107,7 @@ public interface ICFIntProtTldTable
 	 *
 	 *	@param	argKey	The key identifying the instances to be deleted.
 	 */
-	void deleteTldByTenantIdx( ICFSecProtAuthorization Authorization,
+	public void protdeleteTldByTenantIdx( ICFSecProtAuthorization Authorization,
 		ICFIntProtTldByTenantIdxKey argKey );
 	/**
 	 *	Delete the Tld instances identified by the key NameIdx.
@@ -116,7 +116,7 @@ public interface ICFIntProtTldTable
 	 *
 	 *	@param	Name	The Tld key attribute of the instance generating the id.
 	 */
-	void deleteTldByNameIdx( ICFSecProtAuthorization Authorization,
+	public void protdeleteTldByNameIdx( ICFSecProtAuthorization Authorization,
 		String argName );
 
 	/**
@@ -126,7 +126,7 @@ public interface ICFIntProtTldTable
 	 *
 	 *	@param	argKey	The key identifying the instances to be deleted.
 	 */
-	void deleteTldByNameIdx( ICFSecProtAuthorization Authorization,
+	public void protdeleteTldByNameIdx( ICFSecProtAuthorization Authorization,
 		ICFIntProtTldByNameIdxKey argKey );
 
 
@@ -140,7 +140,7 @@ public interface ICFIntProtTldTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 */
-	ICFIntProtTld readDerived( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTld protreadDerived( ICFSecProtAuthorization Authorization,
 		CFLibDbKeyHash256 PKey );
 
 	/**
@@ -153,7 +153,7 @@ public interface ICFIntProtTldTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 */
-	ICFIntProtTld lockDerived( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTld protlockDerived( ICFSecProtAuthorization Authorization,
 		CFLibDbKeyHash256 PKey );
 
 	/**
@@ -163,7 +163,7 @@ public interface ICFIntProtTldTable
 	 *
 	 *	@return An array of derived record instances, potentially with 0 elements in the set.
 	 */
-	ICFIntProtTld[] readProtAllDerived( ICFSecProtAuthorization Authorization );
+	public ICFIntProtTld[] protreadProtAllDerived( ICFSecProtAuthorization Authorization );
 
 	/**
 	 *	Read the derived Tld record instance identified by the unique key IdIdx.
@@ -175,7 +175,7 @@ public interface ICFIntProtTldTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 */
-	ICFIntProtTld readDerivedByIdIdx( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTld protreadDerivedByIdIdx( ICFSecProtAuthorization Authorization,
 		CFLibDbKeyHash256 Id );
 
 	/**
@@ -187,7 +187,7 @@ public interface ICFIntProtTldTable
 	 *
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
-	ICFIntProtTld[] readDerivedByTenantIdx( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTld[] protreadDerivedByTenantIdx( ICFSecProtAuthorization Authorization,
 		CFLibDbKeyHash256 TenantId );
 
 	/**
@@ -200,7 +200,7 @@ public interface ICFIntProtTldTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 */
-	ICFIntProtTld readDerivedByNameIdx( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTld protreadDerivedByNameIdx( ICFSecProtAuthorization Authorization,
 		String Name );
 
 	/**
@@ -215,7 +215,7 @@ public interface ICFIntProtTldTable
 	 *
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
-	ICFIntProtTld readRec( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTld protreadRec( ICFSecProtAuthorization Authorization,
 		CFLibDbKeyHash256 PKey );
 
 	/**
@@ -230,7 +230,7 @@ public interface ICFIntProtTldTable
 	 *
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
-	ICFIntProtTld lockRec( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTld protlockRec( ICFSecProtAuthorization Authorization,
 		CFLibDbKeyHash256 PKey );
 
 	/**
@@ -240,7 +240,7 @@ public interface ICFIntProtTldTable
 	 *
 	 *	@return All the specific Tld instances in the database accessible for the Authorization.
 	 */
-	ICFIntProtTld[] readAllRec( ICFSecProtAuthorization Authorization );
+	public ICFIntProtTld[] protreadAllRec( ICFSecProtAuthorization Authorization );
 
 	/**
 	 *	Read the specific Tld record instance identified by the unique key IdIdx.
@@ -254,7 +254,7 @@ public interface ICFIntProtTldTable
 	 *
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
-	ICFIntProtTld readRecByIdIdx( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTld protreadRecByIdIdx( ICFSecProtAuthorization Authorization,
 		CFLibDbKeyHash256 Id );
 
 	/**
@@ -268,7 +268,7 @@ public interface ICFIntProtTldTable
 	 *
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
-	ICFIntProtTld[] readRecByTenantIdx( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTld[] protreadRecByTenantIdx( ICFSecProtAuthorization Authorization,
 		CFLibDbKeyHash256 TenantId );
 
 	/**
@@ -283,6 +283,6 @@ public interface ICFIntProtTldTable
 	 *
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
-	ICFIntProtTld readRecByNameIdx( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTld protreadRecByNameIdx( ICFSecProtAuthorization Authorization,
 		String Name );
 }

@@ -36,12 +36,15 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
 
 /*
  *	ICFIntProtSubProjectFactory protected interface for SubProject
  */
 public interface ICFIntProtSubProjectFactory
+extends ICFIntPubSubProjectFactory
 {
 
 	/**
@@ -77,13 +80,13 @@ public interface ICFIntProtSubProjectFactory
 	 *
 	 *	@return	The new instance.
 	 */
-	public ICFIntProtSubProject newRec();
+	public ICFIntProtSubProject newProtRec();
 
 	/**
 	 *	Allocate a protected SubProject history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
-	public ICFIntProtSubProjectH newHRec();
+	public ICFIntProtSubProjectH newProtHRec();
 
 }

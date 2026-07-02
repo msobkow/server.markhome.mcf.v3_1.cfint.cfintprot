@@ -36,12 +36,15 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
 
 /*
  *	ICFIntProtMajorVersionFactory protected interface for MajorVersion
  */
 public interface ICFIntProtMajorVersionFactory
+extends ICFIntPubMajorVersionFactory
 {
 
 	/**
@@ -77,13 +80,13 @@ public interface ICFIntProtMajorVersionFactory
 	 *
 	 *	@return	The new instance.
 	 */
-	public ICFIntProtMajorVersion newRec();
+	public ICFIntProtMajorVersion newProtRec();
 
 	/**
 	 *	Allocate a protected MajorVersion history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
-	public ICFIntProtMajorVersionH newHRec();
+	public ICFIntProtMajorVersionH newProtHRec();
 
 }

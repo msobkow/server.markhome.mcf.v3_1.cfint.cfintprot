@@ -36,12 +36,15 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
 
 /*
  *	ICFIntProtTopProjectFactory protected interface for TopProject
  */
 public interface ICFIntProtTopProjectFactory
+extends ICFIntPubTopProjectFactory
 {
 
 	/**
@@ -77,13 +80,13 @@ public interface ICFIntProtTopProjectFactory
 	 *
 	 *	@return	The new instance.
 	 */
-	public ICFIntProtTopProject newRec();
+	public ICFIntProtTopProject newProtRec();
 
 	/**
 	 *	Allocate a protected TopProject history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
-	public ICFIntProtTopProjectH newHRec();
+	public ICFIntProtTopProjectH newProtHRec();
 
 }

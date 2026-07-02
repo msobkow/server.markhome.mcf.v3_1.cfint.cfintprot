@@ -56,7 +56,7 @@ public interface ICFIntProtTopDomainTable
 	 *
 	 *	@param	rec	The instance interface to be created.
 	 */
-	ICFIntProtTopDomain createTopDomain( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTopDomain protcreateTopDomain( ICFSecProtAuthorization Authorization,
 		ICFIntProtTopDomain rec );
 
 
@@ -68,7 +68,7 @@ public interface ICFIntProtTopDomainTable
 	 *
 	 *	@param	rec	The instance interface to be updated
 	 */
-	ICFIntProtTopDomain updateTopDomain( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTopDomain protupdateTopDomain( ICFSecProtAuthorization Authorization,
 		ICFIntProtTopDomain rec );
 
 
@@ -79,7 +79,7 @@ public interface ICFIntProtTopDomainTable
 	 *
 	 *	@param	rec	The instance interface to be deleted.
 	 */
-	void deleteTopDomain( ICFSecProtAuthorization Authorization,
+	public void protdeleteTopDomain( ICFSecProtAuthorization Authorization,
 		ICFIntProtTopDomain rec );
 	/**
 	 *	Delete the TopDomain instance identified by the primary key.
@@ -88,7 +88,7 @@ public interface ICFIntProtTopDomainTable
 	 *
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
-	void deleteTopDomainByIdIdx( ICFSecProtAuthorization Authorization,
+	public void protdeleteTopDomainByIdIdx( ICFSecProtAuthorization Authorization,
 		CFLibDbKeyHash256 argKey );
 	/**
 	 *	Delete the TopDomain instances identified by the key TenantIdx.
@@ -97,7 +97,7 @@ public interface ICFIntProtTopDomainTable
 	 *
 	 *	@param	TenantId	The TopDomain key attribute of the instance generating the id.
 	 */
-	void deleteTopDomainByTenantIdx( ICFSecProtAuthorization Authorization,
+	public void protdeleteTopDomainByTenantIdx( ICFSecProtAuthorization Authorization,
 		CFLibDbKeyHash256 argTenantId );
 
 	/**
@@ -107,7 +107,7 @@ public interface ICFIntProtTopDomainTable
 	 *
 	 *	@param	argKey	The key identifying the instances to be deleted.
 	 */
-	void deleteTopDomainByTenantIdx( ICFSecProtAuthorization Authorization,
+	public void protdeleteTopDomainByTenantIdx( ICFSecProtAuthorization Authorization,
 		ICFIntProtTopDomainByTenantIdxKey argKey );
 	/**
 	 *	Delete the TopDomain instances identified by the key TldIdx.
@@ -116,7 +116,7 @@ public interface ICFIntProtTopDomainTable
 	 *
 	 *	@param	TldId	The TopDomain key attribute of the instance generating the id.
 	 */
-	void deleteTopDomainByTldIdx( ICFSecProtAuthorization Authorization,
+	public void protdeleteTopDomainByTldIdx( ICFSecProtAuthorization Authorization,
 		CFLibDbKeyHash256 argTldId );
 
 	/**
@@ -126,7 +126,7 @@ public interface ICFIntProtTopDomainTable
 	 *
 	 *	@param	argKey	The key identifying the instances to be deleted.
 	 */
-	void deleteTopDomainByTldIdx( ICFSecProtAuthorization Authorization,
+	public void protdeleteTopDomainByTldIdx( ICFSecProtAuthorization Authorization,
 		ICFIntProtTopDomainByTldIdxKey argKey );
 	/**
 	 *	Delete the TopDomain instances identified by the key NameIdx.
@@ -137,7 +137,7 @@ public interface ICFIntProtTopDomainTable
 	 *
 	 *	@param	Name	The TopDomain key attribute of the instance generating the id.
 	 */
-	void deleteTopDomainByNameIdx( ICFSecProtAuthorization Authorization,
+	public void protdeleteTopDomainByNameIdx( ICFSecProtAuthorization Authorization,
 		CFLibDbKeyHash256 argTldId,
 		String argName );
 
@@ -148,7 +148,7 @@ public interface ICFIntProtTopDomainTable
 	 *
 	 *	@param	argKey	The key identifying the instances to be deleted.
 	 */
-	void deleteTopDomainByNameIdx( ICFSecProtAuthorization Authorization,
+	public void protdeleteTopDomainByNameIdx( ICFSecProtAuthorization Authorization,
 		ICFIntProtTopDomainByNameIdxKey argKey );
 
 
@@ -162,7 +162,7 @@ public interface ICFIntProtTopDomainTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 */
-	ICFIntProtTopDomain readDerived( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTopDomain protreadDerived( ICFSecProtAuthorization Authorization,
 		CFLibDbKeyHash256 PKey );
 
 	/**
@@ -175,7 +175,7 @@ public interface ICFIntProtTopDomainTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 */
-	ICFIntProtTopDomain lockDerived( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTopDomain protlockDerived( ICFSecProtAuthorization Authorization,
 		CFLibDbKeyHash256 PKey );
 
 	/**
@@ -185,7 +185,7 @@ public interface ICFIntProtTopDomainTable
 	 *
 	 *	@return An array of derived record instances, potentially with 0 elements in the set.
 	 */
-	ICFIntProtTopDomain[] readProtAllDerived( ICFSecProtAuthorization Authorization );
+	public ICFIntProtTopDomain[] protreadProtAllDerived( ICFSecProtAuthorization Authorization );
 
 	/**
 	 *	Read the derived TopDomain record instance identified by the unique key IdIdx.
@@ -197,7 +197,7 @@ public interface ICFIntProtTopDomainTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 */
-	ICFIntProtTopDomain readDerivedByIdIdx( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTopDomain protreadDerivedByIdIdx( ICFSecProtAuthorization Authorization,
 		CFLibDbKeyHash256 Id );
 
 	/**
@@ -209,7 +209,7 @@ public interface ICFIntProtTopDomainTable
 	 *
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
-	ICFIntProtTopDomain[] readDerivedByTenantIdx( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTopDomain[] protreadDerivedByTenantIdx( ICFSecProtAuthorization Authorization,
 		CFLibDbKeyHash256 TenantId );
 
 	/**
@@ -221,7 +221,7 @@ public interface ICFIntProtTopDomainTable
 	 *
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
-	ICFIntProtTopDomain[] readDerivedByTldIdx( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTopDomain[] protreadDerivedByTldIdx( ICFSecProtAuthorization Authorization,
 		CFLibDbKeyHash256 TldId );
 
 	/**
@@ -236,7 +236,7 @@ public interface ICFIntProtTopDomainTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 */
-	ICFIntProtTopDomain readDerivedByNameIdx( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTopDomain protreadDerivedByNameIdx( ICFSecProtAuthorization Authorization,
 		CFLibDbKeyHash256 TldId,
 		String Name );
 
@@ -252,7 +252,7 @@ public interface ICFIntProtTopDomainTable
 	 *
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
-	ICFIntProtTopDomain readRec( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTopDomain protreadRec( ICFSecProtAuthorization Authorization,
 		CFLibDbKeyHash256 PKey );
 
 	/**
@@ -267,7 +267,7 @@ public interface ICFIntProtTopDomainTable
 	 *
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
-	ICFIntProtTopDomain lockRec( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTopDomain protlockRec( ICFSecProtAuthorization Authorization,
 		CFLibDbKeyHash256 PKey );
 
 	/**
@@ -277,7 +277,7 @@ public interface ICFIntProtTopDomainTable
 	 *
 	 *	@return All the specific TopDomain instances in the database accessible for the Authorization.
 	 */
-	ICFIntProtTopDomain[] readAllRec( ICFSecProtAuthorization Authorization );
+	public ICFIntProtTopDomain[] protreadAllRec( ICFSecProtAuthorization Authorization );
 
 	/**
 	 *	Read the specific TopDomain record instance identified by the unique key IdIdx.
@@ -291,7 +291,7 @@ public interface ICFIntProtTopDomainTable
 	 *
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
-	ICFIntProtTopDomain readRecByIdIdx( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTopDomain protreadRecByIdIdx( ICFSecProtAuthorization Authorization,
 		CFLibDbKeyHash256 Id );
 
 	/**
@@ -305,7 +305,7 @@ public interface ICFIntProtTopDomainTable
 	 *
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
-	ICFIntProtTopDomain[] readRecByTenantIdx( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTopDomain[] protreadRecByTenantIdx( ICFSecProtAuthorization Authorization,
 		CFLibDbKeyHash256 TenantId );
 
 	/**
@@ -319,7 +319,7 @@ public interface ICFIntProtTopDomainTable
 	 *
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
-	ICFIntProtTopDomain[] readRecByTldIdx( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTopDomain[] protreadRecByTldIdx( ICFSecProtAuthorization Authorization,
 		CFLibDbKeyHash256 TldId );
 
 	/**
@@ -336,7 +336,7 @@ public interface ICFIntProtTopDomainTable
 	 *
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
-	ICFIntProtTopDomain readRecByNameIdx( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTopDomain protreadRecByNameIdx( ICFSecProtAuthorization Authorization,
 		CFLibDbKeyHash256 TldId,
 		String Name );
 }

@@ -36,12 +36,15 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
 
 /*
  *	ICFIntProtTldFactory protected interface for Tld
  */
 public interface ICFIntProtTldFactory
+extends ICFIntPubTldFactory
 {
 
 	/**
@@ -70,13 +73,13 @@ public interface ICFIntProtTldFactory
 	 *
 	 *	@return	The new instance.
 	 */
-	public ICFIntProtTld newRec();
+	public ICFIntProtTld newProtRec();
 
 	/**
 	 *	Allocate a protected Tld history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
-	public ICFIntProtTldH newHRec();
+	public ICFIntProtTldH newProtHRec();
 
 }

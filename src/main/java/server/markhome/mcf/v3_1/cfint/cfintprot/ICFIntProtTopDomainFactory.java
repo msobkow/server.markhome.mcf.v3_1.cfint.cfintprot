@@ -36,12 +36,15 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
 
 /*
  *	ICFIntProtTopDomainFactory protected interface for TopDomain
  */
 public interface ICFIntProtTopDomainFactory
+extends ICFIntPubTopDomainFactory
 {
 
 	/**
@@ -77,13 +80,13 @@ public interface ICFIntProtTopDomainFactory
 	 *
 	 *	@return	The new instance.
 	 */
-	public ICFIntProtTopDomain newRec();
+	public ICFIntProtTopDomain newProtRec();
 
 	/**
 	 *	Allocate a protected TopDomain history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
-	public ICFIntProtTopDomainH newHRec();
+	public ICFIntProtTopDomainH newProtHRec();
 
 }

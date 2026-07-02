@@ -36,12 +36,15 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
 
 /*
  *	ICFIntProtMinorVersionFactory protected interface for MinorVersion
  */
 public interface ICFIntProtMinorVersionFactory
+extends ICFIntPubMinorVersionFactory
 {
 
 	/**
@@ -77,13 +80,13 @@ public interface ICFIntProtMinorVersionFactory
 	 *
 	 *	@return	The new instance.
 	 */
-	public ICFIntProtMinorVersion newRec();
+	public ICFIntProtMinorVersion newProtRec();
 
 	/**
 	 *	Allocate a protected MinorVersion history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
-	public ICFIntProtMinorVersionH newHRec();
+	public ICFIntProtMinorVersionH newProtHRec();
 
 }
