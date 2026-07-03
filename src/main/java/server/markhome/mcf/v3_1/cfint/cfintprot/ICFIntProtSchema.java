@@ -45,7 +45,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
 
-		import server.markhome.mcf.v3_1.cfsec.cfsecprot.buff.CFSecProtBuffFactoryService;
+//import server.markhome.mcf.v3_1.cfsec.cfsecprot.buff.CFSecProtBuffFactoryService;
 //import server.markhome.mcf.v3_1.cfint.cfintprot.buff.CFIntProtBuffSchema;
 //import server.markhome.mcf.v3_1.cfint.cfintprot.buff.CFIntProtBuffFactoryService;
 
@@ -56,34 +56,34 @@ extends ICFSecProtSchema
 	public static final String SCHEMA_NAME = "CFInt";
 	public static final String DBSCHEMA_NAME = "CFInt31";
 	static final AtomicReference<ApplicationContext> arApplicationContext = new AtomicReference<>(null);
-	public static final CFSecProtTableData TABLE_DATA[] = {new CFSecProtTableData("CFInt", "License", null, false, false, "Tenant", "Public"),
-		new CFSecProtTableData("CFInt", "MajorVersion", null, true, false, "Tenant", "Public"),
-		new CFSecProtTableData("CFInt", "MimeType", null, true, false, "System", "Public"),
-		new CFSecProtTableData("CFInt", "MinorVersion", null, true, false, "Tenant", "Public"),
-		new CFSecProtTableData("CFInt", "SubProject", null, true, false, "Tenant", "Public"),
-		new CFSecProtTableData("CFInt", "Tld", null, true, false, "Tenant", "Public"),
-		new CFSecProtTableData("CFInt", "TopDomain", null, true, false, "Tenant", "Public"),
-		new CFSecProtTableData("CFInt", "TopProject", null, true, false, "Tenant", "Public"),
-		new CFSecProtTableData("CFInt", "URLProtocol", null, true, false, "System", "Public")};
-	public static final AtomicReference<CFSecProtTableData[]> consolidatedProtTableData = new AtomicReference<>(null);
-	public static final CFSecProtRoleInfo ROLE_INFO[] = {};
-	public static final AtomicReference<CFSecProtRoleInfo[]> consolidatedProtRoleInfo = new AtomicReference<>(null);
-	public static CFSecProtTableData[] getProtTableData() {
+	public static final CFSecPubTableData TABLE_DATA[] = {new CFSecPubTableData("CFInt", "License", null, false, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFInt", "MajorVersion", null, true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFInt", "MimeType", null, true, false, "System", "Public"),
+		new CFSecPubTableData("CFInt", "MinorVersion", null, true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFInt", "SubProject", null, true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFInt", "Tld", null, true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFInt", "TopDomain", null, true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFInt", "TopProject", null, true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFInt", "URLProtocol", null, true, false, "System", "Public")};
+	public static final AtomicReference<CFSecPubTableData[]> consolidatedProtTableData = new AtomicReference<>(null);
+	public static final CFSecPubRoleInfo ROLE_INFO[] = {};
+	public static final AtomicReference<CFSecPubRoleInfo[]> consolidatedProtRoleInfo = new AtomicReference<>(null);
+	public static CFSecPubTableData[] getProtTableData() {
 		return TABLE_DATA;
 	}
 
-	public static CFSecProtTableData[] getConsolidatedProtTableData() {
+	public static CFSecPubTableData[] getConsolidatedProtTableData() {
 		if (consolidatedProtTableData.get() == null) {
-			ArrayList<CFSecProtTableData> lst = new ArrayList<>();
-			for( CFSecProtTableData data: ICFSecProtSchema.getTableData()) {
+			ArrayList<CFSecPubTableData> lst = new ArrayList<>();
+			for( CFSecPubTableData data: ICFSecProtSchema.getTableData()) {
 				lst.add(data);
 			}
-			for( CFSecProtTableData data: TABLE_DATA) {
+			for( CFSecPubTableData data: TABLE_DATA) {
 				lst.add(data);
 			}
-			CFSecProtTableData arr[] = new CFSecProtTableData[lst.size()];
+			CFSecPubTableData arr[] = new CFSecPubTableData[lst.size()];
 			int idx = 0;
-			for(CFSecProtTableData data: lst) {
+			for(CFSecPubTableData data: lst) {
 				arr[idx++] = data;
 			}
 			consolidatedProtTableData.compareAndSet(null, arr);
@@ -91,24 +91,24 @@ extends ICFSecProtSchema
 		return(consolidatedProtTableData.get());
 	}
 
-	public static CFSecProtRoleInfo[] getProtRoleInfo() {
+	public static CFSecPubRoleInfo[] getProtRoleInfo() {
 		return ROLE_INFO;
 	}
 
-	public static CFSecProtRoleInfo[] getConsolidatedProtRoleInfo() {
+	public static CFSecPubRoleInfo[] getConsolidatedProtRoleInfo() {
 		if (consolidatedProtRoleInfo.get() == null) {
-			ArrayList<CFSecProtRoleInfo> lst = new ArrayList<>();
-			for( CFSecProtRoleInfo info: ICFSecProtSchema.getRoleInfo()) {
+			ArrayList<CFSecPubRoleInfo> lst = new ArrayList<>();
+			for( CFSecPubRoleInfo info: ICFSecProtSchema.getRoleInfo()) {
 				lst.add(info);
 			}
-			for( CFSecProtRoleInfo info: ROLE_INFO) {
+			for( CFSecPubRoleInfo info: ROLE_INFO) {
 				lst.add(info);
 			}
 			// Dependency order is the natural order of role info comparison
-			lst.sort(new CFSecProtRoleInfoDependencyComparator());
-			CFSecProtRoleInfo arr[] = new CFSecProtRoleInfo[lst.size()];
+			lst.sort(new CFSecPubRoleInfoDependencyComparator());
+			CFSecPubRoleInfo arr[] = new CFSecPubRoleInfo[lst.size()];
 			int idx = 0;
-			for(CFSecProtRoleInfo info: lst) {
+			for(CFSecPubRoleInfo info: lst) {
 				arr[idx++] = info;
 			}
 			consolidatedProtRoleInfo.compareAndSet(null, arr);
@@ -546,6 +546,6 @@ extends ICFSecProtSchema
 	 */
 	//public static void setTablePerms( ICFSecProtTablePerms value );
 
-	public void bootstrapSchema(CFSecProtTableData tableData[]);
-	public void bootstrapAllTablesSecurity(CFLibDbKeyHash256 clusterId, CFLibDbKeyHash256 tenantId, CFSecProtTableData tableData[]);
+	public void bootstrapSchema(CFSecPubTableData tableData[]);
+	public void bootstrapAllTablesSecurity(CFLibDbKeyHash256 clusterId, CFLibDbKeyHash256 tenantId, CFSecPubTableData tableData[]);
 }
