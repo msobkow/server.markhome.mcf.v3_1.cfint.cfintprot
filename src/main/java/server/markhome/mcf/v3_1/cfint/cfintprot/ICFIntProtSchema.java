@@ -65,15 +65,15 @@ extends ICFSecProtSchema
 		new CFSecPubTableData("CFInt", "TopDomain", null, true, false, "Tenant", "Public"),
 		new CFSecPubTableData("CFInt", "TopProject", null, true, false, "Tenant", "Public"),
 		new CFSecPubTableData("CFInt", "URLProtocol", null, true, false, "System", "Public")};
-	public static final AtomicReference<CFSecPubTableData[]> consolidatedProtTableData = new AtomicReference<>(null);
+	public static final AtomicReference<CFSecPubTableData[]> consolidatedTableData = new AtomicReference<>(null);
 	public static final CFSecPubRoleInfo ROLE_INFO[] = {};
-	public static final AtomicReference<CFSecPubRoleInfo[]> consolidatedProtRoleInfo = new AtomicReference<>(null);
-	public static CFSecPubTableData[] getProtTableData() {
+	public static final AtomicReference<CFSecPubRoleInfo[]> consolidatedRoleInfo = new AtomicReference<>(null);
+	public static CFSecPubTableData[] getTableData() {
 		return TABLE_DATA;
 	}
 
-	public static CFSecPubTableData[] getConsolidatedProtTableData() {
-		if (consolidatedProtTableData.get() == null) {
+	public static CFSecPubTableData[] getConsolidatedTableData() {
+		if (consolidatedTableData.get() == null) {
 			ArrayList<CFSecPubTableData> lst = new ArrayList<>();
 			for( CFSecPubTableData data: ICFSecProtSchema.getTableData()) {
 				lst.add(data);
@@ -86,17 +86,17 @@ extends ICFSecProtSchema
 			for(CFSecPubTableData data: lst) {
 				arr[idx++] = data;
 			}
-			consolidatedProtTableData.compareAndSet(null, arr);
+			consolidatedTableData.compareAndSet(null, arr);
 		}
-		return(consolidatedProtTableData.get());
+		return(consolidatedTableData.get());
 	}
 
-	public static CFSecPubRoleInfo[] getProtRoleInfo() {
+	public static CFSecPubRoleInfo[] getRoleInfo() {
 		return ROLE_INFO;
 	}
 
-	public static CFSecPubRoleInfo[] getConsolidatedProtRoleInfo() {
-		if (consolidatedProtRoleInfo.get() == null) {
+	public static CFSecPubRoleInfo[] getConsolidatedRoleInfo() {
+		if (consolidatedRoleInfo.get() == null) {
 			ArrayList<CFSecPubRoleInfo> lst = new ArrayList<>();
 			for( CFSecPubRoleInfo info: ICFSecProtSchema.getRoleInfo()) {
 				lst.add(info);
@@ -111,9 +111,9 @@ extends ICFSecProtSchema
 			for(CFSecPubRoleInfo info: lst) {
 				arr[idx++] = info;
 			}
-			consolidatedProtRoleInfo.compareAndSet(null, arr);
+			consolidatedRoleInfo.compareAndSet(null, arr);
 		}
-		return(consolidatedProtRoleInfo.get());
+		return(consolidatedRoleInfo.get());
 	}
 
 	public default void setApplicationContext(final ApplicationContext applicationContext) throws BeansException {
@@ -421,22 +421,22 @@ extends ICFSecProtSchema
 	/**
 	 *	Get the factory for CFSecProt data objects.
 	 */
-	// public ICFSecProtFactory getCFSecProtFactory();
+	// public ICFSecProtFactory getCFSecFactory();
 
 	/**
 	 *	Get the buffer factory for CFSecProt data buffers.
 	 */
-	// public CFSecProtBuffFactoryService getCFSecProtBuffFactory();
+	// public CFSecProtBuffFactoryService getCFSecBuffFactory();
 
 	/**
 	 *	Get the factory for CFIntProt data objects.
 	 */
-	// public ICFIntProtFactory getCFIntProtFactory();
+	// public ICFIntProtFactory getCFIntFactory();
 
 	/**
 	 *	Get the buffer factory for CFIntProt data buffers.
 	 */
-	// public CFIntProtBuffFactoryService getCFIntProtBuffFactory();
+	// public CFIntProtBuffFactoryService getCFIntBuffFactory();
 
 	/**
 	 *	Get the License Table interface for the schema.
