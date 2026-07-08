@@ -1,5 +1,5 @@
 
-// Description: Java 25 protected DbIO interface for MajorVersion.
+// Description: Java 25 protlic DbIO interface for MajorVersion.
 
 /*
  *	server.markhome.mcf.CFInt
@@ -37,14 +37,17 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
 import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 
 /*
- *	CFIntProtMajorVersionTable protected database interface for MajorVersion has CodeVis Public, meaning that any user interface or referencing schema can access it.
+ *	CFIntProtMajorVersionTable protlic database interface for MajorVersion has CodeVis Public, meaning that any user interface or referencing schema can access it.
  */
 public interface ICFIntProtMajorVersionTable
+extends ICFIntPubMajorVersionTable
 {
 	public static final String TABLE_NAME = "MajorVersion";
 
@@ -59,6 +62,17 @@ public interface ICFIntProtMajorVersionTable
 	public ICFIntProtMajorVersion protcreateMajorVersion( ICFSecProtAuthorization Authorization,
 		ICFIntProtMajorVersion rec );
 
+	/**
+	 *	Create the instance in the database, and update the specified record
+	 *	with the assigned primary key.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	rec	The instance interface to be created.
+	 */
+	public ICFIntProtMajorVersion protcreateMajorVersion( ICFSecProtAuthorization Authorization,
+		ICFIntPubMajorVersion rec );
+
 
 	/**
 	 *	Update the instance in the database, and update the specified record
@@ -70,6 +84,17 @@ public interface ICFIntProtMajorVersionTable
 	 */
 	public ICFIntProtMajorVersion protupdateMajorVersion( ICFSecProtAuthorization Authorization,
 		ICFIntProtMajorVersion rec );
+
+	/**
+	 *	Update the instance in the database, and update the specified record
+	 *	with any calculated changes imposed by the associated stored procedure.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	rec	The instance interface to be updated
+	 */
+	public ICFIntProtMajorVersion protupdateMajorVersion( ICFSecProtAuthorization Authorization,
+		ICFIntPubMajorVersion rec );
 
 
 	/**
@@ -110,6 +135,15 @@ public interface ICFIntProtMajorVersionTable
 	public void protdeleteMajorVersionByTenantIdx( ICFSecProtAuthorization Authorization,
 		ICFIntProtMajorVersionByTenantIdxKey argKey );
 	/**
+	 *	Delete the MajorVersion instances identified by the key TenantIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	argKey	The key identifying the instances to be deleted.
+	 */
+	public void protdeleteMajorVersionByTenantIdx( ICFSecProtAuthorization Authorization,
+		ICFIntPubMajorVersionByTenantIdxKey argKey );
+	/**
 	 *	Delete the MajorVersion instances identified by the key SubProjectIdx.
 	 *
 	 *	@param	Authorization	The session authorization information.
@@ -128,6 +162,15 @@ public interface ICFIntProtMajorVersionTable
 	 */
 	public void protdeleteMajorVersionBySubProjectIdx( ICFSecProtAuthorization Authorization,
 		ICFIntProtMajorVersionBySubProjectIdxKey argKey );
+	/**
+	 *	Delete the MajorVersion instances identified by the key SubProjectIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	argKey	The key identifying the instances to be deleted.
+	 */
+	public void protdeleteMajorVersionBySubProjectIdx( ICFSecProtAuthorization Authorization,
+		ICFIntPubMajorVersionBySubProjectIdxKey argKey );
 	/**
 	 *	Delete the MajorVersion instances identified by the key NameIdx.
 	 *
@@ -150,10 +193,90 @@ public interface ICFIntProtMajorVersionTable
 	 */
 	public void protdeleteMajorVersionByNameIdx( ICFSecProtAuthorization Authorization,
 		ICFIntProtMajorVersionByNameIdxKey argKey );
+	/**
+	 *	Delete the MajorVersion instances identified by the key NameIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	argKey	The key identifying the instances to be deleted.
+	 */
+	public void protdeleteMajorVersionByNameIdx( ICFSecProtAuthorization Authorization,
+		ICFIntPubMajorVersionByNameIdxKey argKey );
+
+	/**
+	 *	Delete the instance from the database.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	rec	The instance interface to be deleted.
+	 */
+	public void protdeleteMajorVersion( ICFSecProtAuthorization Authorization,
+		ICFIntPubMajorVersion rec );
+	/**
+	 *	Delete the MajorVersion instance identified by the primary key.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	argKey	The primary key identifying the instance to be deleted.
+	 */
+	public void protdeleteMajorVersionByIdIdx( ICFSecProtAuthorization Authorization,
+		CFLibDbKeyHash256 argKey );
+	/**
+	 *	Delete the MajorVersion instances identified by the key TenantIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	argKey	The key identifying the instances to be deleted.
+	 */
+	public void protdeleteMajorVersionByTenantIdx( ICFSecProtAuthorization Authorization,
+		ICFIntPubMajorVersionByTenantIdxKey argKey );
+	/**
+	 *	Delete the MajorVersion instances identified by the key SubProjectIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	argKey	The key identifying the instances to be deleted.
+	 */
+	public void protdeleteMajorVersionBySubProjectIdx( ICFSecProtAuthorization Authorization,
+		ICFIntPubMajorVersionBySubProjectIdxKey argKey );
+	/**
+	 *	Delete the MajorVersion instances identified by the key NameIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	argKey	The key identifying the instances to be deleted.
+	 */
+	public void protdeleteMajorVersionByNameIdx( ICFSecProtAuthorization Authorization,
+		ICFIntPubMajorVersionByNameIdxKey argKey );
 
 
 	/**
-	 *	Read the derived MajorVersion record instance by primary key.
+	 *	Read the derived MajorVersion record instance by protected primary key.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	PKey	The primary key of the MajorVersion instance to be read.
+	 *
+	 *	@return The record instance for the specified primary key, or null if there is
+	 *		no such existing key value.
+	 */
+	public ICFIntProtMajorVersion protreadDerived( ICFSecProtAuthorization Authorization,
+		CFLibDbKeyHash256 PKey );
+	/**
+	 *	Read the derived MajorVersion record instance by protected primary key.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	PKey	The primary key of the MajorVersion instance to be read.
+	 *
+	 *	@return The record instance for the specified primary key, or null if there is
+	 *		no such existing key value.
+	 */
+	public ICFIntPubMajorVersion pubreadDerived( ICFSecProtAuthorization Authorization,
+		CFLibDbKeyHash256 PKey );
+
+	/**
+	 *	Read the derived MajorVersion record instance by public primary key.
 	 *
 	 *	@param	Authorization	The session authorization information.
 	 *
@@ -165,8 +288,9 @@ public interface ICFIntProtMajorVersionTable
 	public ICFIntProtMajorVersion protreadDerived( ICFSecProtAuthorization Authorization,
 		CFLibDbKeyHash256 PKey );
 
+
 	/**
-	 *	Lock the derived MajorVersion record instance by primary key.
+	 *	Lock the derived MajorVersion record instance by protected primary key.
 	 *
 	 *	@param	Authorization	The session authorization information.
 	 *
@@ -177,6 +301,32 @@ public interface ICFIntProtMajorVersionTable
 	 */
 	public ICFIntProtMajorVersion protlockDerived( ICFSecProtAuthorization Authorization,
 		CFLibDbKeyHash256 PKey );
+	/**
+	 *	Lock the derived MajorVersion record instance by protected primary key.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	PKey	The primary key of the MajorVersion instance to be locked.
+	 *
+	 *	@return The record instance for the specified primary key, or null if there is
+	 *		no such existing key value.
+	 */
+	public ICFIntPubMajorVersion publockDerived( ICFSecProtAuthorization Authorization,
+		CFLibDbKeyHash256 PKey );
+
+	/**
+	 *	Lock the derived MajorVersion record instance by public primary key.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	PKey	The primary key of the MajorVersion instance to be locked.
+	 *
+	 *	@return The record instance for the specified primary key, or null if there is
+	 *		no such existing key value.
+	 */
+	public ICFIntProtMajorVersion protlockDerived( ICFSecProtAuthorization Authorization,
+		CFLibDbKeyHash256 PKey );
+
 
 	/**
 	 *	Read all MajorVersion instances.
@@ -253,6 +403,66 @@ public interface ICFIntProtMajorVersionTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFIntProtMajorVersion protreadRec( ICFSecProtAuthorization Authorization,
+		CFLibDbKeyHash256 PKey );
+
+	/**
+	 *	Read the specific MajorVersion record instance identified by the primary key.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	PKey	The primary key of the MajorVersion instance to be locked.
+	 *
+	 *	@return The record instance for the specified primary key, or null if there is
+	 *		no such existing key value.
+	 *
+	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFIntProtMajorVersion protreadRec( ICFSecProtAuthorization Authorization,
+		CFLibDbKeyHash256 PKey );
+
+	/**
+	 *	Read the specific MajorVersion record instance identified by the primary key.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	PKey	The primary key of the MajorVersion instance to be locked.
+	 *
+	 *	@return The record instance for the specified primary key, or null if there is
+	 *		no such existing key value.
+	 *
+	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFIntPubMajorVersion pubreadRec( ICFSecProtAuthorization Authorization,
+		CFLibDbKeyHash256 PKey );
+
+	/**
+	 *	Lock the specific MajorVersion record instance identified by the primary key.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	PKey	The primary key of the MajorVersion instance to be locked.
+	 *
+	 *	@return The record instance for the specified primary key, or null if there is
+	 *		no such existing key value.
+	 *
+	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFIntProtMajorVersion protlockRec( ICFSecProtAuthorization Authorization,
+		CFLibDbKeyHash256 PKey );
+
+	/**
+	 *	Lock the specific MajorVersion record instance identified by the primary key.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	PKey	The primary key of the MajorVersion instance to be locked.
+	 *
+	 *	@return The record instance for the specified primary key, or null if there is
+	 *		no such existing key value.
+	 *
+	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFIntPubMajorVersion publockRec( ICFSecProtAuthorization Authorization,
 		CFLibDbKeyHash256 PKey );
 
 	/**

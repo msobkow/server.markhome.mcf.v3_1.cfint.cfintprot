@@ -1,4 +1,4 @@
-// Description: Java 25 protected interface for a URLProtocol history object
+// Description: Java 25 protlic interface for a URLProtocol history object
 
 /*
  *	server.markhome.mcf.CFInt
@@ -38,7 +38,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
 //import server.markhome.mcf.v3_1.cfint.cfintprot.*;
 
 /**
- *	ICFIntProtURLProtocolH provides access to protected history records matching the CFIntProtURLProtocol object change history.
+ *	ICFIntProtURLProtocolH provides access to protlic history records matching the CFIntProtURLProtocol object change history.
  */
 public interface ICFIntProtURLProtocolH
 {

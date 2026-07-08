@@ -38,13 +38,14 @@ import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 
 /*
  *	ICFIntProtURLProtocolFactory protected interface for URLProtocol
  */
-public interface ICFIntProtURLProtocolFactory
-extends ICFIntPubURLProtocolFactory
+public interface ICFIntProtURLProtocolFactory extends ICFIntPubURLProtocolFactory
 {
 
 	/**
@@ -55,18 +56,39 @@ extends ICFIntPubURLProtocolFactory
 	ICFIntProtURLProtocolHPKey newProtHPKey();
 
 	/**
-	 *	Allocate a protected UNameIdx key over public URLProtocol instances.
+	 *	Allocate a public primary history key for URLProtocol instances from a protected instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFIntPubURLProtocolHPKey asPublic(ICFIntProtURLProtocolHPKey src);
+
+	/**
+	 *	Allocate a protected UNameIdx key over protected URLProtocol instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntProtURLProtocolByUNameIdxKey newProtByUNameIdxKey();
 
 	/**
-	 *	Allocate a protected IsSecureIdx key over public URLProtocol instances.
+	 *	Allocate a public UNameIdx key from a protected instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubURLProtocolByUNameIdxKey asPublic(ICFIntProtURLProtocolByUNameIdxKey src);
+
+	/**
+	 *	Allocate a protected IsSecureIdx key over protected URLProtocol instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntProtURLProtocolByIsSecureIdxKey newProtByIsSecureIdxKey();
+
+	/**
+	 *	Allocate a public IsSecureIdx key from a protected instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubURLProtocolByIsSecureIdxKey asPublic(ICFIntProtURLProtocolByIsSecureIdxKey src);
 
 	/**
 	 *	Allocate a protected URLProtocol interface implementation.
@@ -76,10 +98,24 @@ extends ICFIntPubURLProtocolFactory
 	public ICFIntProtURLProtocol newProtRec();
 
 	/**
+	 *	Allocate a public URLProtocol interface from a protected interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubURLProtocol asPublic(ICFIntProtURLProtocol src);
+
+	/**
 	 *	Allocate a protected URLProtocol history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntProtURLProtocolH newProtHRec();
+
+	/**
+	 *	Allocate a public URLProtocol history interface implementation from a protected interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubURLProtocolH asPublic(ICFIntProtURLProtocolH src);
 
 }

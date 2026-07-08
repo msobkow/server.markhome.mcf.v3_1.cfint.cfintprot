@@ -38,13 +38,14 @@ import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 
 /*
  *	ICFIntProtMinorVersionFactory protected interface for MinorVersion
  */
-public interface ICFIntProtMinorVersionFactory
-extends ICFIntPubMinorVersionFactory
+public interface ICFIntProtMinorVersionFactory extends ICFIntPubMinorVersionFactory
 {
 
 	/**
@@ -55,25 +56,53 @@ extends ICFIntPubMinorVersionFactory
 	ICFIntProtMinorVersionHPKey newProtHPKey();
 
 	/**
-	 *	Allocate a protected TenantIdx key over public MinorVersion instances.
+	 *	Allocate a public primary history key for MinorVersion instances from a protected instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFIntPubMinorVersionHPKey asPublic(ICFIntProtMinorVersionHPKey src);
+
+	/**
+	 *	Allocate a protected TenantIdx key over protected MinorVersion instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntProtMinorVersionByTenantIdxKey newProtByTenantIdxKey();
 
 	/**
-	 *	Allocate a protected MajorVerIdx key over public MinorVersion instances.
+	 *	Allocate a public TenantIdx key from a protected instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubMinorVersionByTenantIdxKey asPublic(ICFIntProtMinorVersionByTenantIdxKey src);
+
+	/**
+	 *	Allocate a protected MajorVerIdx key over protected MinorVersion instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntProtMinorVersionByMajorVerIdxKey newProtByMajorVerIdxKey();
 
 	/**
-	 *	Allocate a protected NameIdx key over public MinorVersion instances.
+	 *	Allocate a public MajorVerIdx key from a protected instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubMinorVersionByMajorVerIdxKey asPublic(ICFIntProtMinorVersionByMajorVerIdxKey src);
+
+	/**
+	 *	Allocate a protected NameIdx key over protected MinorVersion instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntProtMinorVersionByNameIdxKey newProtByNameIdxKey();
+
+	/**
+	 *	Allocate a public NameIdx key from a protected instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubMinorVersionByNameIdxKey asPublic(ICFIntProtMinorVersionByNameIdxKey src);
 
 	/**
 	 *	Allocate a protected MinorVersion interface implementation.
@@ -83,10 +112,24 @@ extends ICFIntPubMinorVersionFactory
 	public ICFIntProtMinorVersion newProtRec();
 
 	/**
+	 *	Allocate a public MinorVersion interface from a protected interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubMinorVersion asPublic(ICFIntProtMinorVersion src);
+
+	/**
 	 *	Allocate a protected MinorVersion history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntProtMinorVersionH newProtHRec();
+
+	/**
+	 *	Allocate a public MinorVersion history interface implementation from a protected interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubMinorVersionH asPublic(ICFIntProtMinorVersionH src);
 
 }

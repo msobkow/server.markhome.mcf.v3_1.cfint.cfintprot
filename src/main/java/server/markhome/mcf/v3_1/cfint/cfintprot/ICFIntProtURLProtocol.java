@@ -33,9 +33,11 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
-import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
-//import server.markhome.mcf.v3_1.cfint.cfintprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 
 /**
  *	ICFIntProtURLProtocol persistence instances have CodeVis Public, meaning that any user interface or referencing schema can access it.
@@ -43,14 +45,14 @@ import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
 public interface ICFIntProtURLProtocol
 {
 	public static final int URLPROTOCOLID_MIN_VALUE = 0;
-	public static final String S_INIT_CREATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 INIT_CREATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_CREATED_BY);
-	public static final String S_INIT_UPDATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 INIT_UPDATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
-	public static final int URLPROTOCOLID_INIT_VALUE = 0;
-	public static final String NAME_INIT_VALUE = new String( "" );
-	public static final String DESCRIPTION_INIT_VALUE = new String( "" );
-	public final static boolean ISSECURE_INIT_VALUE = false;
+	public static final String S_INIT_CREATED_BY = ICFIntPubURLProtocol.S_INIT_CREATED_BY;
+	public static final CFLibDbKeyHash256 INIT_CREATED_BY = ICFIntPubURLProtocol.INIT_CREATED_BY;
+	public static final String S_INIT_UPDATED_BY = ICFIntPubURLProtocol.S_INIT_UPDATED_BY;
+	public static final CFLibDbKeyHash256 INIT_UPDATED_BY = ICFIntPubURLProtocol.INIT_UPDATED_BY;
+	public static final int URLPROTOCOLID_INIT_VALUE = ICFIntPubURLProtocol.URLPROTOCOLID_INIT_VALUE;
+	public static final String NAME_INIT_VALUE = ICFIntPubURLProtocol.NAME_INIT_VALUE;
+	public static final String DESCRIPTION_INIT_VALUE = ICFIntPubURLProtocol.DESCRIPTION_INIT_VALUE;
+	public final static boolean ISSECURE_INIT_VALUE = ICFIntPubURLProtocol.ISSECURE_INIT_VALUE;
 	public final static int CLASS_CODE = 0xa109;
 	public final static String S_CLASS_CODE = "a109";
 
@@ -65,8 +67,8 @@ public interface ICFIntProtURLProtocol
 	public LocalDateTime getUpdatedAt();
 	public void setUpdatedAt( LocalDateTime value );
 
-	public Integer getProtPKey();
-	public void setProtPKey(Integer requiredURLProtocolId);
+	public Integer getPKey();
+	public void setPKey(Integer requiredURLProtocolId);
 	
 	public int getRequiredURLProtocolId();
 	public void setRequiredURLProtocolId( int value );
@@ -89,9 +91,13 @@ public interface ICFIntProtURLProtocol
 	public int compareTo( Object obj );
 
 	public void set( ICFIntProtURLProtocol src );
-	public void setProtURLProtocol( ICFIntProtURLProtocol src );
+	public void setURLProtocol( ICFIntProtURLProtocol src );
+	public void set( ICFIntPubURLProtocol src );
 	public void set( ICFIntProtURLProtocolH src );
-	public void setProtURLProtocol( ICFIntProtURLProtocolH src );
+	public void setURLProtocol( ICFIntProtURLProtocolH src );
+	public void set( ICFIntPubURLProtocolH src );
+	public void setURLProtocol( ICFIntPubURLProtocolH src );
+
 
 	public String getXmlAttrFragment();
 

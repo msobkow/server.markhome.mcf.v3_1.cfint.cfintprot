@@ -33,32 +33,34 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
-import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
-//import server.markhome.mcf.v3_1.cfint.cfintprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 
 /**
  *	ICFIntProtLicense persistence instances have CodeVis Public, meaning that any user interface or referencing schema can access it.
  */
 public interface ICFIntProtLicense
 {
-	public static final String S_ID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 ID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_ID_INIT_VALUE );
-	public static final String S_TENANTID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 TENANTID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_TENANTID_INIT_VALUE );
-	public static final String S_TOPDOMAINID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 TOPDOMAINID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_TOPDOMAINID_INIT_VALUE );
-	public static final String NAME_INIT_VALUE = new String( "" );
-	public static final String DESCRIPTION_INIT_VALUE = new String( "" );
-	public static final String EMBEDDEDTEXT_INIT_VALUE = new String( "" );
-	public static final String FULLTEXT_INIT_VALUE = new String( "" );
+	public static final String S_ID_INIT_VALUE = ICFIntPubLicense.S_ID_INIT_VALUE;
+	public static final CFLibDbKeyHash256 ID_INIT_VALUE = ICFIntPubLicense.ID_INIT_VALUE;
+	public static final String S_TENANTID_INIT_VALUE = ICFIntPubLicense.S_TENANTID_INIT_VALUE;
+	public static final CFLibDbKeyHash256 TENANTID_INIT_VALUE = ICFIntPubLicense.TENANTID_INIT_VALUE;
+	public static final String S_TOPDOMAINID_INIT_VALUE = ICFIntPubLicense.S_TOPDOMAINID_INIT_VALUE;
+	public static final CFLibDbKeyHash256 TOPDOMAINID_INIT_VALUE = ICFIntPubLicense.TOPDOMAINID_INIT_VALUE;
+	public static final String NAME_INIT_VALUE = ICFIntPubLicense.NAME_INIT_VALUE;
+	public static final String DESCRIPTION_INIT_VALUE = ICFIntPubLicense.DESCRIPTION_INIT_VALUE;
+	public static final String EMBEDDEDTEXT_INIT_VALUE = ICFIntPubLicense.EMBEDDEDTEXT_INIT_VALUE;
+	public static final String FULLTEXT_INIT_VALUE = ICFIntPubLicense.FULLTEXT_INIT_VALUE;
 	public final static int CLASS_CODE = 0xa110;
 	public final static String S_CLASS_CODE = "a110";
 
 	public int getClassCode();
 
-	public CFLibDbKeyHash256 getProtPKey();
-	public void setProtPKey(CFLibDbKeyHash256 requiredId);
+	public CFLibDbKeyHash256 getPKey();
+	public void setPKey(CFLibDbKeyHash256 requiredId);
 	
 	public CFLibDbKeyHash256 getRequiredId();
 	public void setRequiredId( CFLibDbKeyHash256 value );
@@ -69,8 +71,10 @@ public interface ICFIntProtLicense
 	public ICFIntProtTopDomain getRequiredContainerTopDomain();
 	public void setRequiredOwnerTenant(ICFSecProtTenant argObj);
 	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId);
+	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
 	public void setRequiredContainerTopDomain(ICFIntProtTopDomain argObj);
 	public void setRequiredContainerTopDomain(CFLibDbKeyHash256 argTopDomainId);
+	public void setRequiredContainerTopDomain(ICFIntPubTopDomain argObj);
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public CFLibDbKeyHash256 getRequiredTopDomainId();
 	public String getRequiredName();
@@ -91,9 +95,13 @@ public interface ICFIntProtLicense
 	public int compareTo( Object obj );
 
 	public void set( ICFIntProtLicense src );
-	public void setProtLicense( ICFIntProtLicense src );
+	public void setLicense( ICFIntProtLicense src );
+	public void set( ICFIntPubLicense src );
 	public void set( ICFIntProtLicenseH src );
-	public void setProtLicense( ICFIntProtLicenseH src );
+	public void setLicense( ICFIntProtLicenseH src );
+	public void set( ICFIntPubLicenseH src );
+	public void setLicense( ICFIntPubLicenseH src );
+
 
 	public String getXmlAttrFragment();
 

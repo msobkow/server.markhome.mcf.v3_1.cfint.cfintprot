@@ -1,5 +1,5 @@
 
-// Description: Java 25 protected DbIO interface for Tld.
+// Description: Java 25 protlic DbIO interface for Tld.
 
 /*
  *	server.markhome.mcf.CFInt
@@ -37,14 +37,17 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
 import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 
 /*
- *	CFIntProtTldTable protected database interface for Tld has CodeVis Public, meaning that any user interface or referencing schema can access it.
+ *	CFIntProtTldTable protlic database interface for Tld has CodeVis Public, meaning that any user interface or referencing schema can access it.
  */
 public interface ICFIntProtTldTable
+extends ICFIntPubTldTable
 {
 	public static final String TABLE_NAME = "Tld";
 
@@ -59,6 +62,17 @@ public interface ICFIntProtTldTable
 	public ICFIntProtTld protcreateTld( ICFSecProtAuthorization Authorization,
 		ICFIntProtTld rec );
 
+	/**
+	 *	Create the instance in the database, and update the specified record
+	 *	with the assigned primary key.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	rec	The instance interface to be created.
+	 */
+	public ICFIntProtTld protcreateTld( ICFSecProtAuthorization Authorization,
+		ICFIntPubTld rec );
+
 
 	/**
 	 *	Update the instance in the database, and update the specified record
@@ -70,6 +84,17 @@ public interface ICFIntProtTldTable
 	 */
 	public ICFIntProtTld protupdateTld( ICFSecProtAuthorization Authorization,
 		ICFIntProtTld rec );
+
+	/**
+	 *	Update the instance in the database, and update the specified record
+	 *	with any calculated changes imposed by the associated stored procedure.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	rec	The instance interface to be updated
+	 */
+	public ICFIntProtTld protupdateTld( ICFSecProtAuthorization Authorization,
+		ICFIntPubTld rec );
 
 
 	/**
@@ -110,6 +135,15 @@ public interface ICFIntProtTldTable
 	public void protdeleteTldByTenantIdx( ICFSecProtAuthorization Authorization,
 		ICFIntProtTldByTenantIdxKey argKey );
 	/**
+	 *	Delete the Tld instances identified by the key TenantIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	argKey	The key identifying the instances to be deleted.
+	 */
+	public void protdeleteTldByTenantIdx( ICFSecProtAuthorization Authorization,
+		ICFIntPubTldByTenantIdxKey argKey );
+	/**
 	 *	Delete the Tld instances identified by the key NameIdx.
 	 *
 	 *	@param	Authorization	The session authorization information.
@@ -128,10 +162,81 @@ public interface ICFIntProtTldTable
 	 */
 	public void protdeleteTldByNameIdx( ICFSecProtAuthorization Authorization,
 		ICFIntProtTldByNameIdxKey argKey );
+	/**
+	 *	Delete the Tld instances identified by the key NameIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	argKey	The key identifying the instances to be deleted.
+	 */
+	public void protdeleteTldByNameIdx( ICFSecProtAuthorization Authorization,
+		ICFIntPubTldByNameIdxKey argKey );
+
+	/**
+	 *	Delete the instance from the database.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	rec	The instance interface to be deleted.
+	 */
+	public void protdeleteTld( ICFSecProtAuthorization Authorization,
+		ICFIntPubTld rec );
+	/**
+	 *	Delete the Tld instance identified by the primary key.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	argKey	The primary key identifying the instance to be deleted.
+	 */
+	public void protdeleteTldByIdIdx( ICFSecProtAuthorization Authorization,
+		CFLibDbKeyHash256 argKey );
+	/**
+	 *	Delete the Tld instances identified by the key TenantIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	argKey	The key identifying the instances to be deleted.
+	 */
+	public void protdeleteTldByTenantIdx( ICFSecProtAuthorization Authorization,
+		ICFIntPubTldByTenantIdxKey argKey );
+	/**
+	 *	Delete the Tld instances identified by the key NameIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	argKey	The key identifying the instances to be deleted.
+	 */
+	public void protdeleteTldByNameIdx( ICFSecProtAuthorization Authorization,
+		ICFIntPubTldByNameIdxKey argKey );
 
 
 	/**
-	 *	Read the derived Tld record instance by primary key.
+	 *	Read the derived Tld record instance by protected primary key.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	PKey	The primary key of the Tld instance to be read.
+	 *
+	 *	@return The record instance for the specified primary key, or null if there is
+	 *		no such existing key value.
+	 */
+	public ICFIntProtTld protreadDerived( ICFSecProtAuthorization Authorization,
+		CFLibDbKeyHash256 PKey );
+	/**
+	 *	Read the derived Tld record instance by protected primary key.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	PKey	The primary key of the Tld instance to be read.
+	 *
+	 *	@return The record instance for the specified primary key, or null if there is
+	 *		no such existing key value.
+	 */
+	public ICFIntPubTld pubreadDerived( ICFSecProtAuthorization Authorization,
+		CFLibDbKeyHash256 PKey );
+
+	/**
+	 *	Read the derived Tld record instance by public primary key.
 	 *
 	 *	@param	Authorization	The session authorization information.
 	 *
@@ -143,8 +248,9 @@ public interface ICFIntProtTldTable
 	public ICFIntProtTld protreadDerived( ICFSecProtAuthorization Authorization,
 		CFLibDbKeyHash256 PKey );
 
+
 	/**
-	 *	Lock the derived Tld record instance by primary key.
+	 *	Lock the derived Tld record instance by protected primary key.
 	 *
 	 *	@param	Authorization	The session authorization information.
 	 *
@@ -155,6 +261,32 @@ public interface ICFIntProtTldTable
 	 */
 	public ICFIntProtTld protlockDerived( ICFSecProtAuthorization Authorization,
 		CFLibDbKeyHash256 PKey );
+	/**
+	 *	Lock the derived Tld record instance by protected primary key.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	PKey	The primary key of the Tld instance to be locked.
+	 *
+	 *	@return The record instance for the specified primary key, or null if there is
+	 *		no such existing key value.
+	 */
+	public ICFIntPubTld publockDerived( ICFSecProtAuthorization Authorization,
+		CFLibDbKeyHash256 PKey );
+
+	/**
+	 *	Lock the derived Tld record instance by public primary key.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	PKey	The primary key of the Tld instance to be locked.
+	 *
+	 *	@return The record instance for the specified primary key, or null if there is
+	 *		no such existing key value.
+	 */
+	public ICFIntProtTld protlockDerived( ICFSecProtAuthorization Authorization,
+		CFLibDbKeyHash256 PKey );
+
 
 	/**
 	 *	Read all Tld instances.
@@ -216,6 +348,66 @@ public interface ICFIntProtTldTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFIntProtTld protreadRec( ICFSecProtAuthorization Authorization,
+		CFLibDbKeyHash256 PKey );
+
+	/**
+	 *	Read the specific Tld record instance identified by the primary key.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	PKey	The primary key of the Tld instance to be locked.
+	 *
+	 *	@return The record instance for the specified primary key, or null if there is
+	 *		no such existing key value.
+	 *
+	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFIntProtTld protreadRec( ICFSecProtAuthorization Authorization,
+		CFLibDbKeyHash256 PKey );
+
+	/**
+	 *	Read the specific Tld record instance identified by the primary key.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	PKey	The primary key of the Tld instance to be locked.
+	 *
+	 *	@return The record instance for the specified primary key, or null if there is
+	 *		no such existing key value.
+	 *
+	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFIntPubTld pubreadRec( ICFSecProtAuthorization Authorization,
+		CFLibDbKeyHash256 PKey );
+
+	/**
+	 *	Lock the specific Tld record instance identified by the primary key.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	PKey	The primary key of the Tld instance to be locked.
+	 *
+	 *	@return The record instance for the specified primary key, or null if there is
+	 *		no such existing key value.
+	 *
+	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFIntProtTld protlockRec( ICFSecProtAuthorization Authorization,
+		CFLibDbKeyHash256 PKey );
+
+	/**
+	 *	Lock the specific Tld record instance identified by the primary key.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	PKey	The primary key of the Tld instance to be locked.
+	 *
+	 *	@return The record instance for the specified primary key, or null if there is
+	 *		no such existing key value.
+	 *
+	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFIntPubTld publockRec( ICFSecProtAuthorization Authorization,
 		CFLibDbKeyHash256 PKey );
 
 	/**

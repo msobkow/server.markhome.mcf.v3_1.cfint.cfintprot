@@ -1,4 +1,4 @@
-// Description: Java 25 protected interface for a MajorVersion history object
+// Description: Java 25 protlic interface for a MajorVersion history object
 
 /*
  *	server.markhome.mcf.CFInt
@@ -38,7 +38,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
 //import server.markhome.mcf.v3_1.cfint.cfintprot.*;
 
 /**
- *	ICFIntProtMajorVersionH provides access to protected history records matching the CFIntProtMajorVersion object change history.
+ *	ICFIntProtMajorVersionH provides access to protlic history records matching the CFIntProtMajorVersion object change history.
  */
 public interface ICFIntProtMajorVersionH
 {

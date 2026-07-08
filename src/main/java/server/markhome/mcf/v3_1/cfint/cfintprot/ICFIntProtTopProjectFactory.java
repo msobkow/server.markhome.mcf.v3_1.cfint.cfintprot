@@ -38,13 +38,14 @@ import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 
 /*
  *	ICFIntProtTopProjectFactory protected interface for TopProject
  */
-public interface ICFIntProtTopProjectFactory
-extends ICFIntPubTopProjectFactory
+public interface ICFIntProtTopProjectFactory extends ICFIntPubTopProjectFactory
 {
 
 	/**
@@ -55,25 +56,53 @@ extends ICFIntPubTopProjectFactory
 	ICFIntProtTopProjectHPKey newProtHPKey();
 
 	/**
-	 *	Allocate a protected TenantIdx key over public TopProject instances.
+	 *	Allocate a public primary history key for TopProject instances from a protected instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFIntPubTopProjectHPKey asPublic(ICFIntProtTopProjectHPKey src);
+
+	/**
+	 *	Allocate a protected TenantIdx key over protected TopProject instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntProtTopProjectByTenantIdxKey newProtByTenantIdxKey();
 
 	/**
-	 *	Allocate a protected TopDomainIdx key over public TopProject instances.
+	 *	Allocate a public TenantIdx key from a protected instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubTopProjectByTenantIdxKey asPublic(ICFIntProtTopProjectByTenantIdxKey src);
+
+	/**
+	 *	Allocate a protected TopDomainIdx key over protected TopProject instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntProtTopProjectByTopDomainIdxKey newProtByTopDomainIdxKey();
 
 	/**
-	 *	Allocate a protected NameIdx key over public TopProject instances.
+	 *	Allocate a public TopDomainIdx key from a protected instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubTopProjectByTopDomainIdxKey asPublic(ICFIntProtTopProjectByTopDomainIdxKey src);
+
+	/**
+	 *	Allocate a protected NameIdx key over protected TopProject instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntProtTopProjectByNameIdxKey newProtByNameIdxKey();
+
+	/**
+	 *	Allocate a public NameIdx key from a protected instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubTopProjectByNameIdxKey asPublic(ICFIntProtTopProjectByNameIdxKey src);
 
 	/**
 	 *	Allocate a protected TopProject interface implementation.
@@ -83,10 +112,24 @@ extends ICFIntPubTopProjectFactory
 	public ICFIntProtTopProject newProtRec();
 
 	/**
+	 *	Allocate a public TopProject interface from a protected interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubTopProject asPublic(ICFIntProtTopProject src);
+
+	/**
 	 *	Allocate a protected TopProject history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntProtTopProjectH newProtHRec();
+
+	/**
+	 *	Allocate a public TopProject history interface implementation from a protected interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubTopProjectH asPublic(ICFIntProtTopProjectH src);
 
 }

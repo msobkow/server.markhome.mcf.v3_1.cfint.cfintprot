@@ -1,4 +1,4 @@
-// Description: Java 25 protected interface for a Tld history object
+// Description: Java 25 protlic interface for a Tld history object
 
 /*
  *	server.markhome.mcf.CFInt
@@ -38,7 +38,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
 //import server.markhome.mcf.v3_1.cfint.cfintprot.*;
 
 /**
- *	ICFIntProtTldH provides access to protected history records matching the CFIntProtTld object change history.
+ *	ICFIntProtTldH provides access to protlic history records matching the CFIntProtTld object change history.
  */
 public interface ICFIntProtTldH
 {

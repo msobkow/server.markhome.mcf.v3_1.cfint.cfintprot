@@ -1,4 +1,4 @@
-// Description: Java 25 protected interface for a Tld by TenantIdx index key object
+// Description: Java 25 protlic interface for a Tld by TenantIdx index key object
 
 /*
  *	server.markhome.mcf.CFInt

@@ -38,13 +38,14 @@ import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 
 /*
  *	ICFIntProtMimeTypeFactory protected interface for MimeType
  */
-public interface ICFIntProtMimeTypeFactory
-extends ICFIntPubMimeTypeFactory
+public interface ICFIntProtMimeTypeFactory extends ICFIntPubMimeTypeFactory
 {
 
 	/**
@@ -55,11 +56,25 @@ extends ICFIntPubMimeTypeFactory
 	ICFIntProtMimeTypeHPKey newProtHPKey();
 
 	/**
-	 *	Allocate a protected UNameIdx key over public MimeType instances.
+	 *	Allocate a public primary history key for MimeType instances from a protected instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFIntPubMimeTypeHPKey asPublic(ICFIntProtMimeTypeHPKey src);
+
+	/**
+	 *	Allocate a protected UNameIdx key over protected MimeType instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntProtMimeTypeByUNameIdxKey newProtByUNameIdxKey();
+
+	/**
+	 *	Allocate a public UNameIdx key from a protected instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubMimeTypeByUNameIdxKey asPublic(ICFIntProtMimeTypeByUNameIdxKey src);
 
 	/**
 	 *	Allocate a protected MimeType interface implementation.
@@ -69,10 +84,24 @@ extends ICFIntPubMimeTypeFactory
 	public ICFIntProtMimeType newProtRec();
 
 	/**
+	 *	Allocate a public MimeType interface from a protected interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubMimeType asPublic(ICFIntProtMimeType src);
+
+	/**
 	 *	Allocate a protected MimeType history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntProtMimeTypeH newProtHRec();
+
+	/**
+	 *	Allocate a public MimeType history interface implementation from a protected interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubMimeTypeH asPublic(ICFIntProtMimeTypeH src);
 
 }

@@ -1,4 +1,4 @@
-// Description: Java 25 protected interface for a TopProject history object
+// Description: Java 25 protlic interface for a TopProject history object
 
 /*
  *	server.markhome.mcf.CFInt
@@ -38,7 +38,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
 //import server.markhome.mcf.v3_1.cfint.cfintprot.*;
 
 /**
- *	ICFIntProtTopProjectH provides access to protected history records matching the CFIntProtTopProject object change history.
+ *	ICFIntProtTopProjectH provides access to protlic history records matching the CFIntProtTopProject object change history.
  */
 public interface ICFIntProtTopProjectH
 {

@@ -33,9 +33,11 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
-import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
-//import server.markhome.mcf.v3_1.cfint.cfintprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 
 /**
  *	ICFIntProtMimeType persistence instances have CodeVis Public, meaning that any user interface or referencing schema can access it.
@@ -43,13 +45,13 @@ import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
 public interface ICFIntProtMimeType
 {
 	public static final int MIMETYPEID_MIN_VALUE = 0;
-	public static final String S_INIT_CREATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 INIT_CREATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_CREATED_BY);
-	public static final String S_INIT_UPDATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 INIT_UPDATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
-	public static final int MIMETYPEID_INIT_VALUE = 0;
-	public static final String NAME_INIT_VALUE = new String( "" );
-	public static final String FILETYPES_INIT_VALUE = new String( "" );
+	public static final String S_INIT_CREATED_BY = ICFIntPubMimeType.S_INIT_CREATED_BY;
+	public static final CFLibDbKeyHash256 INIT_CREATED_BY = ICFIntPubMimeType.INIT_CREATED_BY;
+	public static final String S_INIT_UPDATED_BY = ICFIntPubMimeType.S_INIT_UPDATED_BY;
+	public static final CFLibDbKeyHash256 INIT_UPDATED_BY = ICFIntPubMimeType.INIT_UPDATED_BY;
+	public static final int MIMETYPEID_INIT_VALUE = ICFIntPubMimeType.MIMETYPEID_INIT_VALUE;
+	public static final String NAME_INIT_VALUE = ICFIntPubMimeType.NAME_INIT_VALUE;
+	public static final String FILETYPES_INIT_VALUE = ICFIntPubMimeType.FILETYPES_INIT_VALUE;
 	public final static int CLASS_CODE = 0xa103;
 	public final static String S_CLASS_CODE = "a103";
 
@@ -64,8 +66,8 @@ public interface ICFIntProtMimeType
 	public LocalDateTime getUpdatedAt();
 	public void setUpdatedAt( LocalDateTime value );
 
-	public Integer getProtPKey();
-	public void setProtPKey(Integer requiredMimeTypeId);
+	public Integer getPKey();
+	public void setPKey(Integer requiredMimeTypeId);
 	
 	public int getRequiredMimeTypeId();
 	public void setRequiredMimeTypeId( int value );
@@ -86,9 +88,13 @@ public interface ICFIntProtMimeType
 	public int compareTo( Object obj );
 
 	public void set( ICFIntProtMimeType src );
-	public void setProtMimeType( ICFIntProtMimeType src );
+	public void setMimeType( ICFIntProtMimeType src );
+	public void set( ICFIntPubMimeType src );
 	public void set( ICFIntProtMimeTypeH src );
-	public void setProtMimeType( ICFIntProtMimeTypeH src );
+	public void setMimeType( ICFIntProtMimeTypeH src );
+	public void set( ICFIntPubMimeTypeH src );
+	public void setMimeType( ICFIntPubMimeTypeH src );
+
 
 	public String getXmlAttrFragment();
 

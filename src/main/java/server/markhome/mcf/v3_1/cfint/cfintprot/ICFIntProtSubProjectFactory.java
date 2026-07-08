@@ -38,13 +38,14 @@ import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 
 /*
  *	ICFIntProtSubProjectFactory protected interface for SubProject
  */
-public interface ICFIntProtSubProjectFactory
-extends ICFIntPubSubProjectFactory
+public interface ICFIntProtSubProjectFactory extends ICFIntPubSubProjectFactory
 {
 
 	/**
@@ -55,25 +56,53 @@ extends ICFIntPubSubProjectFactory
 	ICFIntProtSubProjectHPKey newProtHPKey();
 
 	/**
-	 *	Allocate a protected TenantIdx key over public SubProject instances.
+	 *	Allocate a public primary history key for SubProject instances from a protected instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFIntPubSubProjectHPKey asPublic(ICFIntProtSubProjectHPKey src);
+
+	/**
+	 *	Allocate a protected TenantIdx key over protected SubProject instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntProtSubProjectByTenantIdxKey newProtByTenantIdxKey();
 
 	/**
-	 *	Allocate a protected TopProjectIdx key over public SubProject instances.
+	 *	Allocate a public TenantIdx key from a protected instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubSubProjectByTenantIdxKey asPublic(ICFIntProtSubProjectByTenantIdxKey src);
+
+	/**
+	 *	Allocate a protected TopProjectIdx key over protected SubProject instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntProtSubProjectByTopProjectIdxKey newProtByTopProjectIdxKey();
 
 	/**
-	 *	Allocate a protected NameIdx key over public SubProject instances.
+	 *	Allocate a public TopProjectIdx key from a protected instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubSubProjectByTopProjectIdxKey asPublic(ICFIntProtSubProjectByTopProjectIdxKey src);
+
+	/**
+	 *	Allocate a protected NameIdx key over protected SubProject instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntProtSubProjectByNameIdxKey newProtByNameIdxKey();
+
+	/**
+	 *	Allocate a public NameIdx key from a protected instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubSubProjectByNameIdxKey asPublic(ICFIntProtSubProjectByNameIdxKey src);
 
 	/**
 	 *	Allocate a protected SubProject interface implementation.
@@ -83,10 +112,24 @@ extends ICFIntPubSubProjectFactory
 	public ICFIntProtSubProject newProtRec();
 
 	/**
+	 *	Allocate a public SubProject interface from a protected interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubSubProject asPublic(ICFIntProtSubProject src);
+
+	/**
 	 *	Allocate a protected SubProject history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntProtSubProjectH newProtHRec();
+
+	/**
+	 *	Allocate a public SubProject history interface implementation from a protected interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubSubProjectH asPublic(ICFIntProtSubProjectH src);
 
 }

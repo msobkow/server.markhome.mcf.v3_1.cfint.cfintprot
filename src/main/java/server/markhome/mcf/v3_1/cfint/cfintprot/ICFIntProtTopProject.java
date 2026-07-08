@@ -33,27 +33,29 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
-import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
-//import server.markhome.mcf.v3_1.cfint.cfintprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 
 /**
  *	ICFIntProtTopProject persistence instances have CodeVis Public, meaning that any user interface or referencing schema can access it.
  */
 public interface ICFIntProtTopProject
 {
-	public static final String S_INIT_CREATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 INIT_CREATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_CREATED_BY);
-	public static final String S_INIT_UPDATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 INIT_UPDATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
-	public static final String S_ID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 ID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_ID_INIT_VALUE );
-	public static final String S_TENANTID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 TENANTID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_TENANTID_INIT_VALUE );
-	public static final String S_TOPDOMAINID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 TOPDOMAINID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_TOPDOMAINID_INIT_VALUE );
-	public static final String NAME_INIT_VALUE = new String( "" );
-	public static final String DESCRIPTION_INIT_VALUE = new String( "" );
+	public static final String S_INIT_CREATED_BY = ICFIntPubTopProject.S_INIT_CREATED_BY;
+	public static final CFLibDbKeyHash256 INIT_CREATED_BY = ICFIntPubTopProject.INIT_CREATED_BY;
+	public static final String S_INIT_UPDATED_BY = ICFIntPubTopProject.S_INIT_UPDATED_BY;
+	public static final CFLibDbKeyHash256 INIT_UPDATED_BY = ICFIntPubTopProject.INIT_UPDATED_BY;
+	public static final String S_ID_INIT_VALUE = ICFIntPubTopProject.S_ID_INIT_VALUE;
+	public static final CFLibDbKeyHash256 ID_INIT_VALUE = ICFIntPubTopProject.ID_INIT_VALUE;
+	public static final String S_TENANTID_INIT_VALUE = ICFIntPubTopProject.S_TENANTID_INIT_VALUE;
+	public static final CFLibDbKeyHash256 TENANTID_INIT_VALUE = ICFIntPubTopProject.TENANTID_INIT_VALUE;
+	public static final String S_TOPDOMAINID_INIT_VALUE = ICFIntPubTopProject.S_TOPDOMAINID_INIT_VALUE;
+	public static final CFLibDbKeyHash256 TOPDOMAINID_INIT_VALUE = ICFIntPubTopProject.TOPDOMAINID_INIT_VALUE;
+	public static final String NAME_INIT_VALUE = ICFIntPubTopProject.NAME_INIT_VALUE;
+	public static final String DESCRIPTION_INIT_VALUE = ICFIntPubTopProject.DESCRIPTION_INIT_VALUE;
 	public final static int CLASS_CODE = 0xa108;
 	public final static String S_CLASS_CODE = "a108";
 
@@ -68,8 +70,8 @@ public interface ICFIntProtTopProject
 	public LocalDateTime getUpdatedAt();
 	public void setUpdatedAt( LocalDateTime value );
 
-	public CFLibDbKeyHash256 getProtPKey();
-	public void setProtPKey(CFLibDbKeyHash256 requiredId);
+	public CFLibDbKeyHash256 getPKey();
+	public void setPKey(CFLibDbKeyHash256 requiredId);
 	
 	public List<ICFIntProtSubProject> getOptionalComponentsSubProject();
 	public CFLibDbKeyHash256 getRequiredId();
@@ -81,8 +83,10 @@ public interface ICFIntProtTopProject
 	public ICFIntProtTopDomain getRequiredContainerParentSDom();
 	public void setRequiredOwnerTenant(ICFSecProtTenant argObj);
 	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId);
+	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
 	public void setRequiredContainerParentSDom(ICFIntProtTopDomain argObj);
 	public void setRequiredContainerParentSDom(CFLibDbKeyHash256 argTopDomainId);
+	public void setRequiredContainerParentSDom(ICFIntPubTopDomain argObj);
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public CFLibDbKeyHash256 getRequiredTopDomainId();
 	public String getRequiredName();
@@ -99,9 +103,13 @@ public interface ICFIntProtTopProject
 	public int compareTo( Object obj );
 
 	public void set( ICFIntProtTopProject src );
-	public void setProtTopProject( ICFIntProtTopProject src );
+	public void setTopProject( ICFIntProtTopProject src );
+	public void set( ICFIntPubTopProject src );
 	public void set( ICFIntProtTopProjectH src );
-	public void setProtTopProject( ICFIntProtTopProjectH src );
+	public void setTopProject( ICFIntProtTopProjectH src );
+	public void set( ICFIntPubTopProjectH src );
+	public void setTopProject( ICFIntPubTopProjectH src );
+
 
 	public String getXmlAttrFragment();
 

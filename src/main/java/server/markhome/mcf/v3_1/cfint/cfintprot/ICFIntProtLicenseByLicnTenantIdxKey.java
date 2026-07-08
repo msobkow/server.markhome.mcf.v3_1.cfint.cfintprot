@@ -1,4 +1,4 @@
-// Description: Java 25 protected interface for a License by LicnTenantIdx index key object
+// Description: Java 25 protlic interface for a License by LicnTenantIdx index key object
 
 /*
  *	server.markhome.mcf.CFInt

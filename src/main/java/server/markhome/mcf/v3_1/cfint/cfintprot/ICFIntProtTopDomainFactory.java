@@ -38,13 +38,14 @@ import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 
 /*
  *	ICFIntProtTopDomainFactory protected interface for TopDomain
  */
-public interface ICFIntProtTopDomainFactory
-extends ICFIntPubTopDomainFactory
+public interface ICFIntProtTopDomainFactory extends ICFIntPubTopDomainFactory
 {
 
 	/**
@@ -55,25 +56,53 @@ extends ICFIntPubTopDomainFactory
 	ICFIntProtTopDomainHPKey newProtHPKey();
 
 	/**
-	 *	Allocate a protected TenantIdx key over public TopDomain instances.
+	 *	Allocate a public primary history key for TopDomain instances from a protected instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFIntPubTopDomainHPKey asPublic(ICFIntProtTopDomainHPKey src);
+
+	/**
+	 *	Allocate a protected TenantIdx key over protected TopDomain instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntProtTopDomainByTenantIdxKey newProtByTenantIdxKey();
 
 	/**
-	 *	Allocate a protected TldIdx key over public TopDomain instances.
+	 *	Allocate a public TenantIdx key from a protected instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubTopDomainByTenantIdxKey asPublic(ICFIntProtTopDomainByTenantIdxKey src);
+
+	/**
+	 *	Allocate a protected TldIdx key over protected TopDomain instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntProtTopDomainByTldIdxKey newProtByTldIdxKey();
 
 	/**
-	 *	Allocate a protected NameIdx key over public TopDomain instances.
+	 *	Allocate a public TldIdx key from a protected instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubTopDomainByTldIdxKey asPublic(ICFIntProtTopDomainByTldIdxKey src);
+
+	/**
+	 *	Allocate a protected NameIdx key over protected TopDomain instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntProtTopDomainByNameIdxKey newProtByNameIdxKey();
+
+	/**
+	 *	Allocate a public NameIdx key from a protected instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubTopDomainByNameIdxKey asPublic(ICFIntProtTopDomainByNameIdxKey src);
 
 	/**
 	 *	Allocate a protected TopDomain interface implementation.
@@ -83,10 +112,24 @@ extends ICFIntPubTopDomainFactory
 	public ICFIntProtTopDomain newProtRec();
 
 	/**
+	 *	Allocate a public TopDomain interface from a protected interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubTopDomain asPublic(ICFIntProtTopDomain src);
+
+	/**
 	 *	Allocate a protected TopDomain history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntProtTopDomainH newProtHRec();
+
+	/**
+	 *	Allocate a public TopDomain history interface implementation from a protected interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubTopDomainH asPublic(ICFIntProtTopDomainH src);
 
 }
