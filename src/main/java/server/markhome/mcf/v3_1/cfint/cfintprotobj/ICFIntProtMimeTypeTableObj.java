@@ -34,9 +34,12 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 
 public interface ICFIntProtMimeTypeTableObj
 {
@@ -139,42 +142,42 @@ public interface ICFIntProtMimeTypeTableObj
 	List<ICFIntProtMimeTypeObj> readCachedAllMimeType();
 
 	/**
-	 *	Get the CFIntProtMimeTypeObj instance for the primary key attributes.
+	 *	Get the ICFIntProtMimeTypeObj instance for the primary key attributes.
 	 *
 	 *	@param	MimeTypeId	The MimeType key attribute of the instance generating the id.
 	 *
-	 *	@return	CFIntProtMimeTypeObj cached instance for the primary key, or
+	 *	@return	ICFIntProtMimeTypeObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
 	ICFIntProtMimeTypeObj readMimeTypeByIdIdx( int MimeTypeId );
 
 	/**
-	 *	Get the CFIntProtMimeTypeObj instance for the primary key attributes.
+	 *	Get the ICFIntProtMimeTypeObj instance for the primary key attributes.
 	 *
 	 *	@param	MimeTypeId	The MimeType key attribute of the instance generating the id.
 	 *
-	 *	@return	CFIntProtMimeTypeObj refreshed instance for the primary key, or
+	 *	@return	ICFIntProtMimeTypeObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
 	ICFIntProtMimeTypeObj readMimeTypeByIdIdx( int MimeTypeId,
 		boolean forceRead );
 
 	/**
-	 *	Get the CFIntProtMimeTypeObj instance for the unique UNameIdx key.
+	 *	Get the ICFIntProtMimeTypeObj instance for the unique UNameIdx key.
 	 *
 	 *	@param	Name	The MimeType key attribute of the instance generating the id.
 	 *
-	 *	@return	CFIntProtMimeTypeObj cached instance for the unique UNameIdx key, or
+	 *	@return	ICFIntProtMimeTypeObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
 	ICFIntProtMimeTypeObj readMimeTypeByUNameIdx(String Name );
 
 	/**
-	 *	Get the CFIntProtMimeTypeObj instance for the unique UNameIdx key.
+	 *	Get the ICFIntProtMimeTypeObj instance for the unique UNameIdx key.
 	 *
 	 *	@param	Name	The MimeType key attribute of the instance generating the id.
 	 *
-	 *	@return	CFIntProtMimeTypeObj refreshed instance for the unique UNameIdx key, or
+	 *	@return	ICFIntProtMimeTypeObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
 	ICFIntProtMimeTypeObj readMimeTypeByUNameIdx(String Name,

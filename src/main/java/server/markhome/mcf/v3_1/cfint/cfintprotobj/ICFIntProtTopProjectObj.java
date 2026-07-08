@@ -34,9 +34,11 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
 
 public interface ICFIntProtTopProjectObj
 	extends ICFLibAnyObj
@@ -51,9 +53,9 @@ public interface ICFIntProtTopProjectObj
 	/**
 	 *	Get the user who created this instance.
 	 *
-	 *	@return	The ICFSecProtSecUserObj instance who created this instance.
+	 *	@return	The ICFSecPubSecUserObj instance who created this instance.
 	 */
-	ICFSecProtSecUserObj getCreatedBy();
+	ICFSecPubSecUserObj getCreatedBy();
 
 	/**
 	 *	Get the LocalDateTime this instance was created.
@@ -65,9 +67,9 @@ public interface ICFIntProtTopProjectObj
 	/**
 	 *	Get the user who updated this instance.
 	 *
-	 *	@return	The ICFSecProtSecUserObj instance who updated this instance.
+	 *	@return	The ICFSecPubSecUserObj instance who updated this instance.
 	 */
-	ICFSecProtSecUserObj getUpdatedBy();
+	ICFSecPubSecUserObj getUpdatedBy();
 
 	/**
 	 *	Get the LocalDateTime date-time this instance was updated.
@@ -217,14 +219,14 @@ public interface ICFIntProtTopProjectObj
 	 *
 	 *	@return	The required ICFIntProtTenantObj instance referenced by the Tenant key.
 	 */
-	ICFSecProtTenantObj getRequiredOwnerTenant();
+	ICFSecPubTenantObj getRequiredOwnerTenant();
 
 	/**
 	 *	Get the required ICFSecProtTenantObj instance referenced by the Tenant key.
 	 *
 	 *	@return	The required ICFSecProtTenantObj instance referenced by the Tenant key.
 	 */
-	ICFSecProtTenantObj getRequiredOwnerTenant( boolean forceRead );
+	ICFSecPubTenantObj getRequiredOwnerTenant( boolean forceRead );
 
 	/**
 	 *	Get the required ICFIntProtTopDomainObj instance referenced by the ParentSDom key.

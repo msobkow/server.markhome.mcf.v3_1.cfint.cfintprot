@@ -34,9 +34,12 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 
 public interface ICFIntProtURLProtocolTableObj
 {
@@ -139,63 +142,63 @@ public interface ICFIntProtURLProtocolTableObj
 	List<ICFIntProtURLProtocolObj> readCachedAllURLProtocol();
 
 	/**
-	 *	Get the CFIntProtURLProtocolObj instance for the primary key attributes.
+	 *	Get the ICFIntProtURLProtocolObj instance for the primary key attributes.
 	 *
 	 *	@param	URLProtocolId	The URLProtocol key attribute of the instance generating the id.
 	 *
-	 *	@return	CFIntProtURLProtocolObj cached instance for the primary key, or
+	 *	@return	ICFIntProtURLProtocolObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
 	ICFIntProtURLProtocolObj readURLProtocolByIdIdx( int URLProtocolId );
 
 	/**
-	 *	Get the CFIntProtURLProtocolObj instance for the primary key attributes.
+	 *	Get the ICFIntProtURLProtocolObj instance for the primary key attributes.
 	 *
 	 *	@param	URLProtocolId	The URLProtocol key attribute of the instance generating the id.
 	 *
-	 *	@return	CFIntProtURLProtocolObj refreshed instance for the primary key, or
+	 *	@return	ICFIntProtURLProtocolObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
 	ICFIntProtURLProtocolObj readURLProtocolByIdIdx( int URLProtocolId,
 		boolean forceRead );
 
 	/**
-	 *	Get the CFIntProtURLProtocolObj instance for the unique UNameIdx key.
+	 *	Get the ICFIntProtURLProtocolObj instance for the unique UNameIdx key.
 	 *
 	 *	@param	Name	The URLProtocol key attribute of the instance generating the id.
 	 *
-	 *	@return	CFIntProtURLProtocolObj cached instance for the unique UNameIdx key, or
+	 *	@return	ICFIntProtURLProtocolObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
 	ICFIntProtURLProtocolObj readURLProtocolByUNameIdx(String Name );
 
 	/**
-	 *	Get the CFIntProtURLProtocolObj instance for the unique UNameIdx key.
+	 *	Get the ICFIntProtURLProtocolObj instance for the unique UNameIdx key.
 	 *
 	 *	@param	Name	The URLProtocol key attribute of the instance generating the id.
 	 *
-	 *	@return	CFIntProtURLProtocolObj refreshed instance for the unique UNameIdx key, or
+	 *	@return	ICFIntProtURLProtocolObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
 	ICFIntProtURLProtocolObj readURLProtocolByUNameIdx(String Name,
 		boolean forceRead );
 
 	/**
-	 *	Get the map of CFIntProtURLProtocolObj instances sorted by their primary keys for the duplicate IsSecureIdx key.
+	 *	Get the map of List<ICFIntProtURLProtocolObj> instances sorted by their primary keys for the duplicate IsSecureIdx key.
 	 *
 	 *	@param	IsSecure	The URLProtocol key attribute of the instance generating the id.
 	 *
-	 *	@return	List of CFIntProtURLProtocolObj cached instances sorted by their primary keys for the duplicate IsSecureIdx key,
+	 *	@return	List of List<ICFIntProtURLProtocolObj> cached instances sorted by their primary keys for the duplicate IsSecureIdx key,
 	 *		which may be an empty set.
 	 */
 	List<ICFIntProtURLProtocolObj> readURLProtocolByIsSecureIdx( boolean IsSecure );
 
 	/**
-	 *	Get the map of CFIntProtURLProtocolObj instances sorted by their primary keys for the duplicate IsSecureIdx key.
+	 *	Get the map of List<ICFIntProtURLProtocolObj> instances sorted by their primary keys for the duplicate IsSecureIdx key.
 	 *
 	 *	@param	IsSecure	The URLProtocol key attribute of the instance generating the id.
 	 *
-	 *	@return	List of CFIntProtURLProtocolObj cached instances sorted by their primary keys for the duplicate IsSecureIdx key,
+	 *	@return	List of List<ICFIntProtURLProtocolObj> cached instances sorted by their primary keys for the duplicate IsSecureIdx key,
 	 *		which may be an empty set.
 	 */
 	List<ICFIntProtURLProtocolObj> readURLProtocolByIsSecureIdx( boolean IsSecure,
@@ -205,7 +208,7 @@ public interface ICFIntProtURLProtocolTableObj
 
 	ICFIntProtURLProtocolObj readCachedURLProtocolByUNameIdx( String Name );
 
-	List<ICFIntProtURLProtocolObj> readCachedURLProtocolByIsSecureIdx( boolean IsSecure );
+	List<List<ICFIntProtURLProtocolObj>> readCachedURLProtocolByIsSecureIdx( boolean IsSecure );
 
 	void deepDisposeURLProtocolByIdIdx( int URLProtocolId );
 

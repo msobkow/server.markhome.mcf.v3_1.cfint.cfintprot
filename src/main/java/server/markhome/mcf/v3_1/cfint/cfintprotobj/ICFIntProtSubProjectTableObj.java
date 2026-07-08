@@ -34,9 +34,12 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 
 public interface ICFIntProtSubProjectTableObj
 {
@@ -139,89 +142,89 @@ public interface ICFIntProtSubProjectTableObj
 	List<ICFIntProtSubProjectObj> readCachedAllSubProject();
 
 	/**
-	 *	Get the CFIntProtSubProjectObj instance for the primary key attributes.
+	 *	Get the ICFIntProtSubProjectObj instance for the primary key attributes.
 	 *
 	 *	@param	Id	The SubProject key attribute of the instance generating the id.
 	 *
-	 *	@return	CFIntProtSubProjectObj cached instance for the primary key, or
+	 *	@return	ICFIntProtSubProjectObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
 	ICFIntProtSubProjectObj readSubProjectByIdIdx( CFLibDbKeyHash256 Id );
 
 	/**
-	 *	Get the CFIntProtSubProjectObj instance for the primary key attributes.
+	 *	Get the ICFIntProtSubProjectObj instance for the primary key attributes.
 	 *
 	 *	@param	Id	The SubProject key attribute of the instance generating the id.
 	 *
-	 *	@return	CFIntProtSubProjectObj refreshed instance for the primary key, or
+	 *	@return	ICFIntProtSubProjectObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
 	ICFIntProtSubProjectObj readSubProjectByIdIdx( CFLibDbKeyHash256 Id,
 		boolean forceRead );
 
 	/**
-	 *	Get the map of CFIntProtSubProjectObj instances sorted by their primary keys for the duplicate TenantIdx key.
+	 *	Get the map of List<ICFIntProtSubProjectObj> instances sorted by their primary keys for the duplicate TenantIdx key.
 	 *
 	 *	@param	TenantId	The SubProject key attribute of the instance generating the id.
 	 *
-	 *	@return	List of CFIntProtSubProjectObj cached instances sorted by their primary keys for the duplicate TenantIdx key,
+	 *	@return	List of List<ICFIntProtSubProjectObj> cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
 	List<ICFIntProtSubProjectObj> readSubProjectByTenantIdx( CFLibDbKeyHash256 TenantId );
 
 	/**
-	 *	Get the map of CFIntProtSubProjectObj instances sorted by their primary keys for the duplicate TenantIdx key.
+	 *	Get the map of List<ICFIntProtSubProjectObj> instances sorted by their primary keys for the duplicate TenantIdx key.
 	 *
 	 *	@param	TenantId	The SubProject key attribute of the instance generating the id.
 	 *
-	 *	@return	List of CFIntProtSubProjectObj cached instances sorted by their primary keys for the duplicate TenantIdx key,
+	 *	@return	List of List<ICFIntProtSubProjectObj> cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
 	List<ICFIntProtSubProjectObj> readSubProjectByTenantIdx( CFLibDbKeyHash256 TenantId,
 		boolean forceRead );
 
 	/**
-	 *	Get the map of CFIntProtSubProjectObj instances sorted by their primary keys for the duplicate TopProjectIdx key.
+	 *	Get the map of List<ICFIntProtSubProjectObj> instances sorted by their primary keys for the duplicate TopProjectIdx key.
 	 *
 	 *	@param	TopProjectId	The SubProject key attribute of the instance generating the id.
 	 *
-	 *	@return	List of CFIntProtSubProjectObj cached instances sorted by their primary keys for the duplicate TopProjectIdx key,
+	 *	@return	List of List<ICFIntProtSubProjectObj> cached instances sorted by their primary keys for the duplicate TopProjectIdx key,
 	 *		which may be an empty set.
 	 */
 	List<ICFIntProtSubProjectObj> readSubProjectByTopProjectIdx( CFLibDbKeyHash256 TopProjectId );
 
 	/**
-	 *	Get the map of CFIntProtSubProjectObj instances sorted by their primary keys for the duplicate TopProjectIdx key.
+	 *	Get the map of List<ICFIntProtSubProjectObj> instances sorted by their primary keys for the duplicate TopProjectIdx key.
 	 *
 	 *	@param	TopProjectId	The SubProject key attribute of the instance generating the id.
 	 *
-	 *	@return	List of CFIntProtSubProjectObj cached instances sorted by their primary keys for the duplicate TopProjectIdx key,
+	 *	@return	List of List<ICFIntProtSubProjectObj> cached instances sorted by their primary keys for the duplicate TopProjectIdx key,
 	 *		which may be an empty set.
 	 */
 	List<ICFIntProtSubProjectObj> readSubProjectByTopProjectIdx( CFLibDbKeyHash256 TopProjectId,
 		boolean forceRead );
 
 	/**
-	 *	Get the CFIntProtSubProjectObj instance for the unique NameIdx key.
+	 *	Get the ICFIntProtSubProjectObj instance for the unique NameIdx key.
 	 *
 	 *	@param	TopProjectId	The SubProject key attribute of the instance generating the id.
 	 *
 	 *	@param	Name	The SubProject key attribute of the instance generating the id.
 	 *
-	 *	@return	CFIntProtSubProjectObj cached instance for the unique NameIdx key, or
+	 *	@return	ICFIntProtSubProjectObj cached instance for the unique NameIdx key, or
 	 *		null if no such instance exists.
 	 */
 	ICFIntProtSubProjectObj readSubProjectByNameIdx(CFLibDbKeyHash256 TopProjectId,
 		String Name );
 
 	/**
-	 *	Get the CFIntProtSubProjectObj instance for the unique NameIdx key.
+	 *	Get the ICFIntProtSubProjectObj instance for the unique NameIdx key.
 	 *
 	 *	@param	TopProjectId	The SubProject key attribute of the instance generating the id.
 	 *
 	 *	@param	Name	The SubProject key attribute of the instance generating the id.
 	 *
-	 *	@return	CFIntProtSubProjectObj refreshed instance for the unique NameIdx key, or
+	 *	@return	ICFIntProtSubProjectObj refreshed instance for the unique NameIdx key, or
 	 *		null if no such instance exists.
 	 */
 	ICFIntProtSubProjectObj readSubProjectByNameIdx(CFLibDbKeyHash256 TopProjectId,
@@ -230,9 +233,9 @@ public interface ICFIntProtSubProjectTableObj
 
 	ICFIntProtSubProjectObj readCachedSubProjectByIdIdx( CFLibDbKeyHash256 Id );
 
-	List<ICFIntProtSubProjectObj> readCachedSubProjectByTenantIdx( CFLibDbKeyHash256 TenantId );
+	List<List<ICFIntProtSubProjectObj>> readCachedSubProjectByTenantIdx( CFLibDbKeyHash256 TenantId );
 
-	List<ICFIntProtSubProjectObj> readCachedSubProjectByTopProjectIdx( CFLibDbKeyHash256 TopProjectId );
+	List<List<ICFIntProtSubProjectObj>> readCachedSubProjectByTopProjectIdx( CFLibDbKeyHash256 TopProjectId );
 
 	ICFIntProtSubProjectObj readCachedSubProjectByNameIdx( CFLibDbKeyHash256 TopProjectId,
 		String Name );

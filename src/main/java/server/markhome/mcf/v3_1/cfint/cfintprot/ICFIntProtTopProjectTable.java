@@ -59,7 +59,7 @@ extends ICFIntPubTopProjectTable
 	 *
 	 *	@param	rec	The instance interface to be created.
 	 */
-	public ICFIntProtTopProject protcreateTopProject( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTopProject protcreateTopProject( ICFSecPubAuthorization Authorization,
 		ICFIntProtTopProject rec );
 
 	/**
@@ -70,7 +70,7 @@ extends ICFIntPubTopProjectTable
 	 *
 	 *	@param	rec	The instance interface to be created.
 	 */
-	public ICFIntProtTopProject protcreateTopProject( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTopProject protcreateTopProject( ICFSecPubAuthorization Authorization,
 		ICFIntPubTopProject rec );
 
 
@@ -82,7 +82,7 @@ extends ICFIntPubTopProjectTable
 	 *
 	 *	@param	rec	The instance interface to be updated
 	 */
-	public ICFIntProtTopProject protupdateTopProject( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTopProject protupdateTopProject( ICFSecPubAuthorization Authorization,
 		ICFIntProtTopProject rec );
 
 	/**
@@ -93,7 +93,7 @@ extends ICFIntPubTopProjectTable
 	 *
 	 *	@param	rec	The instance interface to be updated
 	 */
-	public ICFIntProtTopProject protupdateTopProject( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTopProject protupdateTopProject( ICFSecPubAuthorization Authorization,
 		ICFIntPubTopProject rec );
 
 
@@ -104,7 +104,7 @@ extends ICFIntPubTopProjectTable
 	 *
 	 *	@param	rec	The instance interface to be deleted.
 	 */
-	public void protdeleteTopProject( ICFSecProtAuthorization Authorization,
+	public void protdeleteTopProject( ICFSecPubAuthorization Authorization,
 		ICFIntProtTopProject rec );
 	/**
 	 *	Delete the TopProject instance identified by the primary key.
@@ -113,7 +113,7 @@ extends ICFIntPubTopProjectTable
 	 *
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
-	public void protdeleteTopProjectByIdIdx( ICFSecProtAuthorization Authorization,
+	public void protdeleteTopProjectByIdIdx( ICFSecPubAuthorization Authorization,
 		CFLibDbKeyHash256 argKey );
 	/**
 	 *	Delete the TopProject instances identified by the key TenantIdx.
@@ -122,7 +122,7 @@ extends ICFIntPubTopProjectTable
 	 *
 	 *	@param	TenantId	The TopProject key attribute of the instance generating the id.
 	 */
-	public void protdeleteTopProjectByTenantIdx( ICFSecProtAuthorization Authorization,
+	public void protdeleteTopProjectByTenantIdx( ICFSecPubAuthorization Authorization,
 		CFLibDbKeyHash256 argTenantId );
 
 	/**
@@ -132,7 +132,7 @@ extends ICFIntPubTopProjectTable
 	 *
 	 *	@param	argKey	The key identifying the instances to be deleted.
 	 */
-	public void protdeleteTopProjectByTenantIdx( ICFSecProtAuthorization Authorization,
+	public void protdeleteTopProjectByTenantIdx( ICFSecPubAuthorization Authorization,
 		ICFIntProtTopProjectByTenantIdxKey argKey );
 	/**
 	 *	Delete the TopProject instances identified by the key TenantIdx.
@@ -141,7 +141,7 @@ extends ICFIntPubTopProjectTable
 	 *
 	 *	@param	argKey	The key identifying the instances to be deleted.
 	 */
-	public void protdeleteTopProjectByTenantIdx( ICFSecProtAuthorization Authorization,
+	public void protdeleteTopProjectByTenantIdx( ICFSecPubAuthorization Authorization,
 		ICFIntPubTopProjectByTenantIdxKey argKey );
 	/**
 	 *	Delete the TopProject instances identified by the key TopDomainIdx.
@@ -150,7 +150,7 @@ extends ICFIntPubTopProjectTable
 	 *
 	 *	@param	TopDomainId	The TopProject key attribute of the instance generating the id.
 	 */
-	public void protdeleteTopProjectByTopDomainIdx( ICFSecProtAuthorization Authorization,
+	public void protdeleteTopProjectByTopDomainIdx( ICFSecPubAuthorization Authorization,
 		CFLibDbKeyHash256 argTopDomainId );
 
 	/**
@@ -160,7 +160,7 @@ extends ICFIntPubTopProjectTable
 	 *
 	 *	@param	argKey	The key identifying the instances to be deleted.
 	 */
-	public void protdeleteTopProjectByTopDomainIdx( ICFSecProtAuthorization Authorization,
+	public void protdeleteTopProjectByTopDomainIdx( ICFSecPubAuthorization Authorization,
 		ICFIntProtTopProjectByTopDomainIdxKey argKey );
 	/**
 	 *	Delete the TopProject instances identified by the key TopDomainIdx.
@@ -169,7 +169,7 @@ extends ICFIntPubTopProjectTable
 	 *
 	 *	@param	argKey	The key identifying the instances to be deleted.
 	 */
-	public void protdeleteTopProjectByTopDomainIdx( ICFSecProtAuthorization Authorization,
+	public void protdeleteTopProjectByTopDomainIdx( ICFSecPubAuthorization Authorization,
 		ICFIntPubTopProjectByTopDomainIdxKey argKey );
 	/**
 	 *	Delete the TopProject instances identified by the key NameIdx.
@@ -180,7 +180,7 @@ extends ICFIntPubTopProjectTable
 	 *
 	 *	@param	Name	The TopProject key attribute of the instance generating the id.
 	 */
-	public void protdeleteTopProjectByNameIdx( ICFSecProtAuthorization Authorization,
+	public void protdeleteTopProjectByNameIdx( ICFSecPubAuthorization Authorization,
 		CFLibDbKeyHash256 argTopDomainId,
 		String argName );
 
@@ -191,7 +191,7 @@ extends ICFIntPubTopProjectTable
 	 *
 	 *	@param	argKey	The key identifying the instances to be deleted.
 	 */
-	public void protdeleteTopProjectByNameIdx( ICFSecProtAuthorization Authorization,
+	public void protdeleteTopProjectByNameIdx( ICFSecPubAuthorization Authorization,
 		ICFIntProtTopProjectByNameIdxKey argKey );
 	/**
 	 *	Delete the TopProject instances identified by the key NameIdx.
@@ -200,7 +200,7 @@ extends ICFIntPubTopProjectTable
 	 *
 	 *	@param	argKey	The key identifying the instances to be deleted.
 	 */
-	public void protdeleteTopProjectByNameIdx( ICFSecProtAuthorization Authorization,
+	public void protdeleteTopProjectByNameIdx( ICFSecPubAuthorization Authorization,
 		ICFIntPubTopProjectByNameIdxKey argKey );
 
 	/**
@@ -210,44 +210,8 @@ extends ICFIntPubTopProjectTable
 	 *
 	 *	@param	rec	The instance interface to be deleted.
 	 */
-	public void protdeleteTopProject( ICFSecProtAuthorization Authorization,
+	public void protdeleteTopProject( ICFSecPubAuthorization Authorization,
 		ICFIntPubTopProject rec );
-	/**
-	 *	Delete the TopProject instance identified by the primary key.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	argKey	The primary key identifying the instance to be deleted.
-	 */
-	public void protdeleteTopProjectByIdIdx( ICFSecProtAuthorization Authorization,
-		CFLibDbKeyHash256 argKey );
-	/**
-	 *	Delete the TopProject instances identified by the key TenantIdx.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	argKey	The key identifying the instances to be deleted.
-	 */
-	public void protdeleteTopProjectByTenantIdx( ICFSecProtAuthorization Authorization,
-		ICFIntPubTopProjectByTenantIdxKey argKey );
-	/**
-	 *	Delete the TopProject instances identified by the key TopDomainIdx.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	argKey	The key identifying the instances to be deleted.
-	 */
-	public void protdeleteTopProjectByTopDomainIdx( ICFSecProtAuthorization Authorization,
-		ICFIntPubTopProjectByTopDomainIdxKey argKey );
-	/**
-	 *	Delete the TopProject instances identified by the key NameIdx.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	argKey	The key identifying the instances to be deleted.
-	 */
-	public void protdeleteTopProjectByNameIdx( ICFSecProtAuthorization Authorization,
-		ICFIntPubTopProjectByNameIdxKey argKey );
 
 
 	/**
@@ -260,34 +224,8 @@ extends ICFIntPubTopProjectTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 */
-	public ICFIntProtTopProject protreadDerived( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTopProject protreadDerived( ICFSecPubAuthorization Authorization,
 		CFLibDbKeyHash256 PKey );
-	/**
-	 *	Read the derived TopProject record instance by protected primary key.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	PKey	The primary key of the TopProject instance to be read.
-	 *
-	 *	@return The record instance for the specified primary key, or null if there is
-	 *		no such existing key value.
-	 */
-	public ICFIntPubTopProject pubreadDerived( ICFSecProtAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
-
-	/**
-	 *	Read the derived TopProject record instance by public primary key.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	PKey	The primary key of the TopProject instance to be read.
-	 *
-	 *	@return The record instance for the specified primary key, or null if there is
-	 *		no such existing key value.
-	 */
-	public ICFIntProtTopProject protreadDerived( ICFSecProtAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
-
 
 	/**
 	 *	Lock the derived TopProject record instance by protected primary key.
@@ -299,34 +237,8 @@ extends ICFIntPubTopProjectTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 */
-	public ICFIntProtTopProject protlockDerived( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTopProject protlockDerived( ICFSecPubAuthorization Authorization,
 		CFLibDbKeyHash256 PKey );
-	/**
-	 *	Lock the derived TopProject record instance by protected primary key.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	PKey	The primary key of the TopProject instance to be locked.
-	 *
-	 *	@return The record instance for the specified primary key, or null if there is
-	 *		no such existing key value.
-	 */
-	public ICFIntPubTopProject publockDerived( ICFSecProtAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
-
-	/**
-	 *	Lock the derived TopProject record instance by public primary key.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	PKey	The primary key of the TopProject instance to be locked.
-	 *
-	 *	@return The record instance for the specified primary key, or null if there is
-	 *		no such existing key value.
-	 */
-	public ICFIntProtTopProject protlockDerived( ICFSecProtAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
-
 
 	/**
 	 *	Read all TopProject instances.
@@ -335,7 +247,7 @@ extends ICFIntPubTopProjectTable
 	 *
 	 *	@return An array of derived record instances, potentially with 0 elements in the set.
 	 */
-	public ICFIntProtTopProject[] protreadProtAllDerived( ICFSecProtAuthorization Authorization );
+	public ICFIntProtTopProject[] protreadProtAllDerived( ICFSecPubAuthorization Authorization );
 
 	/**
 	 *	Read the derived TopProject record instance identified by the unique key IdIdx.
@@ -347,7 +259,7 @@ extends ICFIntPubTopProjectTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 */
-	public ICFIntProtTopProject protreadDerivedByIdIdx( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTopProject protreadDerivedByIdIdx( ICFSecPubAuthorization Authorization,
 		CFLibDbKeyHash256 Id );
 
 	/**
@@ -359,7 +271,7 @@ extends ICFIntPubTopProjectTable
 	 *
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
-	public ICFIntProtTopProject[] protreadDerivedByTenantIdx( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTopProject[] protreadDerivedByTenantIdx( ICFSecPubAuthorization Authorization,
 		CFLibDbKeyHash256 TenantId );
 
 	/**
@@ -371,7 +283,7 @@ extends ICFIntPubTopProjectTable
 	 *
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
-	public ICFIntProtTopProject[] protreadDerivedByTopDomainIdx( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTopProject[] protreadDerivedByTopDomainIdx( ICFSecPubAuthorization Authorization,
 		CFLibDbKeyHash256 TopDomainId );
 
 	/**
@@ -386,7 +298,7 @@ extends ICFIntPubTopProjectTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 */
-	public ICFIntProtTopProject protreadDerivedByNameIdx( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTopProject protreadDerivedByNameIdx( ICFSecPubAuthorization Authorization,
 		CFLibDbKeyHash256 TopDomainId,
 		String Name );
 
@@ -402,37 +314,7 @@ extends ICFIntPubTopProjectTable
 	 *
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
-	public ICFIntProtTopProject protreadRec( ICFSecProtAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
-
-	/**
-	 *	Read the specific TopProject record instance identified by the primary key.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	PKey	The primary key of the TopProject instance to be locked.
-	 *
-	 *	@return The record instance for the specified primary key, or null if there is
-	 *		no such existing key value.
-	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFIntProtTopProject protreadRec( ICFSecProtAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
-
-	/**
-	 *	Read the specific TopProject record instance identified by the primary key.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	PKey	The primary key of the TopProject instance to be locked.
-	 *
-	 *	@return The record instance for the specified primary key, or null if there is
-	 *		no such existing key value.
-	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFIntPubTopProject pubreadRec( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTopProject protreadRec( ICFSecPubAuthorization Authorization,
 		CFLibDbKeyHash256 PKey );
 
 	/**
@@ -447,37 +329,7 @@ extends ICFIntPubTopProjectTable
 	 *
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
-	public ICFIntProtTopProject protlockRec( ICFSecProtAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
-
-	/**
-	 *	Lock the specific TopProject record instance identified by the primary key.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	PKey	The primary key of the TopProject instance to be locked.
-	 *
-	 *	@return The record instance for the specified primary key, or null if there is
-	 *		no such existing key value.
-	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFIntPubTopProject publockRec( ICFSecProtAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
-
-	/**
-	 *	Lock the specific TopProject record instance identified by the primary key.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	PKey	The primary key of the TopProject instance to be locked.
-	 *
-	 *	@return The record instance for the specified primary key, or null if there is
-	 *		no such existing key value.
-	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFIntProtTopProject protlockRec( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTopProject protlockRec( ICFSecPubAuthorization Authorization,
 		CFLibDbKeyHash256 PKey );
 
 	/**
@@ -487,7 +339,7 @@ extends ICFIntPubTopProjectTable
 	 *
 	 *	@return All the specific TopProject instances in the database accessible for the Authorization.
 	 */
-	public ICFIntProtTopProject[] protreadAllRec( ICFSecProtAuthorization Authorization );
+	public ICFIntProtTopProject[] protreadAllRec( ICFSecPubAuthorization Authorization );
 
 	/**
 	 *	Read the specific TopProject record instance identified by the unique key IdIdx.
@@ -501,7 +353,7 @@ extends ICFIntPubTopProjectTable
 	 *
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
-	public ICFIntProtTopProject protreadRecByIdIdx( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTopProject protreadRecByIdIdx( ICFSecPubAuthorization Authorization,
 		CFLibDbKeyHash256 Id );
 
 	/**
@@ -515,7 +367,7 @@ extends ICFIntPubTopProjectTable
 	 *
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
-	public ICFIntProtTopProject[] protreadRecByTenantIdx( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTopProject[] protreadRecByTenantIdx( ICFSecPubAuthorization Authorization,
 		CFLibDbKeyHash256 TenantId );
 
 	/**
@@ -529,7 +381,7 @@ extends ICFIntPubTopProjectTable
 	 *
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
-	public ICFIntProtTopProject[] protreadRecByTopDomainIdx( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTopProject[] protreadRecByTopDomainIdx( ICFSecPubAuthorization Authorization,
 		CFLibDbKeyHash256 TopDomainId );
 
 	/**
@@ -546,7 +398,7 @@ extends ICFIntPubTopProjectTable
 	 *
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
-	public ICFIntProtTopProject protreadRecByNameIdx( ICFSecProtAuthorization Authorization,
+	public ICFIntProtTopProject protreadRecByNameIdx( ICFSecPubAuthorization Authorization,
 		CFLibDbKeyHash256 TopDomainId,
 		String Name );
 }

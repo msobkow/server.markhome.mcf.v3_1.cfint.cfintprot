@@ -59,7 +59,7 @@ extends ICFIntPubURLProtocolTable
 	 *
 	 *	@param	rec	The instance interface to be created.
 	 */
-	public ICFIntProtURLProtocol protcreateURLProtocol( ICFSecProtAuthorization Authorization,
+	public ICFIntProtURLProtocol protcreateURLProtocol( ICFSecPubAuthorization Authorization,
 		ICFIntProtURLProtocol rec );
 
 	/**
@@ -70,7 +70,7 @@ extends ICFIntPubURLProtocolTable
 	 *
 	 *	@param	rec	The instance interface to be created.
 	 */
-	public ICFIntProtURLProtocol protcreateURLProtocol( ICFSecProtAuthorization Authorization,
+	public ICFIntProtURLProtocol protcreateURLProtocol( ICFSecPubAuthorization Authorization,
 		ICFIntPubURLProtocol rec );
 
 
@@ -82,7 +82,7 @@ extends ICFIntPubURLProtocolTable
 	 *
 	 *	@param	rec	The instance interface to be updated
 	 */
-	public ICFIntProtURLProtocol protupdateURLProtocol( ICFSecProtAuthorization Authorization,
+	public ICFIntProtURLProtocol protupdateURLProtocol( ICFSecPubAuthorization Authorization,
 		ICFIntProtURLProtocol rec );
 
 	/**
@@ -93,7 +93,7 @@ extends ICFIntPubURLProtocolTable
 	 *
 	 *	@param	rec	The instance interface to be updated
 	 */
-	public ICFIntProtURLProtocol protupdateURLProtocol( ICFSecProtAuthorization Authorization,
+	public ICFIntProtURLProtocol protupdateURLProtocol( ICFSecPubAuthorization Authorization,
 		ICFIntPubURLProtocol rec );
 
 
@@ -104,7 +104,7 @@ extends ICFIntPubURLProtocolTable
 	 *
 	 *	@param	rec	The instance interface to be deleted.
 	 */
-	public void protdeleteURLProtocol( ICFSecProtAuthorization Authorization,
+	public void protdeleteURLProtocol( ICFSecPubAuthorization Authorization,
 		ICFIntProtURLProtocol rec );
 	/**
 	 *	Delete the URLProtocol instance identified by the primary key.
@@ -113,7 +113,7 @@ extends ICFIntPubURLProtocolTable
 	 *
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
-	public void protdeleteURLProtocolByIdIdx( ICFSecProtAuthorization Authorization,
+	public void protdeleteURLProtocolByIdIdx( ICFSecPubAuthorization Authorization,
 		Integer argKey );
 	/**
 	 *	Delete the URLProtocol instances identified by the key UNameIdx.
@@ -122,7 +122,7 @@ extends ICFIntPubURLProtocolTable
 	 *
 	 *	@param	Name	The URLProtocol key attribute of the instance generating the id.
 	 */
-	public void protdeleteURLProtocolByUNameIdx( ICFSecProtAuthorization Authorization,
+	public void protdeleteURLProtocolByUNameIdx( ICFSecPubAuthorization Authorization,
 		String argName );
 
 	/**
@@ -132,7 +132,7 @@ extends ICFIntPubURLProtocolTable
 	 *
 	 *	@param	argKey	The key identifying the instances to be deleted.
 	 */
-	public void protdeleteURLProtocolByUNameIdx( ICFSecProtAuthorization Authorization,
+	public void protdeleteURLProtocolByUNameIdx( ICFSecPubAuthorization Authorization,
 		ICFIntProtURLProtocolByUNameIdxKey argKey );
 	/**
 	 *	Delete the URLProtocol instances identified by the key UNameIdx.
@@ -141,7 +141,7 @@ extends ICFIntPubURLProtocolTable
 	 *
 	 *	@param	argKey	The key identifying the instances to be deleted.
 	 */
-	public void protdeleteURLProtocolByUNameIdx( ICFSecProtAuthorization Authorization,
+	public void protdeleteURLProtocolByUNameIdx( ICFSecPubAuthorization Authorization,
 		ICFIntPubURLProtocolByUNameIdxKey argKey );
 	/**
 	 *	Delete the URLProtocol instances identified by the key IsSecureIdx.
@@ -150,7 +150,7 @@ extends ICFIntPubURLProtocolTable
 	 *
 	 *	@param	IsSecure	The URLProtocol key attribute of the instance generating the id.
 	 */
-	public void protdeleteURLProtocolByIsSecureIdx( ICFSecProtAuthorization Authorization,
+	public void protdeleteURLProtocolByIsSecureIdx( ICFSecPubAuthorization Authorization,
 		boolean argIsSecure );
 
 	/**
@@ -160,7 +160,7 @@ extends ICFIntPubURLProtocolTable
 	 *
 	 *	@param	argKey	The key identifying the instances to be deleted.
 	 */
-	public void protdeleteURLProtocolByIsSecureIdx( ICFSecProtAuthorization Authorization,
+	public void protdeleteURLProtocolByIsSecureIdx( ICFSecPubAuthorization Authorization,
 		ICFIntProtURLProtocolByIsSecureIdxKey argKey );
 	/**
 	 *	Delete the URLProtocol instances identified by the key IsSecureIdx.
@@ -169,7 +169,7 @@ extends ICFIntPubURLProtocolTable
 	 *
 	 *	@param	argKey	The key identifying the instances to be deleted.
 	 */
-	public void protdeleteURLProtocolByIsSecureIdx( ICFSecProtAuthorization Authorization,
+	public void protdeleteURLProtocolByIsSecureIdx( ICFSecPubAuthorization Authorization,
 		ICFIntPubURLProtocolByIsSecureIdxKey argKey );
 
 	/**
@@ -179,35 +179,8 @@ extends ICFIntPubURLProtocolTable
 	 *
 	 *	@param	rec	The instance interface to be deleted.
 	 */
-	public void protdeleteURLProtocol( ICFSecProtAuthorization Authorization,
+	public void protdeleteURLProtocol( ICFSecPubAuthorization Authorization,
 		ICFIntPubURLProtocol rec );
-	/**
-	 *	Delete the URLProtocol instance identified by the primary key.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	argKey	The primary key identifying the instance to be deleted.
-	 */
-	public void protdeleteURLProtocolByIdIdx( ICFSecProtAuthorization Authorization,
-		Integer argKey );
-	/**
-	 *	Delete the URLProtocol instances identified by the key UNameIdx.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	argKey	The key identifying the instances to be deleted.
-	 */
-	public void protdeleteURLProtocolByUNameIdx( ICFSecProtAuthorization Authorization,
-		ICFIntPubURLProtocolByUNameIdxKey argKey );
-	/**
-	 *	Delete the URLProtocol instances identified by the key IsSecureIdx.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	argKey	The key identifying the instances to be deleted.
-	 */
-	public void protdeleteURLProtocolByIsSecureIdx( ICFSecProtAuthorization Authorization,
-		ICFIntPubURLProtocolByIsSecureIdxKey argKey );
 
 
 	/**
@@ -220,34 +193,8 @@ extends ICFIntPubURLProtocolTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 */
-	public ICFIntProtURLProtocol protreadDerived( ICFSecProtAuthorization Authorization,
+	public ICFIntProtURLProtocol protreadDerived( ICFSecPubAuthorization Authorization,
 		Integer PKey );
-	/**
-	 *	Read the derived URLProtocol record instance by protected primary key.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	PKey	The primary key of the URLProtocol instance to be read.
-	 *
-	 *	@return The record instance for the specified primary key, or null if there is
-	 *		no such existing key value.
-	 */
-	public ICFIntPubURLProtocol pubreadDerived( ICFSecProtAuthorization Authorization,
-		Integer PKey );
-
-	/**
-	 *	Read the derived URLProtocol record instance by public primary key.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	PKey	The primary key of the URLProtocol instance to be read.
-	 *
-	 *	@return The record instance for the specified primary key, or null if there is
-	 *		no such existing key value.
-	 */
-	public ICFIntProtURLProtocol protreadDerived( ICFSecProtAuthorization Authorization,
-		Integer PKey );
-
 
 	/**
 	 *	Lock the derived URLProtocol record instance by protected primary key.
@@ -259,34 +206,8 @@ extends ICFIntPubURLProtocolTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 */
-	public ICFIntProtURLProtocol protlockDerived( ICFSecProtAuthorization Authorization,
+	public ICFIntProtURLProtocol protlockDerived( ICFSecPubAuthorization Authorization,
 		Integer PKey );
-	/**
-	 *	Lock the derived URLProtocol record instance by protected primary key.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	PKey	The primary key of the URLProtocol instance to be locked.
-	 *
-	 *	@return The record instance for the specified primary key, or null if there is
-	 *		no such existing key value.
-	 */
-	public ICFIntPubURLProtocol publockDerived( ICFSecProtAuthorization Authorization,
-		Integer PKey );
-
-	/**
-	 *	Lock the derived URLProtocol record instance by public primary key.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	PKey	The primary key of the URLProtocol instance to be locked.
-	 *
-	 *	@return The record instance for the specified primary key, or null if there is
-	 *		no such existing key value.
-	 */
-	public ICFIntProtURLProtocol protlockDerived( ICFSecProtAuthorization Authorization,
-		Integer PKey );
-
 
 	/**
 	 *	Read all URLProtocol instances.
@@ -295,7 +216,7 @@ extends ICFIntPubURLProtocolTable
 	 *
 	 *	@return An array of derived record instances, potentially with 0 elements in the set.
 	 */
-	public ICFIntProtURLProtocol[] protreadProtAllDerived( ICFSecProtAuthorization Authorization );
+	public ICFIntProtURLProtocol[] protreadProtAllDerived( ICFSecPubAuthorization Authorization );
 
 	/**
 	 *	Read the derived URLProtocol record instance identified by the unique key IdIdx.
@@ -307,7 +228,7 @@ extends ICFIntPubURLProtocolTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 */
-	public ICFIntProtURLProtocol protreadDerivedByIdIdx( ICFSecProtAuthorization Authorization,
+	public ICFIntProtURLProtocol protreadDerivedByIdIdx( ICFSecPubAuthorization Authorization,
 		int URLProtocolId );
 
 	/**
@@ -320,7 +241,7 @@ extends ICFIntPubURLProtocolTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 */
-	public ICFIntProtURLProtocol protreadDerivedByUNameIdx( ICFSecProtAuthorization Authorization,
+	public ICFIntProtURLProtocol protreadDerivedByUNameIdx( ICFSecPubAuthorization Authorization,
 		String Name );
 
 	/**
@@ -332,7 +253,7 @@ extends ICFIntPubURLProtocolTable
 	 *
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
-	public ICFIntProtURLProtocol[] protreadDerivedByIsSecureIdx( ICFSecProtAuthorization Authorization,
+	public ICFIntProtURLProtocol[] protreadDerivedByIsSecureIdx( ICFSecPubAuthorization Authorization,
 		boolean IsSecure );
 
 	/**
@@ -347,37 +268,7 @@ extends ICFIntPubURLProtocolTable
 	 *
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
-	public ICFIntProtURLProtocol protreadRec( ICFSecProtAuthorization Authorization,
-		Integer PKey );
-
-	/**
-	 *	Read the specific URLProtocol record instance identified by the primary key.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	PKey	The primary key of the URLProtocol instance to be locked.
-	 *
-	 *	@return The record instance for the specified primary key, or null if there is
-	 *		no such existing key value.
-	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFIntProtURLProtocol protreadRec( ICFSecProtAuthorization Authorization,
-		Integer PKey );
-
-	/**
-	 *	Read the specific URLProtocol record instance identified by the primary key.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	PKey	The primary key of the URLProtocol instance to be locked.
-	 *
-	 *	@return The record instance for the specified primary key, or null if there is
-	 *		no such existing key value.
-	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFIntPubURLProtocol pubreadRec( ICFSecProtAuthorization Authorization,
+	public ICFIntProtURLProtocol protreadRec( ICFSecPubAuthorization Authorization,
 		Integer PKey );
 
 	/**
@@ -392,37 +283,7 @@ extends ICFIntPubURLProtocolTable
 	 *
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
-	public ICFIntProtURLProtocol protlockRec( ICFSecProtAuthorization Authorization,
-		Integer PKey );
-
-	/**
-	 *	Lock the specific URLProtocol record instance identified by the primary key.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	PKey	The primary key of the URLProtocol instance to be locked.
-	 *
-	 *	@return The record instance for the specified primary key, or null if there is
-	 *		no such existing key value.
-	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFIntPubURLProtocol publockRec( ICFSecProtAuthorization Authorization,
-		Integer PKey );
-
-	/**
-	 *	Lock the specific URLProtocol record instance identified by the primary key.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	PKey	The primary key of the URLProtocol instance to be locked.
-	 *
-	 *	@return The record instance for the specified primary key, or null if there is
-	 *		no such existing key value.
-	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFIntProtURLProtocol protlockRec( ICFSecProtAuthorization Authorization,
+	public ICFIntProtURLProtocol protlockRec( ICFSecPubAuthorization Authorization,
 		Integer PKey );
 
 	/**
@@ -432,7 +293,7 @@ extends ICFIntPubURLProtocolTable
 	 *
 	 *	@return All the specific URLProtocol instances in the database accessible for the Authorization.
 	 */
-	public ICFIntProtURLProtocol[] protreadAllRec( ICFSecProtAuthorization Authorization );
+	public ICFIntProtURLProtocol[] protreadAllRec( ICFSecPubAuthorization Authorization );
 
 	/**
 	 *	Read the specific URLProtocol record instance identified by the unique key IdIdx.
@@ -446,7 +307,7 @@ extends ICFIntPubURLProtocolTable
 	 *
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
-	public ICFIntProtURLProtocol protreadRecByIdIdx( ICFSecProtAuthorization Authorization,
+	public ICFIntProtURLProtocol protreadRecByIdIdx( ICFSecPubAuthorization Authorization,
 		int URLProtocolId );
 
 	/**
@@ -461,7 +322,7 @@ extends ICFIntPubURLProtocolTable
 	 *
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
-	public ICFIntProtURLProtocol protreadRecByUNameIdx( ICFSecProtAuthorization Authorization,
+	public ICFIntProtURLProtocol protreadRecByUNameIdx( ICFSecPubAuthorization Authorization,
 		String Name );
 
 	/**
@@ -475,6 +336,6 @@ extends ICFIntPubURLProtocolTable
 	 *
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
-	public ICFIntProtURLProtocol[] protreadRecByIsSecureIdx( ICFSecProtAuthorization Authorization,
+	public ICFIntProtURLProtocol[] protreadRecByIsSecureIdx( ICFSecPubAuthorization Authorization,
 		boolean IsSecure );
 }

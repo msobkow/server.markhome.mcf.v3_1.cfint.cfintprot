@@ -34,9 +34,12 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 
 public interface ICFIntProtTldTableObj
 {
@@ -139,63 +142,63 @@ public interface ICFIntProtTldTableObj
 	List<ICFIntProtTldObj> readCachedAllTld();
 
 	/**
-	 *	Get the CFIntProtTldObj instance for the primary key attributes.
+	 *	Get the ICFIntProtTldObj instance for the primary key attributes.
 	 *
 	 *	@param	Id	The Tld key attribute of the instance generating the id.
 	 *
-	 *	@return	CFIntProtTldObj cached instance for the primary key, or
+	 *	@return	ICFIntProtTldObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
 	ICFIntProtTldObj readTldByIdIdx( CFLibDbKeyHash256 Id );
 
 	/**
-	 *	Get the CFIntProtTldObj instance for the primary key attributes.
+	 *	Get the ICFIntProtTldObj instance for the primary key attributes.
 	 *
 	 *	@param	Id	The Tld key attribute of the instance generating the id.
 	 *
-	 *	@return	CFIntProtTldObj refreshed instance for the primary key, or
+	 *	@return	ICFIntProtTldObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
 	ICFIntProtTldObj readTldByIdIdx( CFLibDbKeyHash256 Id,
 		boolean forceRead );
 
 	/**
-	 *	Get the map of CFIntProtTldObj instances sorted by their primary keys for the duplicate TenantIdx key.
+	 *	Get the map of List<ICFIntProtTldObj> instances sorted by their primary keys for the duplicate TenantIdx key.
 	 *
 	 *	@param	TenantId	The Tld key attribute of the instance generating the id.
 	 *
-	 *	@return	List of CFIntProtTldObj cached instances sorted by their primary keys for the duplicate TenantIdx key,
+	 *	@return	List of List<ICFIntProtTldObj> cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
 	List<ICFIntProtTldObj> readTldByTenantIdx( CFLibDbKeyHash256 TenantId );
 
 	/**
-	 *	Get the map of CFIntProtTldObj instances sorted by their primary keys for the duplicate TenantIdx key.
+	 *	Get the map of List<ICFIntProtTldObj> instances sorted by their primary keys for the duplicate TenantIdx key.
 	 *
 	 *	@param	TenantId	The Tld key attribute of the instance generating the id.
 	 *
-	 *	@return	List of CFIntProtTldObj cached instances sorted by their primary keys for the duplicate TenantIdx key,
+	 *	@return	List of List<ICFIntProtTldObj> cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
 	List<ICFIntProtTldObj> readTldByTenantIdx( CFLibDbKeyHash256 TenantId,
 		boolean forceRead );
 
 	/**
-	 *	Get the CFIntProtTldObj instance for the unique NameIdx key.
+	 *	Get the ICFIntProtTldObj instance for the unique NameIdx key.
 	 *
 	 *	@param	Name	The Tld key attribute of the instance generating the id.
 	 *
-	 *	@return	CFIntProtTldObj cached instance for the unique NameIdx key, or
+	 *	@return	ICFIntProtTldObj cached instance for the unique NameIdx key, or
 	 *		null if no such instance exists.
 	 */
 	ICFIntProtTldObj readTldByNameIdx(String Name );
 
 	/**
-	 *	Get the CFIntProtTldObj instance for the unique NameIdx key.
+	 *	Get the ICFIntProtTldObj instance for the unique NameIdx key.
 	 *
 	 *	@param	Name	The Tld key attribute of the instance generating the id.
 	 *
-	 *	@return	CFIntProtTldObj refreshed instance for the unique NameIdx key, or
+	 *	@return	ICFIntProtTldObj refreshed instance for the unique NameIdx key, or
 	 *		null if no such instance exists.
 	 */
 	ICFIntProtTldObj readTldByNameIdx(String Name,
@@ -203,7 +206,7 @@ public interface ICFIntProtTldTableObj
 
 	ICFIntProtTldObj readCachedTldByIdIdx( CFLibDbKeyHash256 Id );
 
-	List<ICFIntProtTldObj> readCachedTldByTenantIdx( CFLibDbKeyHash256 TenantId );
+	List<List<ICFIntProtTldObj>> readCachedTldByTenantIdx( CFLibDbKeyHash256 TenantId );
 
 	ICFIntProtTldObj readCachedTldByNameIdx( String Name );
 

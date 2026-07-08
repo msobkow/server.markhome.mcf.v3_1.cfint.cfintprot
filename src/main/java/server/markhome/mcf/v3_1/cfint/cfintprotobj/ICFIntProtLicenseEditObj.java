@@ -33,10 +33,12 @@ import java.util.*;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
-import server.markhome.mcf.v3_1.cflib.dbutil.*;import org.apache.commons.text.StringEscapeUtils;
-import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
+import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
 
 public interface ICFIntProtLicenseEditObj
 	extends ICFIntProtLicenseObj
@@ -77,25 +79,25 @@ public interface ICFIntProtLicenseEditObj
 	ICFIntProtLicenseEditObj deleteInstance();
 
 	/**
-	 *	Get the ICFSecProtTenantObj instance referenced by the Tenant key.
+	 *	Get the ICFSecPubTenantObj instance referenced by the Tenant key.
 	 *
-	 *	@return	The ICFSecProtTenantObj instance referenced by the Tenant key.
+	 *	@return	The ICFSecPubTenantObj instance referenced by the Tenant key.
 	 */
-	ICFSecProtTenantObj getRequiredOwnerTenant();
+	ICFSecPubTenantObj getRequiredOwnerTenant();
 
 	/**
-	 *	Get the required ICFSecProtTenantObj instance referenced by the Tenant key.
+	 *	Get the required ICFSecPubTenantObj instance referenced by the Tenant key.
 	 *
-	 *	@return	The required ICFSecProtTenantObj instance referenced by the Tenant key.
+	 *	@return	The required ICFSecPubTenantObj instance referenced by the Tenant key.
 	 */
-	ICFSecProtTenantObj getRequiredOwnerTenant( boolean forceRead );
+	ICFSecPubTenantObj getRequiredOwnerTenant( boolean forceRead );
 
 	/**
-	 *	Set the ICFSecProtTenantObj instance referenced by the Tenant key.
+	 *	Set the ICFSecPubTenantObj instance referenced by the Tenant key.
 	 *
-	 *	@param	value	the ICFSecProtTenantObj instance to be referenced by the Tenant key.
+	 *	@param	value	the ICFSecPubTenantObj instance to be referenced by the Tenant key.
 	 */
-	void setRequiredOwnerTenant( ICFSecProtTenantObj value );
+	void setRequiredOwnerTenant( ICFSecPubTenantObj value );
 
 	/**
 	 *	Get the ICFIntProtTopDomainObj instance referenced by the TopDomain key.

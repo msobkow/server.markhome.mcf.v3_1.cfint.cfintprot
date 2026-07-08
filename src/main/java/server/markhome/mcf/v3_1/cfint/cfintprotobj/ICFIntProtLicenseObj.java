@@ -34,9 +34,11 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
 
 public interface ICFIntProtLicenseObj
 	extends ICFLibAnyObj
@@ -190,14 +192,14 @@ public interface ICFIntProtLicenseObj
 	 *
 	 *	@return	The required ICFIntProtTenantObj instance referenced by the Tenant key.
 	 */
-	ICFSecProtTenantObj getRequiredOwnerTenant();
+	ICFSecPubTenantObj getRequiredOwnerTenant();
 
 	/**
 	 *	Get the required ICFSecProtTenantObj instance referenced by the Tenant key.
 	 *
 	 *	@return	The required ICFSecProtTenantObj instance referenced by the Tenant key.
 	 */
-	ICFSecProtTenantObj getRequiredOwnerTenant( boolean forceRead );
+	ICFSecPubTenantObj getRequiredOwnerTenant( boolean forceRead );
 
 	/**
 	 *	Get the required ICFIntProtTopDomainObj instance referenced by the TopDomain key.

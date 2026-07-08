@@ -33,6 +33,7 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
@@ -80,14 +81,12 @@ public interface ICFIntProtTopDomain
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public ICFSecProtTenant getRequiredOwnerTenant();
+	public ICFSecPubTenant getRequiredOwnerTenant();
 	public ICFIntProtTld getRequiredContainerParentTld();
-	public void setRequiredOwnerTenant(ICFSecProtTenant argObj);
-	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId);
 	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
+	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId);
 	public void setRequiredContainerParentTld(ICFIntProtTld argObj);
 	public void setRequiredContainerParentTld(CFLibDbKeyHash256 argTldId);
-	public void setRequiredContainerParentTld(ICFIntPubTld argObj);
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public CFLibDbKeyHash256 getRequiredTldId();
 	public String getRequiredName();

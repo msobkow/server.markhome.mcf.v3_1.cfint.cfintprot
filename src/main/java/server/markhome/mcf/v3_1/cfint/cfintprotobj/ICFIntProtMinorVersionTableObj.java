@@ -34,9 +34,12 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 
 public interface ICFIntProtMinorVersionTableObj
 {
@@ -139,89 +142,89 @@ public interface ICFIntProtMinorVersionTableObj
 	List<ICFIntProtMinorVersionObj> readCachedAllMinorVersion();
 
 	/**
-	 *	Get the CFIntProtMinorVersionObj instance for the primary key attributes.
+	 *	Get the ICFIntProtMinorVersionObj instance for the primary key attributes.
 	 *
 	 *	@param	Id	The MinorVersion key attribute of the instance generating the id.
 	 *
-	 *	@return	CFIntProtMinorVersionObj cached instance for the primary key, or
+	 *	@return	ICFIntProtMinorVersionObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
 	ICFIntProtMinorVersionObj readMinorVersionByIdIdx( CFLibDbKeyHash256 Id );
 
 	/**
-	 *	Get the CFIntProtMinorVersionObj instance for the primary key attributes.
+	 *	Get the ICFIntProtMinorVersionObj instance for the primary key attributes.
 	 *
 	 *	@param	Id	The MinorVersion key attribute of the instance generating the id.
 	 *
-	 *	@return	CFIntProtMinorVersionObj refreshed instance for the primary key, or
+	 *	@return	ICFIntProtMinorVersionObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
 	ICFIntProtMinorVersionObj readMinorVersionByIdIdx( CFLibDbKeyHash256 Id,
 		boolean forceRead );
 
 	/**
-	 *	Get the map of CFIntProtMinorVersionObj instances sorted by their primary keys for the duplicate TenantIdx key.
+	 *	Get the map of List<ICFIntProtMinorVersionObj> instances sorted by their primary keys for the duplicate TenantIdx key.
 	 *
 	 *	@param	TenantId	The MinorVersion key attribute of the instance generating the id.
 	 *
-	 *	@return	List of CFIntProtMinorVersionObj cached instances sorted by their primary keys for the duplicate TenantIdx key,
+	 *	@return	List of List<ICFIntProtMinorVersionObj> cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
 	List<ICFIntProtMinorVersionObj> readMinorVersionByTenantIdx( CFLibDbKeyHash256 TenantId );
 
 	/**
-	 *	Get the map of CFIntProtMinorVersionObj instances sorted by their primary keys for the duplicate TenantIdx key.
+	 *	Get the map of List<ICFIntProtMinorVersionObj> instances sorted by their primary keys for the duplicate TenantIdx key.
 	 *
 	 *	@param	TenantId	The MinorVersion key attribute of the instance generating the id.
 	 *
-	 *	@return	List of CFIntProtMinorVersionObj cached instances sorted by their primary keys for the duplicate TenantIdx key,
+	 *	@return	List of List<ICFIntProtMinorVersionObj> cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
 	List<ICFIntProtMinorVersionObj> readMinorVersionByTenantIdx( CFLibDbKeyHash256 TenantId,
 		boolean forceRead );
 
 	/**
-	 *	Get the map of CFIntProtMinorVersionObj instances sorted by their primary keys for the duplicate MajorVerIdx key.
+	 *	Get the map of List<ICFIntProtMinorVersionObj> instances sorted by their primary keys for the duplicate MajorVerIdx key.
 	 *
 	 *	@param	MajorVersionId	The MinorVersion key attribute of the instance generating the id.
 	 *
-	 *	@return	List of CFIntProtMinorVersionObj cached instances sorted by their primary keys for the duplicate MajorVerIdx key,
+	 *	@return	List of List<ICFIntProtMinorVersionObj> cached instances sorted by their primary keys for the duplicate MajorVerIdx key,
 	 *		which may be an empty set.
 	 */
 	List<ICFIntProtMinorVersionObj> readMinorVersionByMajorVerIdx( CFLibDbKeyHash256 MajorVersionId );
 
 	/**
-	 *	Get the map of CFIntProtMinorVersionObj instances sorted by their primary keys for the duplicate MajorVerIdx key.
+	 *	Get the map of List<ICFIntProtMinorVersionObj> instances sorted by their primary keys for the duplicate MajorVerIdx key.
 	 *
 	 *	@param	MajorVersionId	The MinorVersion key attribute of the instance generating the id.
 	 *
-	 *	@return	List of CFIntProtMinorVersionObj cached instances sorted by their primary keys for the duplicate MajorVerIdx key,
+	 *	@return	List of List<ICFIntProtMinorVersionObj> cached instances sorted by their primary keys for the duplicate MajorVerIdx key,
 	 *		which may be an empty set.
 	 */
 	List<ICFIntProtMinorVersionObj> readMinorVersionByMajorVerIdx( CFLibDbKeyHash256 MajorVersionId,
 		boolean forceRead );
 
 	/**
-	 *	Get the CFIntProtMinorVersionObj instance for the unique NameIdx key.
+	 *	Get the ICFIntProtMinorVersionObj instance for the unique NameIdx key.
 	 *
 	 *	@param	MajorVersionId	The MinorVersion key attribute of the instance generating the id.
 	 *
 	 *	@param	Name	The MinorVersion key attribute of the instance generating the id.
 	 *
-	 *	@return	CFIntProtMinorVersionObj cached instance for the unique NameIdx key, or
+	 *	@return	ICFIntProtMinorVersionObj cached instance for the unique NameIdx key, or
 	 *		null if no such instance exists.
 	 */
 	ICFIntProtMinorVersionObj readMinorVersionByNameIdx(CFLibDbKeyHash256 MajorVersionId,
 		String Name );
 
 	/**
-	 *	Get the CFIntProtMinorVersionObj instance for the unique NameIdx key.
+	 *	Get the ICFIntProtMinorVersionObj instance for the unique NameIdx key.
 	 *
 	 *	@param	MajorVersionId	The MinorVersion key attribute of the instance generating the id.
 	 *
 	 *	@param	Name	The MinorVersion key attribute of the instance generating the id.
 	 *
-	 *	@return	CFIntProtMinorVersionObj refreshed instance for the unique NameIdx key, or
+	 *	@return	ICFIntProtMinorVersionObj refreshed instance for the unique NameIdx key, or
 	 *		null if no such instance exists.
 	 */
 	ICFIntProtMinorVersionObj readMinorVersionByNameIdx(CFLibDbKeyHash256 MajorVersionId,
@@ -230,9 +233,9 @@ public interface ICFIntProtMinorVersionTableObj
 
 	ICFIntProtMinorVersionObj readCachedMinorVersionByIdIdx( CFLibDbKeyHash256 Id );
 
-	List<ICFIntProtMinorVersionObj> readCachedMinorVersionByTenantIdx( CFLibDbKeyHash256 TenantId );
+	List<List<ICFIntProtMinorVersionObj>> readCachedMinorVersionByTenantIdx( CFLibDbKeyHash256 TenantId );
 
-	List<ICFIntProtMinorVersionObj> readCachedMinorVersionByMajorVerIdx( CFLibDbKeyHash256 MajorVersionId );
+	List<List<ICFIntProtMinorVersionObj>> readCachedMinorVersionByMajorVerIdx( CFLibDbKeyHash256 MajorVersionId );
 
 	ICFIntProtMinorVersionObj readCachedMinorVersionByNameIdx( CFLibDbKeyHash256 MajorVersionId,
 		String Name );

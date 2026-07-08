@@ -34,9 +34,12 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 
 public interface ICFIntProtLicenseTableObj
 {
@@ -139,89 +142,89 @@ public interface ICFIntProtLicenseTableObj
 	List<ICFIntProtLicenseObj> readCachedAllLicense();
 
 	/**
-	 *	Get the CFIntProtLicenseObj instance for the primary key attributes.
+	 *	Get the ICFIntProtLicenseObj instance for the primary key attributes.
 	 *
 	 *	@param	Id	The License key attribute of the instance generating the id.
 	 *
-	 *	@return	CFIntProtLicenseObj cached instance for the primary key, or
+	 *	@return	ICFIntProtLicenseObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
 	ICFIntProtLicenseObj readLicenseByIdIdx( CFLibDbKeyHash256 Id );
 
 	/**
-	 *	Get the CFIntProtLicenseObj instance for the primary key attributes.
+	 *	Get the ICFIntProtLicenseObj instance for the primary key attributes.
 	 *
 	 *	@param	Id	The License key attribute of the instance generating the id.
 	 *
-	 *	@return	CFIntProtLicenseObj refreshed instance for the primary key, or
+	 *	@return	ICFIntProtLicenseObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
 	ICFIntProtLicenseObj readLicenseByIdIdx( CFLibDbKeyHash256 Id,
 		boolean forceRead );
 
 	/**
-	 *	Get the map of CFIntProtLicenseObj instances sorted by their primary keys for the duplicate LicnTenantIdx key.
+	 *	Get the map of List<ICFIntProtLicenseObj> instances sorted by their primary keys for the duplicate LicnTenantIdx key.
 	 *
 	 *	@param	TenantId	The License key attribute of the instance generating the id.
 	 *
-	 *	@return	List of CFIntProtLicenseObj cached instances sorted by their primary keys for the duplicate LicnTenantIdx key,
+	 *	@return	List of List<ICFIntProtLicenseObj> cached instances sorted by their primary keys for the duplicate LicnTenantIdx key,
 	 *		which may be an empty set.
 	 */
 	List<ICFIntProtLicenseObj> readLicenseByLicnTenantIdx( CFLibDbKeyHash256 TenantId );
 
 	/**
-	 *	Get the map of CFIntProtLicenseObj instances sorted by their primary keys for the duplicate LicnTenantIdx key.
+	 *	Get the map of List<ICFIntProtLicenseObj> instances sorted by their primary keys for the duplicate LicnTenantIdx key.
 	 *
 	 *	@param	TenantId	The License key attribute of the instance generating the id.
 	 *
-	 *	@return	List of CFIntProtLicenseObj cached instances sorted by their primary keys for the duplicate LicnTenantIdx key,
+	 *	@return	List of List<ICFIntProtLicenseObj> cached instances sorted by their primary keys for the duplicate LicnTenantIdx key,
 	 *		which may be an empty set.
 	 */
 	List<ICFIntProtLicenseObj> readLicenseByLicnTenantIdx( CFLibDbKeyHash256 TenantId,
 		boolean forceRead );
 
 	/**
-	 *	Get the map of CFIntProtLicenseObj instances sorted by their primary keys for the duplicate DomainIdx key.
+	 *	Get the map of List<ICFIntProtLicenseObj> instances sorted by their primary keys for the duplicate DomainIdx key.
 	 *
 	 *	@param	TopDomainId	The License key attribute of the instance generating the id.
 	 *
-	 *	@return	List of CFIntProtLicenseObj cached instances sorted by their primary keys for the duplicate DomainIdx key,
+	 *	@return	List of List<ICFIntProtLicenseObj> cached instances sorted by their primary keys for the duplicate DomainIdx key,
 	 *		which may be an empty set.
 	 */
 	List<ICFIntProtLicenseObj> readLicenseByDomainIdx( CFLibDbKeyHash256 TopDomainId );
 
 	/**
-	 *	Get the map of CFIntProtLicenseObj instances sorted by their primary keys for the duplicate DomainIdx key.
+	 *	Get the map of List<ICFIntProtLicenseObj> instances sorted by their primary keys for the duplicate DomainIdx key.
 	 *
 	 *	@param	TopDomainId	The License key attribute of the instance generating the id.
 	 *
-	 *	@return	List of CFIntProtLicenseObj cached instances sorted by their primary keys for the duplicate DomainIdx key,
+	 *	@return	List of List<ICFIntProtLicenseObj> cached instances sorted by their primary keys for the duplicate DomainIdx key,
 	 *		which may be an empty set.
 	 */
 	List<ICFIntProtLicenseObj> readLicenseByDomainIdx( CFLibDbKeyHash256 TopDomainId,
 		boolean forceRead );
 
 	/**
-	 *	Get the CFIntProtLicenseObj instance for the unique UNameIdx key.
+	 *	Get the ICFIntProtLicenseObj instance for the unique UNameIdx key.
 	 *
 	 *	@param	TopDomainId	The License key attribute of the instance generating the id.
 	 *
 	 *	@param	Name	The License key attribute of the instance generating the id.
 	 *
-	 *	@return	CFIntProtLicenseObj cached instance for the unique UNameIdx key, or
+	 *	@return	ICFIntProtLicenseObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
 	ICFIntProtLicenseObj readLicenseByUNameIdx(CFLibDbKeyHash256 TopDomainId,
 		String Name );
 
 	/**
-	 *	Get the CFIntProtLicenseObj instance for the unique UNameIdx key.
+	 *	Get the ICFIntProtLicenseObj instance for the unique UNameIdx key.
 	 *
 	 *	@param	TopDomainId	The License key attribute of the instance generating the id.
 	 *
 	 *	@param	Name	The License key attribute of the instance generating the id.
 	 *
-	 *	@return	CFIntProtLicenseObj refreshed instance for the unique UNameIdx key, or
+	 *	@return	ICFIntProtLicenseObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
 	ICFIntProtLicenseObj readLicenseByUNameIdx(CFLibDbKeyHash256 TopDomainId,
@@ -230,9 +233,9 @@ public interface ICFIntProtLicenseTableObj
 
 	ICFIntProtLicenseObj readCachedLicenseByIdIdx( CFLibDbKeyHash256 Id );
 
-	List<ICFIntProtLicenseObj> readCachedLicenseByLicnTenantIdx( CFLibDbKeyHash256 TenantId );
+	List<List<ICFIntProtLicenseObj>> readCachedLicenseByLicnTenantIdx( CFLibDbKeyHash256 TenantId );
 
-	List<ICFIntProtLicenseObj> readCachedLicenseByDomainIdx( CFLibDbKeyHash256 TopDomainId );
+	List<List<ICFIntProtLicenseObj>> readCachedLicenseByDomainIdx( CFLibDbKeyHash256 TopDomainId );
 
 	ICFIntProtLicenseObj readCachedLicenseByUNameIdx( CFLibDbKeyHash256 TopDomainId,
 		String Name );

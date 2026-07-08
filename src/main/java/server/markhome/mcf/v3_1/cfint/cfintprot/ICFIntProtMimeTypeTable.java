@@ -59,7 +59,7 @@ extends ICFIntPubMimeTypeTable
 	 *
 	 *	@param	rec	The instance interface to be created.
 	 */
-	public ICFIntProtMimeType protcreateMimeType( ICFSecProtAuthorization Authorization,
+	public ICFIntProtMimeType protcreateMimeType( ICFSecPubAuthorization Authorization,
 		ICFIntProtMimeType rec );
 
 	/**
@@ -70,7 +70,7 @@ extends ICFIntPubMimeTypeTable
 	 *
 	 *	@param	rec	The instance interface to be created.
 	 */
-	public ICFIntProtMimeType protcreateMimeType( ICFSecProtAuthorization Authorization,
+	public ICFIntProtMimeType protcreateMimeType( ICFSecPubAuthorization Authorization,
 		ICFIntPubMimeType rec );
 
 
@@ -82,7 +82,7 @@ extends ICFIntPubMimeTypeTable
 	 *
 	 *	@param	rec	The instance interface to be updated
 	 */
-	public ICFIntProtMimeType protupdateMimeType( ICFSecProtAuthorization Authorization,
+	public ICFIntProtMimeType protupdateMimeType( ICFSecPubAuthorization Authorization,
 		ICFIntProtMimeType rec );
 
 	/**
@@ -93,7 +93,7 @@ extends ICFIntPubMimeTypeTable
 	 *
 	 *	@param	rec	The instance interface to be updated
 	 */
-	public ICFIntProtMimeType protupdateMimeType( ICFSecProtAuthorization Authorization,
+	public ICFIntProtMimeType protupdateMimeType( ICFSecPubAuthorization Authorization,
 		ICFIntPubMimeType rec );
 
 
@@ -104,7 +104,7 @@ extends ICFIntPubMimeTypeTable
 	 *
 	 *	@param	rec	The instance interface to be deleted.
 	 */
-	public void protdeleteMimeType( ICFSecProtAuthorization Authorization,
+	public void protdeleteMimeType( ICFSecPubAuthorization Authorization,
 		ICFIntProtMimeType rec );
 	/**
 	 *	Delete the MimeType instance identified by the primary key.
@@ -113,7 +113,7 @@ extends ICFIntPubMimeTypeTable
 	 *
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
-	public void protdeleteMimeTypeByIdIdx( ICFSecProtAuthorization Authorization,
+	public void protdeleteMimeTypeByIdIdx( ICFSecPubAuthorization Authorization,
 		Integer argKey );
 	/**
 	 *	Delete the MimeType instances identified by the key UNameIdx.
@@ -122,7 +122,7 @@ extends ICFIntPubMimeTypeTable
 	 *
 	 *	@param	Name	The MimeType key attribute of the instance generating the id.
 	 */
-	public void protdeleteMimeTypeByUNameIdx( ICFSecProtAuthorization Authorization,
+	public void protdeleteMimeTypeByUNameIdx( ICFSecPubAuthorization Authorization,
 		String argName );
 
 	/**
@@ -132,7 +132,7 @@ extends ICFIntPubMimeTypeTable
 	 *
 	 *	@param	argKey	The key identifying the instances to be deleted.
 	 */
-	public void protdeleteMimeTypeByUNameIdx( ICFSecProtAuthorization Authorization,
+	public void protdeleteMimeTypeByUNameIdx( ICFSecPubAuthorization Authorization,
 		ICFIntProtMimeTypeByUNameIdxKey argKey );
 	/**
 	 *	Delete the MimeType instances identified by the key UNameIdx.
@@ -141,7 +141,7 @@ extends ICFIntPubMimeTypeTable
 	 *
 	 *	@param	argKey	The key identifying the instances to be deleted.
 	 */
-	public void protdeleteMimeTypeByUNameIdx( ICFSecProtAuthorization Authorization,
+	public void protdeleteMimeTypeByUNameIdx( ICFSecPubAuthorization Authorization,
 		ICFIntPubMimeTypeByUNameIdxKey argKey );
 
 	/**
@@ -151,26 +151,8 @@ extends ICFIntPubMimeTypeTable
 	 *
 	 *	@param	rec	The instance interface to be deleted.
 	 */
-	public void protdeleteMimeType( ICFSecProtAuthorization Authorization,
+	public void protdeleteMimeType( ICFSecPubAuthorization Authorization,
 		ICFIntPubMimeType rec );
-	/**
-	 *	Delete the MimeType instance identified by the primary key.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	argKey	The primary key identifying the instance to be deleted.
-	 */
-	public void protdeleteMimeTypeByIdIdx( ICFSecProtAuthorization Authorization,
-		Integer argKey );
-	/**
-	 *	Delete the MimeType instances identified by the key UNameIdx.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	argKey	The key identifying the instances to be deleted.
-	 */
-	public void protdeleteMimeTypeByUNameIdx( ICFSecProtAuthorization Authorization,
-		ICFIntPubMimeTypeByUNameIdxKey argKey );
 
 
 	/**
@@ -183,34 +165,8 @@ extends ICFIntPubMimeTypeTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 */
-	public ICFIntProtMimeType protreadDerived( ICFSecProtAuthorization Authorization,
+	public ICFIntProtMimeType protreadDerived( ICFSecPubAuthorization Authorization,
 		Integer PKey );
-	/**
-	 *	Read the derived MimeType record instance by protected primary key.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	PKey	The primary key of the MimeType instance to be read.
-	 *
-	 *	@return The record instance for the specified primary key, or null if there is
-	 *		no such existing key value.
-	 */
-	public ICFIntPubMimeType pubreadDerived( ICFSecProtAuthorization Authorization,
-		Integer PKey );
-
-	/**
-	 *	Read the derived MimeType record instance by public primary key.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	PKey	The primary key of the MimeType instance to be read.
-	 *
-	 *	@return The record instance for the specified primary key, or null if there is
-	 *		no such existing key value.
-	 */
-	public ICFIntProtMimeType protreadDerived( ICFSecProtAuthorization Authorization,
-		Integer PKey );
-
 
 	/**
 	 *	Lock the derived MimeType record instance by protected primary key.
@@ -222,34 +178,8 @@ extends ICFIntPubMimeTypeTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 */
-	public ICFIntProtMimeType protlockDerived( ICFSecProtAuthorization Authorization,
+	public ICFIntProtMimeType protlockDerived( ICFSecPubAuthorization Authorization,
 		Integer PKey );
-	/**
-	 *	Lock the derived MimeType record instance by protected primary key.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	PKey	The primary key of the MimeType instance to be locked.
-	 *
-	 *	@return The record instance for the specified primary key, or null if there is
-	 *		no such existing key value.
-	 */
-	public ICFIntPubMimeType publockDerived( ICFSecProtAuthorization Authorization,
-		Integer PKey );
-
-	/**
-	 *	Lock the derived MimeType record instance by public primary key.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	PKey	The primary key of the MimeType instance to be locked.
-	 *
-	 *	@return The record instance for the specified primary key, or null if there is
-	 *		no such existing key value.
-	 */
-	public ICFIntProtMimeType protlockDerived( ICFSecProtAuthorization Authorization,
-		Integer PKey );
-
 
 	/**
 	 *	Read all MimeType instances.
@@ -258,7 +188,7 @@ extends ICFIntPubMimeTypeTable
 	 *
 	 *	@return An array of derived record instances, potentially with 0 elements in the set.
 	 */
-	public ICFIntProtMimeType[] protreadProtAllDerived( ICFSecProtAuthorization Authorization );
+	public ICFIntProtMimeType[] protreadProtAllDerived( ICFSecPubAuthorization Authorization );
 
 	/**
 	 *	Read the derived MimeType record instance identified by the unique key IdIdx.
@@ -270,7 +200,7 @@ extends ICFIntPubMimeTypeTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 */
-	public ICFIntProtMimeType protreadDerivedByIdIdx( ICFSecProtAuthorization Authorization,
+	public ICFIntProtMimeType protreadDerivedByIdIdx( ICFSecPubAuthorization Authorization,
 		int MimeTypeId );
 
 	/**
@@ -283,7 +213,7 @@ extends ICFIntPubMimeTypeTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 */
-	public ICFIntProtMimeType protreadDerivedByUNameIdx( ICFSecProtAuthorization Authorization,
+	public ICFIntProtMimeType protreadDerivedByUNameIdx( ICFSecPubAuthorization Authorization,
 		String Name );
 
 	/**
@@ -298,37 +228,7 @@ extends ICFIntPubMimeTypeTable
 	 *
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
-	public ICFIntProtMimeType protreadRec( ICFSecProtAuthorization Authorization,
-		Integer PKey );
-
-	/**
-	 *	Read the specific MimeType record instance identified by the primary key.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	PKey	The primary key of the MimeType instance to be locked.
-	 *
-	 *	@return The record instance for the specified primary key, or null if there is
-	 *		no such existing key value.
-	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFIntProtMimeType protreadRec( ICFSecProtAuthorization Authorization,
-		Integer PKey );
-
-	/**
-	 *	Read the specific MimeType record instance identified by the primary key.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	PKey	The primary key of the MimeType instance to be locked.
-	 *
-	 *	@return The record instance for the specified primary key, or null if there is
-	 *		no such existing key value.
-	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFIntPubMimeType pubreadRec( ICFSecProtAuthorization Authorization,
+	public ICFIntProtMimeType protreadRec( ICFSecPubAuthorization Authorization,
 		Integer PKey );
 
 	/**
@@ -343,37 +243,7 @@ extends ICFIntPubMimeTypeTable
 	 *
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
-	public ICFIntProtMimeType protlockRec( ICFSecProtAuthorization Authorization,
-		Integer PKey );
-
-	/**
-	 *	Lock the specific MimeType record instance identified by the primary key.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	PKey	The primary key of the MimeType instance to be locked.
-	 *
-	 *	@return The record instance for the specified primary key, or null if there is
-	 *		no such existing key value.
-	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFIntPubMimeType publockRec( ICFSecProtAuthorization Authorization,
-		Integer PKey );
-
-	/**
-	 *	Lock the specific MimeType record instance identified by the primary key.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	PKey	The primary key of the MimeType instance to be locked.
-	 *
-	 *	@return The record instance for the specified primary key, or null if there is
-	 *		no such existing key value.
-	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFIntProtMimeType protlockRec( ICFSecProtAuthorization Authorization,
+	public ICFIntProtMimeType protlockRec( ICFSecPubAuthorization Authorization,
 		Integer PKey );
 
 	/**
@@ -383,7 +253,7 @@ extends ICFIntPubMimeTypeTable
 	 *
 	 *	@return All the specific MimeType instances in the database accessible for the Authorization.
 	 */
-	public ICFIntProtMimeType[] protreadAllRec( ICFSecProtAuthorization Authorization );
+	public ICFIntProtMimeType[] protreadAllRec( ICFSecPubAuthorization Authorization );
 
 	/**
 	 *	Read the specific MimeType record instance identified by the unique key IdIdx.
@@ -397,7 +267,7 @@ extends ICFIntPubMimeTypeTable
 	 *
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
-	public ICFIntProtMimeType protreadRecByIdIdx( ICFSecProtAuthorization Authorization,
+	public ICFIntProtMimeType protreadRecByIdIdx( ICFSecPubAuthorization Authorization,
 		int MimeTypeId );
 
 	/**
@@ -412,6 +282,6 @@ extends ICFIntPubMimeTypeTable
 	 *
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
-	public ICFIntProtMimeType protreadRecByUNameIdx( ICFSecProtAuthorization Authorization,
+	public ICFIntProtMimeType protreadRecByUNameIdx( ICFSecPubAuthorization Authorization,
 		String Name );
 }

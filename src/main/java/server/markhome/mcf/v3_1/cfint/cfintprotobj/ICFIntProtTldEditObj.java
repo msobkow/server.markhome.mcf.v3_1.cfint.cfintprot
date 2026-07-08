@@ -33,10 +33,12 @@ import java.util.*;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
-import server.markhome.mcf.v3_1.cflib.dbutil.*;import org.apache.commons.text.StringEscapeUtils;
-import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
+import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
 
 public interface ICFIntProtTldEditObj
 	extends ICFIntProtTldObj
@@ -79,9 +81,9 @@ public interface ICFIntProtTldEditObj
 	/**
 	 *	Set the user who created this instance.
 	 *
-	 *	@param	value	The ICFSecProtSecUserObj instance who created this instance.
+	 *	@param	value	The ICFSecPubSecUserObj instance who created this instance.
 	 */
-	void setCreatedBy( ICFSecProtSecUserObj value );
+	void setCreatedBy( ICFSecPubSecUserObj value );
 
 	/**
 	 *	Set the Calendar date-time this instance was created.
@@ -93,9 +95,9 @@ public interface ICFIntProtTldEditObj
 	/**
 	 *	Set the user who updated this instance.
 	 *
-	 *	@param	value	The ICFSecProtSecUserObj instance who updated this instance.
+	 *	@param	value	The ICFSecPubSecUserObj instance who updated this instance.
 	 */
-	void setUpdatedBy( ICFSecProtSecUserObj value );
+	void setUpdatedBy( ICFSecPubSecUserObj value );
 
 	/**
 	 *	Set the Calendar date-time this instance was updated.
@@ -105,25 +107,25 @@ public interface ICFIntProtTldEditObj
 	void setUpdatedAt( LocalDateTime value );
 
 	/**
-	 *	Get the ICFSecProtTenantObj instance referenced by the Tenant key.
+	 *	Get the ICFSecPubTenantObj instance referenced by the Tenant key.
 	 *
-	 *	@return	The ICFSecProtTenantObj instance referenced by the Tenant key.
+	 *	@return	The ICFSecPubTenantObj instance referenced by the Tenant key.
 	 */
-	ICFSecProtTenantObj getRequiredContainerTenant();
+	ICFSecPubTenantObj getRequiredContainerTenant();
 
 	/**
-	 *	Get the required ICFSecProtTenantObj instance referenced by the Tenant key.
+	 *	Get the required ICFSecPubTenantObj instance referenced by the Tenant key.
 	 *
-	 *	@return	The required ICFSecProtTenantObj instance referenced by the Tenant key.
+	 *	@return	The required ICFSecPubTenantObj instance referenced by the Tenant key.
 	 */
-	ICFSecProtTenantObj getRequiredContainerTenant( boolean forceRead );
+	ICFSecPubTenantObj getRequiredContainerTenant( boolean forceRead );
 
 	/**
-	 *	Set the ICFSecProtTenantObj instance referenced by the Tenant key.
+	 *	Set the ICFSecPubTenantObj instance referenced by the Tenant key.
 	 *
-	 *	@param	value	the ICFSecProtTenantObj instance to be referenced by the Tenant key.
+	 *	@param	value	the ICFSecPubTenantObj instance to be referenced by the Tenant key.
 	 */
-	void setRequiredContainerTenant( ICFSecProtTenantObj value );
+	void setRequiredContainerTenant( ICFSecPubTenantObj value );
 
 	/**
 	 *	Get a list ICFIntProtTopDomainObj instances referenced by the TopDomain key.

@@ -34,9 +34,12 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 
 public interface ICFIntProtTopProjectTableObj
 {
@@ -139,89 +142,89 @@ public interface ICFIntProtTopProjectTableObj
 	List<ICFIntProtTopProjectObj> readCachedAllTopProject();
 
 	/**
-	 *	Get the CFIntProtTopProjectObj instance for the primary key attributes.
+	 *	Get the ICFIntProtTopProjectObj instance for the primary key attributes.
 	 *
 	 *	@param	Id	The TopProject key attribute of the instance generating the id.
 	 *
-	 *	@return	CFIntProtTopProjectObj cached instance for the primary key, or
+	 *	@return	ICFIntProtTopProjectObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
 	ICFIntProtTopProjectObj readTopProjectByIdIdx( CFLibDbKeyHash256 Id );
 
 	/**
-	 *	Get the CFIntProtTopProjectObj instance for the primary key attributes.
+	 *	Get the ICFIntProtTopProjectObj instance for the primary key attributes.
 	 *
 	 *	@param	Id	The TopProject key attribute of the instance generating the id.
 	 *
-	 *	@return	CFIntProtTopProjectObj refreshed instance for the primary key, or
+	 *	@return	ICFIntProtTopProjectObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
 	ICFIntProtTopProjectObj readTopProjectByIdIdx( CFLibDbKeyHash256 Id,
 		boolean forceRead );
 
 	/**
-	 *	Get the map of CFIntProtTopProjectObj instances sorted by their primary keys for the duplicate TenantIdx key.
+	 *	Get the map of List<ICFIntProtTopProjectObj> instances sorted by their primary keys for the duplicate TenantIdx key.
 	 *
 	 *	@param	TenantId	The TopProject key attribute of the instance generating the id.
 	 *
-	 *	@return	List of CFIntProtTopProjectObj cached instances sorted by their primary keys for the duplicate TenantIdx key,
+	 *	@return	List of List<ICFIntProtTopProjectObj> cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
 	List<ICFIntProtTopProjectObj> readTopProjectByTenantIdx( CFLibDbKeyHash256 TenantId );
 
 	/**
-	 *	Get the map of CFIntProtTopProjectObj instances sorted by their primary keys for the duplicate TenantIdx key.
+	 *	Get the map of List<ICFIntProtTopProjectObj> instances sorted by their primary keys for the duplicate TenantIdx key.
 	 *
 	 *	@param	TenantId	The TopProject key attribute of the instance generating the id.
 	 *
-	 *	@return	List of CFIntProtTopProjectObj cached instances sorted by their primary keys for the duplicate TenantIdx key,
+	 *	@return	List of List<ICFIntProtTopProjectObj> cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
 	List<ICFIntProtTopProjectObj> readTopProjectByTenantIdx( CFLibDbKeyHash256 TenantId,
 		boolean forceRead );
 
 	/**
-	 *	Get the map of CFIntProtTopProjectObj instances sorted by their primary keys for the duplicate TopDomainIdx key.
+	 *	Get the map of List<ICFIntProtTopProjectObj> instances sorted by their primary keys for the duplicate TopDomainIdx key.
 	 *
 	 *	@param	TopDomainId	The TopProject key attribute of the instance generating the id.
 	 *
-	 *	@return	List of CFIntProtTopProjectObj cached instances sorted by their primary keys for the duplicate TopDomainIdx key,
+	 *	@return	List of List<ICFIntProtTopProjectObj> cached instances sorted by their primary keys for the duplicate TopDomainIdx key,
 	 *		which may be an empty set.
 	 */
 	List<ICFIntProtTopProjectObj> readTopProjectByTopDomainIdx( CFLibDbKeyHash256 TopDomainId );
 
 	/**
-	 *	Get the map of CFIntProtTopProjectObj instances sorted by their primary keys for the duplicate TopDomainIdx key.
+	 *	Get the map of List<ICFIntProtTopProjectObj> instances sorted by their primary keys for the duplicate TopDomainIdx key.
 	 *
 	 *	@param	TopDomainId	The TopProject key attribute of the instance generating the id.
 	 *
-	 *	@return	List of CFIntProtTopProjectObj cached instances sorted by their primary keys for the duplicate TopDomainIdx key,
+	 *	@return	List of List<ICFIntProtTopProjectObj> cached instances sorted by their primary keys for the duplicate TopDomainIdx key,
 	 *		which may be an empty set.
 	 */
 	List<ICFIntProtTopProjectObj> readTopProjectByTopDomainIdx( CFLibDbKeyHash256 TopDomainId,
 		boolean forceRead );
 
 	/**
-	 *	Get the CFIntProtTopProjectObj instance for the unique NameIdx key.
+	 *	Get the ICFIntProtTopProjectObj instance for the unique NameIdx key.
 	 *
 	 *	@param	TopDomainId	The TopProject key attribute of the instance generating the id.
 	 *
 	 *	@param	Name	The TopProject key attribute of the instance generating the id.
 	 *
-	 *	@return	CFIntProtTopProjectObj cached instance for the unique NameIdx key, or
+	 *	@return	ICFIntProtTopProjectObj cached instance for the unique NameIdx key, or
 	 *		null if no such instance exists.
 	 */
 	ICFIntProtTopProjectObj readTopProjectByNameIdx(CFLibDbKeyHash256 TopDomainId,
 		String Name );
 
 	/**
-	 *	Get the CFIntProtTopProjectObj instance for the unique NameIdx key.
+	 *	Get the ICFIntProtTopProjectObj instance for the unique NameIdx key.
 	 *
 	 *	@param	TopDomainId	The TopProject key attribute of the instance generating the id.
 	 *
 	 *	@param	Name	The TopProject key attribute of the instance generating the id.
 	 *
-	 *	@return	CFIntProtTopProjectObj refreshed instance for the unique NameIdx key, or
+	 *	@return	ICFIntProtTopProjectObj refreshed instance for the unique NameIdx key, or
 	 *		null if no such instance exists.
 	 */
 	ICFIntProtTopProjectObj readTopProjectByNameIdx(CFLibDbKeyHash256 TopDomainId,
@@ -230,9 +233,9 @@ public interface ICFIntProtTopProjectTableObj
 
 	ICFIntProtTopProjectObj readCachedTopProjectByIdIdx( CFLibDbKeyHash256 Id );
 
-	List<ICFIntProtTopProjectObj> readCachedTopProjectByTenantIdx( CFLibDbKeyHash256 TenantId );
+	List<List<ICFIntProtTopProjectObj>> readCachedTopProjectByTenantIdx( CFLibDbKeyHash256 TenantId );
 
-	List<ICFIntProtTopProjectObj> readCachedTopProjectByTopDomainIdx( CFLibDbKeyHash256 TopDomainId );
+	List<List<ICFIntProtTopProjectObj>> readCachedTopProjectByTopDomainIdx( CFLibDbKeyHash256 TopDomainId );
 
 	ICFIntProtTopProjectObj readCachedTopProjectByNameIdx( CFLibDbKeyHash256 TopDomainId,
 		String Name );

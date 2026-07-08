@@ -33,6 +33,7 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
@@ -78,14 +79,12 @@ public interface ICFIntProtMinorVersion
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public ICFSecProtTenant getRequiredOwnerTenant();
+	public ICFSecPubTenant getRequiredOwnerTenant();
 	public ICFIntProtMajorVersion getRequiredContainerParentMajVer();
-	public void setRequiredOwnerTenant(ICFSecProtTenant argObj);
-	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId);
 	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
+	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId);
 	public void setRequiredContainerParentMajVer(ICFIntProtMajorVersion argObj);
 	public void setRequiredContainerParentMajVer(CFLibDbKeyHash256 argMajorVersionId);
-	public void setRequiredContainerParentMajVer(ICFIntPubMajorVersion argObj);
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public CFLibDbKeyHash256 getRequiredMajorVersionId();
 	public String getRequiredName();
