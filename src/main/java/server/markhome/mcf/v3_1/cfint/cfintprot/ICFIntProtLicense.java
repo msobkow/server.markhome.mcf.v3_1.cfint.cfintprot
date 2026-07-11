@@ -71,8 +71,10 @@ public interface ICFIntProtLicense
 	public ICFSecPubTenant getRequiredOwnerTenant();
 	public ICFIntProtTopDomain getRequiredContainerTopDomain();
 	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
+	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
 	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId);
 	public void setRequiredContainerTopDomain(ICFIntProtTopDomain argObj);
+	public void setRequiredContainerTopDomain(ICFIntPubTopDomain argObj);
 	public void setRequiredContainerTopDomain(CFLibDbKeyHash256 argTopDomainId);
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public CFLibDbKeyHash256 getRequiredTopDomainId();
