@@ -72,10 +72,6 @@ public interface ICFIntProtMimeTypeH
 	public int getRequiredMimeTypeId();
 	public void setRequiredMimeTypeId( int requiredMimeTypeId );
 
-	public String getRequiredName();
-	public void setRequiredName( String value );
-	public String getOptionalFileTypes();
-	public void setOptionalFileTypes( String value );
 	@Override
 	public boolean equals( Object obj );
 

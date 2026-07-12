@@ -63,20 +63,6 @@ public interface ICFIntProtMimeTypeFactory extends ICFIntPubMimeTypeFactory
 	ICFIntPubMimeTypeHPKey asPublic(ICFIntProtMimeTypeHPKey src);
 
 	/**
-	 *	Allocate a protected UNameIdx key over protected MimeType instances.
-	 *
-	 *	@return	The new instance.
-	 */
-	public ICFIntProtMimeTypeByUNameIdxKey newProtByUNameIdxKey();
-
-	/**
-	 *	Allocate a public UNameIdx key from a protected instance.
-	 *
-	 *	@return	The new instance.
-	 */
-	public ICFIntPubMimeTypeByUNameIdxKey asPublic(ICFIntProtMimeTypeByUNameIdxKey src);
-
-	/**
 	 *	Allocate a protected MimeType interface implementation.
 	 *
 	 *	@return	The new instance.

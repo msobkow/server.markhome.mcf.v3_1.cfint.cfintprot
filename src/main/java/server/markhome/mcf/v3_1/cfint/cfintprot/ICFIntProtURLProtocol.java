@@ -51,9 +51,6 @@ public interface ICFIntProtURLProtocol
 	public static final String S_INIT_UPDATED_BY = ICFIntPubURLProtocol.S_INIT_UPDATED_BY;
 	public static final CFLibDbKeyHash256 INIT_UPDATED_BY = ICFIntPubURLProtocol.INIT_UPDATED_BY;
 	public static final int URLPROTOCOLID_INIT_VALUE = ICFIntPubURLProtocol.URLPROTOCOLID_INIT_VALUE;
-	public static final String NAME_INIT_VALUE = ICFIntPubURLProtocol.NAME_INIT_VALUE;
-	public static final String DESCRIPTION_INIT_VALUE = ICFIntPubURLProtocol.DESCRIPTION_INIT_VALUE;
-	public final static boolean ISSECURE_INIT_VALUE = ICFIntPubURLProtocol.ISSECURE_INIT_VALUE;
 	public final static int CLASS_CODE = 0xa109;
 	public final static String S_CLASS_CODE = "a109";
 
@@ -76,12 +73,6 @@ public interface ICFIntProtURLProtocol
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public String getRequiredName();
-	public void setRequiredName( String value );
-	public String getRequiredDescription();
-	public void setRequiredDescription( String value );
-	public boolean getRequiredIsSecure();
-	public void setRequiredIsSecure( boolean value );
 	@Override
 	public boolean equals( Object obj );
 	
