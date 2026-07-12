@@ -115,6 +115,62 @@ extends ICFIntPubURLProtocolTable
 	 */
 	public void protdeleteURLProtocolByIdIdx( ICFSecPubAuthorization Authorization,
 		Integer argKey );
+	/**
+	 *	Delete the URLProtocol instances identified by the key UNameIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	Name	The URLProtocol key attribute of the instance generating the id.
+	 */
+	public void protdeleteURLProtocolByUNameIdx( ICFSecPubAuthorization Authorization,
+		String argName );
+
+	/**
+	 *	Delete the URLProtocol instances identified by the key UNameIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	argKey	The key identifying the instances to be deleted.
+	 */
+	public void protdeleteURLProtocolByUNameIdx( ICFSecPubAuthorization Authorization,
+		ICFIntProtURLProtocolByUNameIdxKey argKey );
+	/**
+	 *	Delete the URLProtocol instances identified by the key UNameIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	argKey	The key identifying the instances to be deleted.
+	 */
+	public void protdeleteURLProtocolByUNameIdx( ICFSecPubAuthorization Authorization,
+		ICFIntPubURLProtocolByUNameIdxKey argKey );
+	/**
+	 *	Delete the URLProtocol instances identified by the key IsSecureIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	IsSecure	The URLProtocol key attribute of the instance generating the id.
+	 */
+	public void protdeleteURLProtocolByIsSecureIdx( ICFSecPubAuthorization Authorization,
+		boolean argIsSecure );
+
+	/**
+	 *	Delete the URLProtocol instances identified by the key IsSecureIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	argKey	The key identifying the instances to be deleted.
+	 */
+	public void protdeleteURLProtocolByIsSecureIdx( ICFSecPubAuthorization Authorization,
+		ICFIntProtURLProtocolByIsSecureIdxKey argKey );
+	/**
+	 *	Delete the URLProtocol instances identified by the key IsSecureIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	argKey	The key identifying the instances to be deleted.
+	 */
+	public void protdeleteURLProtocolByIsSecureIdx( ICFSecPubAuthorization Authorization,
+		ICFIntPubURLProtocolByIsSecureIdxKey argKey );
 
 	/**
 	 *	Delete the instance from the database.
@@ -176,6 +232,31 @@ extends ICFIntPubURLProtocolTable
 		int URLProtocolId );
 
 	/**
+	 *	Read the derived URLProtocol record instance identified by the unique key UNameIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	Name	The URLProtocol key attribute of the instance generating the id.
+	 *
+	 *	@return The record instance for the specified key, or null if there is
+	 *		no such existing key value.
+	 */
+	public ICFIntProtURLProtocol protreadDerivedByUNameIdx( ICFSecPubAuthorization Authorization,
+		String Name );
+
+	/**
+	 *	Read an array of the derived URLProtocol record instances identified by the duplicate key IsSecureIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	IsSecure	The URLProtocol key attribute of the instance generating the id.
+	 *
+	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
+	 */
+	public ICFIntProtURLProtocol[] protreadDerivedByIsSecureIdx( ICFSecPubAuthorization Authorization,
+		boolean IsSecure );
+
+	/**
 	 *	Read the specific URLProtocol record instance identified by the primary key.
 	 *
 	 *	@param	Authorization	The session authorization information.
@@ -228,4 +309,33 @@ extends ICFIntPubURLProtocolTable
 	 */
 	public ICFIntProtURLProtocol protreadRecByIdIdx( ICFSecPubAuthorization Authorization,
 		int URLProtocolId );
+
+	/**
+	 *	Read the specific URLProtocol record instance identified by the unique key UNameIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	Name	The URLProtocol key attribute of the instance generating the id.
+	 *
+	 *	@return The record instance for the specified key, or null if there is
+	 *		no such existing key value.
+	 *
+	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFIntProtURLProtocol protreadRecByUNameIdx( ICFSecPubAuthorization Authorization,
+		String Name );
+
+	/**
+	 *	Read an array of the specific URLProtocol record instances identified by the duplicate key IsSecureIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	IsSecure	The URLProtocol key attribute of the instance generating the id.
+	 *
+	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
+	 *
+	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFIntProtURLProtocol[] protreadRecByIsSecureIdx( ICFSecPubAuthorization Authorization,
+		boolean IsSecure );
 }

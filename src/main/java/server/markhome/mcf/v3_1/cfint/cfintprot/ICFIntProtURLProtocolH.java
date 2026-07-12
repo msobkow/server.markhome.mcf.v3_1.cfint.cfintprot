@@ -72,6 +72,12 @@ public interface ICFIntProtURLProtocolH
 	public int getRequiredURLProtocolId();
 	public void setRequiredURLProtocolId( int requiredURLProtocolId );
 
+	public String getRequiredName();
+	public void setRequiredName( String value );
+	public String getRequiredDescription();
+	public void setRequiredDescription( String value );
+	public boolean getRequiredIsSecure();
+	public void setRequiredIsSecure( boolean value );
 	@Override
 	public boolean equals( Object obj );
 

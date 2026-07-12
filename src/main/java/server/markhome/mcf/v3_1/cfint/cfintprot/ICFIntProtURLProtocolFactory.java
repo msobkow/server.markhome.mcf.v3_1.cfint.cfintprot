@@ -63,6 +63,34 @@ public interface ICFIntProtURLProtocolFactory extends ICFIntPubURLProtocolFactor
 	ICFIntPubURLProtocolHPKey asPublic(ICFIntProtURLProtocolHPKey src);
 
 	/**
+	 *	Allocate a protected UNameIdx key over protected URLProtocol instances.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtURLProtocolByUNameIdxKey newProtByUNameIdxKey();
+
+	/**
+	 *	Allocate a public UNameIdx key from a protected instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubURLProtocolByUNameIdxKey asPublic(ICFIntProtURLProtocolByUNameIdxKey src);
+
+	/**
+	 *	Allocate a protected IsSecureIdx key over protected URLProtocol instances.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtURLProtocolByIsSecureIdxKey newProtByIsSecureIdxKey();
+
+	/**
+	 *	Allocate a public IsSecureIdx key from a protected instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubURLProtocolByIsSecureIdxKey asPublic(ICFIntProtURLProtocolByIsSecureIdxKey src);
+
+	/**
 	 *	Allocate a protected URLProtocol interface implementation.
 	 *
 	 *	@return	The new instance.

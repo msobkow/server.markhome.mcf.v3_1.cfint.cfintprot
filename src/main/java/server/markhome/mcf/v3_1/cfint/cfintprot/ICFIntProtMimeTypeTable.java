@@ -115,6 +115,34 @@ extends ICFIntPubMimeTypeTable
 	 */
 	public void protdeleteMimeTypeByIdIdx( ICFSecPubAuthorization Authorization,
 		Integer argKey );
+	/**
+	 *	Delete the MimeType instances identified by the key UNameIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	Name	The MimeType key attribute of the instance generating the id.
+	 */
+	public void protdeleteMimeTypeByUNameIdx( ICFSecPubAuthorization Authorization,
+		String argName );
+
+	/**
+	 *	Delete the MimeType instances identified by the key UNameIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	argKey	The key identifying the instances to be deleted.
+	 */
+	public void protdeleteMimeTypeByUNameIdx( ICFSecPubAuthorization Authorization,
+		ICFIntProtMimeTypeByUNameIdxKey argKey );
+	/**
+	 *	Delete the MimeType instances identified by the key UNameIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	argKey	The key identifying the instances to be deleted.
+	 */
+	public void protdeleteMimeTypeByUNameIdx( ICFSecPubAuthorization Authorization,
+		ICFIntPubMimeTypeByUNameIdxKey argKey );
 
 	/**
 	 *	Delete the instance from the database.
@@ -176,6 +204,19 @@ extends ICFIntPubMimeTypeTable
 		int MimeTypeId );
 
 	/**
+	 *	Read the derived MimeType record instance identified by the unique key UNameIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	Name	The MimeType key attribute of the instance generating the id.
+	 *
+	 *	@return The record instance for the specified key, or null if there is
+	 *		no such existing key value.
+	 */
+	public ICFIntProtMimeType protreadDerivedByUNameIdx( ICFSecPubAuthorization Authorization,
+		String Name );
+
+	/**
 	 *	Read the specific MimeType record instance identified by the primary key.
 	 *
 	 *	@param	Authorization	The session authorization information.
@@ -228,4 +269,19 @@ extends ICFIntPubMimeTypeTable
 	 */
 	public ICFIntProtMimeType protreadRecByIdIdx( ICFSecPubAuthorization Authorization,
 		int MimeTypeId );
+
+	/**
+	 *	Read the specific MimeType record instance identified by the unique key UNameIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	Name	The MimeType key attribute of the instance generating the id.
+	 *
+	 *	@return The record instance for the specified key, or null if there is
+	 *		no such existing key value.
+	 *
+	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFIntProtMimeType protreadRecByUNameIdx( ICFSecPubAuthorization Authorization,
+		String Name );
 }

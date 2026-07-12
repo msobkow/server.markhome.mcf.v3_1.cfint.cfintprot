@@ -1,4 +1,4 @@
-// Description: Java 25 protlic interface for a MimeType history object
+// Description: Java 25 protlic interface for a MimeType by UNameIdx index key object
 
 /*
  *	server.markhome.mcf.CFInt
@@ -41,41 +41,12 @@ import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
 import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 
 /**
- *	ICFIntProtMimeTypeH provides access to protlic history records matching the CFIntProtMimeType object change history.
+ *	ICFIntProtMimeTypeByUNameIdxKeys has CodeVis Public, meaning that any user interface or referencing schema can access it.
  */
-public interface ICFIntProtMimeTypeH
+public interface ICFIntProtMimeTypeByUNameIdxKey
 {
-	public int getClassCode();
-
-	public CFLibDbKeyHash256 getCreatedByUserId();
-	public void setCreatedByUserId( CFLibDbKeyHash256 value );
-	public LocalDateTime getCreatedAt();
-	public void setCreatedAt( LocalDateTime value );
-	public CFLibDbKeyHash256 getUpdatedByUserId();
-	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
-	public LocalDateTime getUpdatedAt();
-	public void setUpdatedAt( LocalDateTime value );
-
-	public ICFIntProtMimeTypeHPKey getProtPKey();
-	public void setProtPKey( ICFIntProtMimeTypeHPKey pkey );
-	public CFLibDbKeyHash256 getAuditClusterId();
-	public void setAuditClusterId(CFLibDbKeyHash256 auditClusterId);
-	public LocalDateTime getAuditStamp();
-	public void setAuditStamp(LocalDateTime auditStamp);
-	public short getAuditActionId();
-	public void setAuditActionId(short auditActionId);
-	public int getRequiredRevision();
-	public void setRequiredRevision(int revision);
-	public CFLibDbKeyHash256 getAuditSessionId();
-	public void setAuditSessionId(CFLibDbKeyHash256 auditSessionId);
-
-	public int getRequiredMimeTypeId();
-	public void setRequiredMimeTypeId( int requiredMimeTypeId );
-
 	public String getRequiredName();
 	public void setRequiredName( String value );
-	public String getOptionalFileTypes();
-	public void setOptionalFileTypes( String value );
 	@Override
 	public boolean equals( Object obj );
 
@@ -85,10 +56,6 @@ public interface ICFIntProtMimeTypeH
 	//@Override
 	public int compareTo( Object obj );
 
-	public void set( ICFIntProtMimeType src );
-	public void set( ICFIntProtMimeTypeH src );
-	public void setMimeType( ICFIntProtMimeType src );
-	public void setMimeType( ICFIntProtMimeTypeH src );
 	public String getXmlAttrFragment();
 
 	@Override
