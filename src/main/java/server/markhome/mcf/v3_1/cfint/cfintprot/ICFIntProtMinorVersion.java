@@ -82,10 +82,26 @@ public interface ICFIntProtMinorVersion
 	public ICFSecPubTenant getRequiredOwnerTenant();
 	public ICFIntProtMajorVersion getRequiredContainerParentMajVer();
 	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
-	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
+	public default void setRequiredOwnerTenant(ICFSecPubTenant argObj) {
+		if (argObj == null) {
+			setRequiredOwnerTenant((ICFSecProtTenant)null);
+		}
+		else {
+			setRequiredOwnerTenant(argObj.getRequiredId());
+		}
+	}
+
 	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId);
 	public void setRequiredContainerParentMajVer(ICFIntProtMajorVersion argObj);
-	public void setRequiredContainerParentMajVer(ICFIntPubMajorVersion argObj);
+	public default void setRequiredContainerParentMajVer(ICFIntPubMajorVersion argObj) {
+		if (argObj == null) {
+			setRequiredContainerParentMajVer((ICFIntProtMajorVersion)null);
+		}
+		else {
+			setRequiredContainerParentMajVer(argObj.getRequiredId());
+		}
+	}
+
 	public void setRequiredContainerParentMajVer(CFLibDbKeyHash256 argMajorVersionId);
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public CFLibDbKeyHash256 getRequiredMajorVersionId();
