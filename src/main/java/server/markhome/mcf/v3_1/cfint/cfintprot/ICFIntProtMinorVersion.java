@@ -45,90 +45,86 @@ import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
  */
 public interface ICFIntProtMinorVersion
 {
-	public static final String S_INIT_CREATED_BY = ICFIntPubMinorVersion.S_INIT_CREATED_BY;
-	public static final CFLibDbKeyHash256 INIT_CREATED_BY = ICFIntPubMinorVersion.INIT_CREATED_BY;
-	public static final String S_INIT_UPDATED_BY = ICFIntPubMinorVersion.S_INIT_UPDATED_BY;
-	public static final CFLibDbKeyHash256 INIT_UPDATED_BY = ICFIntPubMinorVersion.INIT_UPDATED_BY;
-	public static final String S_ID_INIT_VALUE = ICFIntPubMinorVersion.S_ID_INIT_VALUE;
-	public static final CFLibDbKeyHash256 ID_INIT_VALUE = ICFIntPubMinorVersion.ID_INIT_VALUE;
-	public static final String S_TENANTID_INIT_VALUE = ICFIntPubMinorVersion.S_TENANTID_INIT_VALUE;
-	public static final CFLibDbKeyHash256 TENANTID_INIT_VALUE = ICFIntPubMinorVersion.TENANTID_INIT_VALUE;
-	public static final String S_MAJORVERSIONID_INIT_VALUE = ICFIntPubMinorVersion.S_MAJORVERSIONID_INIT_VALUE;
-	public static final CFLibDbKeyHash256 MAJORVERSIONID_INIT_VALUE = ICFIntPubMinorVersion.MAJORVERSIONID_INIT_VALUE;
-	public static final String NAME_INIT_VALUE = ICFIntPubMinorVersion.NAME_INIT_VALUE;
-	public static final String DESCRIPTION_INIT_VALUE = ICFIntPubMinorVersion.DESCRIPTION_INIT_VALUE;
+	public static final String S_INIT_CREATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
+	public static final CFLibDbKeyHash256 INIT_CREATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_CREATED_BY);
+	public static final String S_INIT_UPDATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
+	public static final CFLibDbKeyHash256 INIT_UPDATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
+	public static final String S_ID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
+	public static final CFLibDbKeyHash256 ID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_ID_INIT_VALUE );
+	public static final String S_TENANTID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
+	public static final CFLibDbKeyHash256 TENANTID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_TENANTID_INIT_VALUE );
+	public static final String S_MAJORVERSIONID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
+	public static final CFLibDbKeyHash256 MAJORVERSIONID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_MAJORVERSIONID_INIT_VALUE );
+	public static final String NAME_INIT_VALUE = new String( "" );
+	public static final String DESCRIPTION_INIT_VALUE = new String( "" );
 	public final static int CLASS_CODE = 0xa104;
 	public final static String S_CLASS_CODE = "a104";
 
 	public int getClassCode();
 
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
 
 	public CFLibDbKeyHash256 getPKey();
 	public void setPKey(CFLibDbKeyHash256 requiredId);
-	
 	public CFLibDbKeyHash256 getRequiredId();
 	public void setRequiredId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFSecPubTenant getRequiredOwnerTenant();
-	public ICFIntProtMajorVersion getRequiredContainerParentMajVer();
-	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
-	public default void setRequiredOwnerTenant(ICFSecPubTenant argObj) {
-		if (argObj == null) {
-			setRequiredOwnerTenant((ICFSecProtTenant)null);
-		}
-		else {
-			setRequiredOwnerTenant(argObj.getRequiredId());
-		}
-	}
 
 	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId);
-	public void setRequiredContainerParentMajVer(ICFIntProtMajorVersion argObj);
-	public default void setRequiredContainerParentMajVer(ICFIntPubMajorVersion argObj) {
-		if (argObj == null) {
-			setRequiredContainerParentMajVer((ICFIntProtMajorVersion)null);
-		}
-		else {
-			setRequiredContainerParentMajVer(argObj.getRequiredId());
-		}
-	}
+
+	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
+
+	public ICFIntProtMajorVersion getRequiredContainerParentMajVer();
 
 	public void setRequiredContainerParentMajVer(CFLibDbKeyHash256 argMajorVersionId);
+
+
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public CFLibDbKeyHash256 getRequiredMajorVersionId();
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalDescription();
 	public void setOptionalDescription( String value );
-	@Override
 	public boolean equals( Object obj );
-	
-	@Override
+
 	public int hashCode();
 
-	//@Override not necessary because interfaces aren't able to implement Comparable, but they can double-team on the requirement
 	public int compareTo( Object obj );
 
 	public void set( ICFIntProtMinorVersion src );
-	public void setMinorVersion( ICFIntProtMinorVersion src );
-	public void set( ICFIntPubMinorVersion src );
-	public void set( ICFIntProtMinorVersionH src );
-	public void setMinorVersion( ICFIntProtMinorVersionH src );
-	public void set( ICFIntPubMinorVersionH src );
-	public void setMinorVersion( ICFIntPubMinorVersionH src );
 
+	public void setMinorVersion( ICFIntProtMinorVersion src );
+
+	public void set( ICFIntProtMinorVersionH src );
+
+	public void setMinorVersion( ICFIntProtMinorVersionH src );
+
+	public void set( ICFIntPubMinorVersion src );
+
+	public void setMinorVersion( ICFIntPubMinorVersion src );
+
+	public void set( ICFIntPubMinorVersionH src );
+
+	public void setMinorVersion( ICFIntPubMinorVersionH src );
 
 	public String getXmlAttrFragment();
 
-	@Override
 	public String toString();
 }

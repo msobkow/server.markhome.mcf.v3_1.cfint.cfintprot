@@ -46,30 +46,36 @@ import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 public interface ICFIntProtMimeType
 {
 	public static final int MIMETYPEID_MIN_VALUE = 0;
-	public static final String S_INIT_CREATED_BY = ICFIntPubMimeType.S_INIT_CREATED_BY;
-	public static final CFLibDbKeyHash256 INIT_CREATED_BY = ICFIntPubMimeType.INIT_CREATED_BY;
-	public static final String S_INIT_UPDATED_BY = ICFIntPubMimeType.S_INIT_UPDATED_BY;
-	public static final CFLibDbKeyHash256 INIT_UPDATED_BY = ICFIntPubMimeType.INIT_UPDATED_BY;
-	public static final int MIMETYPEID_INIT_VALUE = ICFIntPubMimeType.MIMETYPEID_INIT_VALUE;
-	public static final String NAME_INIT_VALUE = ICFIntPubMimeType.NAME_INIT_VALUE;
-	public static final String FILETYPES_INIT_VALUE = ICFIntPubMimeType.FILETYPES_INIT_VALUE;
+	public static final String S_INIT_CREATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
+	public static final CFLibDbKeyHash256 INIT_CREATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_CREATED_BY);
+	public static final String S_INIT_UPDATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
+	public static final CFLibDbKeyHash256 INIT_UPDATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
+	public static final int MIMETYPEID_INIT_VALUE = 0;
+	public static final String NAME_INIT_VALUE = new String( "" );
+	public static final String FILETYPES_INIT_VALUE = new String( "" );
 	public final static int CLASS_CODE = 0xa103;
 	public final static String S_CLASS_CODE = "a103";
 
 	public int getClassCode();
 
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
 
 	public Integer getPKey();
 	public void setPKey(Integer requiredMimeTypeId);
-	
 	public int getRequiredMimeTypeId();
 	public void setRequiredMimeTypeId( int value );
 	public int getRequiredRevision();
@@ -79,26 +85,29 @@ public interface ICFIntProtMimeType
 	public void setRequiredName( String value );
 	public String getOptionalFileTypes();
 	public void setOptionalFileTypes( String value );
-	@Override
 	public boolean equals( Object obj );
-	
-	@Override
+
 	public int hashCode();
 
-	//@Override not necessary because interfaces aren't able to implement Comparable, but they can double-team on the requirement
 	public int compareTo( Object obj );
 
 	public void set( ICFIntProtMimeType src );
-	public void setMimeType( ICFIntProtMimeType src );
-	public void set( ICFIntPubMimeType src );
-	public void set( ICFIntProtMimeTypeH src );
-	public void setMimeType( ICFIntProtMimeTypeH src );
-	public void set( ICFIntPubMimeTypeH src );
-	public void setMimeType( ICFIntPubMimeTypeH src );
 
+	public void setMimeType( ICFIntProtMimeType src );
+
+	public void set( ICFIntProtMimeTypeH src );
+
+	public void setMimeType( ICFIntProtMimeTypeH src );
+
+	public void set( ICFIntPubMimeType src );
+
+	public void setMimeType( ICFIntPubMimeType src );
+
+	public void set( ICFIntPubMimeTypeH src );
+
+	public void setMimeType( ICFIntPubMimeTypeH src );
 
 	public String getXmlAttrFragment();
 
-	@Override
 	public String toString();
 }

@@ -45,76 +45,80 @@ import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
  */
 public interface ICFIntProtTld
 {
-	public static final String S_INIT_CREATED_BY = ICFIntPubTld.S_INIT_CREATED_BY;
-	public static final CFLibDbKeyHash256 INIT_CREATED_BY = ICFIntPubTld.INIT_CREATED_BY;
-	public static final String S_INIT_UPDATED_BY = ICFIntPubTld.S_INIT_UPDATED_BY;
-	public static final CFLibDbKeyHash256 INIT_UPDATED_BY = ICFIntPubTld.INIT_UPDATED_BY;
-	public static final String S_ID_INIT_VALUE = ICFIntPubTld.S_ID_INIT_VALUE;
-	public static final CFLibDbKeyHash256 ID_INIT_VALUE = ICFIntPubTld.ID_INIT_VALUE;
-	public static final String S_TENANTID_INIT_VALUE = ICFIntPubTld.S_TENANTID_INIT_VALUE;
-	public static final CFLibDbKeyHash256 TENANTID_INIT_VALUE = ICFIntPubTld.TENANTID_INIT_VALUE;
-	public static final String NAME_INIT_VALUE = ICFIntPubTld.NAME_INIT_VALUE;
-	public static final String DESCRIPTION_INIT_VALUE = ICFIntPubTld.DESCRIPTION_INIT_VALUE;
+	public static final String S_INIT_CREATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
+	public static final CFLibDbKeyHash256 INIT_CREATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_CREATED_BY);
+	public static final String S_INIT_UPDATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
+	public static final CFLibDbKeyHash256 INIT_UPDATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
+	public static final String S_ID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
+	public static final CFLibDbKeyHash256 ID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_ID_INIT_VALUE );
+	public static final String S_TENANTID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
+	public static final CFLibDbKeyHash256 TENANTID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_TENANTID_INIT_VALUE );
+	public static final String NAME_INIT_VALUE = new String( "" );
+	public static final String DESCRIPTION_INIT_VALUE = new String( "" );
 	public final static int CLASS_CODE = 0xa106;
 	public final static String S_CLASS_CODE = "a106";
 
 	public int getClassCode();
 
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
 
 	public CFLibDbKeyHash256 getPKey();
 	public void setPKey(CFLibDbKeyHash256 requiredId);
-	
 	public List<ICFIntProtTopDomain> getOptionalComponentsTopDomain();
+
 	public CFLibDbKeyHash256 getRequiredId();
 	public void setRequiredId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFSecPubTenant getRequiredContainerTenant();
-	public void setRequiredContainerTenant(ICFSecPubTenant argObj);
-	public default void setRequiredContainerTenant(ICFSecPubTenant argObj) {
-		if (argObj == null) {
-			setRequiredContainerTenant((ICFSecProtTenant)null);
-		}
-		else {
-			setRequiredContainerTenant(argObj.getRequiredId());
-		}
-	}
 
 	public void setRequiredContainerTenant(CFLibDbKeyHash256 argTenantId);
+
+	public void setRequiredContainerTenant(ICFSecPubTenant argObj);
+
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalDescription();
 	public void setOptionalDescription( String value );
-	@Override
 	public boolean equals( Object obj );
-	
-	@Override
+
 	public int hashCode();
 
-	//@Override not necessary because interfaces aren't able to implement Comparable, but they can double-team on the requirement
 	public int compareTo( Object obj );
 
 	public void set( ICFIntProtTld src );
-	public void setTld( ICFIntProtTld src );
-	public void set( ICFIntPubTld src );
-	public void set( ICFIntProtTldH src );
-	public void setTld( ICFIntProtTldH src );
-	public void set( ICFIntPubTldH src );
-	public void setTld( ICFIntPubTldH src );
 
+	public void setTld( ICFIntProtTld src );
+
+	public void set( ICFIntProtTldH src );
+
+	public void setTld( ICFIntProtTldH src );
+
+	public void set( ICFIntPubTld src );
+
+	public void setTld( ICFIntPubTld src );
+
+	public void set( ICFIntPubTldH src );
+
+	public void setTld( ICFIntPubTldH src );
 
 	public String getXmlAttrFragment();
 
-	@Override
 	public String toString();
 }

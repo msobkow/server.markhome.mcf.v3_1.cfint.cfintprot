@@ -46,31 +46,37 @@ import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 public interface ICFIntProtURLProtocol
 {
 	public static final int URLPROTOCOLID_MIN_VALUE = 0;
-	public static final String S_INIT_CREATED_BY = ICFIntPubURLProtocol.S_INIT_CREATED_BY;
-	public static final CFLibDbKeyHash256 INIT_CREATED_BY = ICFIntPubURLProtocol.INIT_CREATED_BY;
-	public static final String S_INIT_UPDATED_BY = ICFIntPubURLProtocol.S_INIT_UPDATED_BY;
-	public static final CFLibDbKeyHash256 INIT_UPDATED_BY = ICFIntPubURLProtocol.INIT_UPDATED_BY;
-	public static final int URLPROTOCOLID_INIT_VALUE = ICFIntPubURLProtocol.URLPROTOCOLID_INIT_VALUE;
-	public static final String NAME_INIT_VALUE = ICFIntPubURLProtocol.NAME_INIT_VALUE;
-	public static final String DESCRIPTION_INIT_VALUE = ICFIntPubURLProtocol.DESCRIPTION_INIT_VALUE;
-	public final static boolean ISSECURE_INIT_VALUE = ICFIntPubURLProtocol.ISSECURE_INIT_VALUE;
+	public static final String S_INIT_CREATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
+	public static final CFLibDbKeyHash256 INIT_CREATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_CREATED_BY);
+	public static final String S_INIT_UPDATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
+	public static final CFLibDbKeyHash256 INIT_UPDATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
+	public static final int URLPROTOCOLID_INIT_VALUE = 0;
+	public static final String NAME_INIT_VALUE = new String( "" );
+	public static final String DESCRIPTION_INIT_VALUE = new String( "" );
+	public final static boolean ISSECURE_INIT_VALUE = false;
 	public final static int CLASS_CODE = 0xa109;
 	public final static String S_CLASS_CODE = "a109";
 
 	public int getClassCode();
 
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
 
 	public Integer getPKey();
 	public void setPKey(Integer requiredURLProtocolId);
-	
 	public int getRequiredURLProtocolId();
 	public void setRequiredURLProtocolId( int value );
 	public int getRequiredRevision();
@@ -82,26 +88,29 @@ public interface ICFIntProtURLProtocol
 	public void setRequiredDescription( String value );
 	public boolean getRequiredIsSecure();
 	public void setRequiredIsSecure( boolean value );
-	@Override
 	public boolean equals( Object obj );
-	
-	@Override
+
 	public int hashCode();
 
-	//@Override not necessary because interfaces aren't able to implement Comparable, but they can double-team on the requirement
 	public int compareTo( Object obj );
 
 	public void set( ICFIntProtURLProtocol src );
-	public void setURLProtocol( ICFIntProtURLProtocol src );
-	public void set( ICFIntPubURLProtocol src );
-	public void set( ICFIntProtURLProtocolH src );
-	public void setURLProtocol( ICFIntProtURLProtocolH src );
-	public void set( ICFIntPubURLProtocolH src );
-	public void setURLProtocol( ICFIntPubURLProtocolH src );
 
+	public void setURLProtocol( ICFIntProtURLProtocol src );
+
+	public void set( ICFIntProtURLProtocolH src );
+
+	public void setURLProtocol( ICFIntProtURLProtocolH src );
+
+	public void set( ICFIntPubURLProtocol src );
+
+	public void setURLProtocol( ICFIntPubURLProtocol src );
+
+	public void set( ICFIntPubURLProtocolH src );
+
+	public void setURLProtocol( ICFIntPubURLProtocolH src );
 
 	public String getXmlAttrFragment();
 
-	@Override
 	public String toString();
 }
