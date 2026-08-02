@@ -78,6 +78,10 @@ public interface ICFIntProtLicense
 	public void setRequiredContainerTopDomain(CFLibDbKeyHash256 argTopDomainId);
 
 
+	public void setRequiredContainerTopDomain(ICFIntProtTopDomain argObj);
+
+	public void setRequiredContainerTopDomain(ICFIntPubTopDomain argObj);
+
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public CFLibDbKeyHash256 getRequiredTopDomainId();
 	public String getRequiredName();

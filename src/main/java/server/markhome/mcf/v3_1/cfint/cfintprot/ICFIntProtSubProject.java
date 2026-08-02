@@ -98,6 +98,10 @@ public interface ICFIntProtSubProject
 	public void setRequiredContainerParentTPrj(CFLibDbKeyHash256 argTopProjectId);
 
 
+	public void setRequiredContainerParentTPrj(ICFIntProtTopProject argObj);
+
+	public void setRequiredContainerParentTPrj(ICFIntPubTopProject argObj);
+
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public CFLibDbKeyHash256 getRequiredTopProjectId();
 	public String getRequiredName();

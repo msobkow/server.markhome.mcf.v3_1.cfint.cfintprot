@@ -96,6 +96,10 @@ public interface ICFIntProtMinorVersion
 	public void setRequiredContainerParentMajVer(CFLibDbKeyHash256 argMajorVersionId);
 
 
+	public void setRequiredContainerParentMajVer(ICFIntProtMajorVersion argObj);
+
+	public void setRequiredContainerParentMajVer(ICFIntPubMajorVersion argObj);
+
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public CFLibDbKeyHash256 getRequiredMajorVersionId();
 	public String getRequiredName();

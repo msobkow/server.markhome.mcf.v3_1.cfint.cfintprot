@@ -100,6 +100,10 @@ public interface ICFIntProtTopDomain
 	public void setRequiredContainerParentTld(CFLibDbKeyHash256 argTldId);
 
 
+	public void setRequiredContainerParentTld(ICFIntProtTld argObj);
+
+	public void setRequiredContainerParentTld(ICFIntPubTld argObj);
+
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public CFLibDbKeyHash256 getRequiredTldId();
 	public String getRequiredName();

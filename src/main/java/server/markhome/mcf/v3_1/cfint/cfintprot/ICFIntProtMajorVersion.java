@@ -98,6 +98,10 @@ public interface ICFIntProtMajorVersion
 	public void setRequiredContainerParentSPrj(CFLibDbKeyHash256 argSubProjectId);
 
 
+	public void setRequiredContainerParentSPrj(ICFIntProtSubProject argObj);
+
+	public void setRequiredContainerParentSPrj(ICFIntPubSubProject argObj);
+
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public CFLibDbKeyHash256 getRequiredSubProjectId();
 	public String getRequiredName();

@@ -98,6 +98,10 @@ public interface ICFIntProtTopProject
 	public void setRequiredContainerParentSDom(CFLibDbKeyHash256 argTopDomainId);
 
 
+	public void setRequiredContainerParentSDom(ICFIntProtTopDomain argObj);
+
+	public void setRequiredContainerParentSDom(ICFIntPubTopDomain argObj);
+
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public CFLibDbKeyHash256 getRequiredTopDomainId();
 	public String getRequiredName();
