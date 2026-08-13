@@ -127,17 +127,17 @@ extends ICFSecProtSchema
 		final static ArrayList<ICFSecProtSchema.ClassMapEntry> entries = new ArrayList<>();
 		final static HashMap<Integer,ICFSecProtSchema.ClassMapEntry> mapBackingClassCodeToEntry = new HashMap<>();
 		final static HashMap<Integer,ICFSecProtSchema.ClassMapEntry> mapRuntimeClassCodeToEntry = new HashMap<>();
-		final static AtomicReference<ICFIntProtSchema> backingCFIntProtSchema = new AtomicReference<>();
-		public static ICFIntProtSchema getBackingCFIntProtSchema() {
-			return( ICFIntProtSchema.backingCFIntProtSchema.get() );
+		final static AtomicReference<ICFIntProtSchema> backingCFInt = new AtomicReference<>();
+		public static ICFIntProtSchema getBackingCFInt() {
+			return( ICFIntProtSchema.backingCFInt.get() );
 		}
 		
-		public static void setBackingCFIntProtSchema(ICFIntProtSchema backingSchema) {
-			ICFIntProtSchema.backingCFIntProtSchema.set(backingSchema);
+		public static void setBackingCFInt(ICFIntProtSchema backingSchema) {
+			ICFIntProtSchema.backingCFInt.set(backingSchema);
 		}
 		
-		public ICFIntProtSchema getCFIntProtSchema();
-		public void setCFIntProtSchema(ICFIntProtSchema schema);
+		public ICFIntProtSchema getCFIntSchema();
+		public void setCFIntSchema(ICFIntProtSchema schema);
 		
 		public static int doInitClassMapEntries(int value) {
 			value = ICFSecProtSchema.doInitClassMapEntries(value);
