@@ -60,8 +60,8 @@ public interface ICFIntProtLicense
 
 	public int getClassCode();
 
-	public CFLibDbKeyHash256 getPKey();
-	public void setPKey(CFLibDbKeyHash256 requiredId);
+	public ICFLibKeyHash256 getPKey();
+	public void setPKey(ICFLibKeyHash256 requiredId);
 	public CFLibDbKeyHash256 getRequiredId();
 	public void setRequiredId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
@@ -69,13 +69,13 @@ public interface ICFIntProtLicense
 
 	public ICFSecPubTenant getRequiredOwnerTenant();
 
-	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId);
+	public void setRequiredOwnerTenant(ICFLibKeyHash256 argTenantId);
 
 	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
 
 	public ICFIntProtTopDomain getRequiredContainerTopDomain();
 
-	public void setRequiredContainerTopDomain(CFLibDbKeyHash256 argTopDomainId);
+	public void setRequiredContainerTopDomain(ICFLibKeyHash256 argTopDomainId);
 
 
 	public void setRequiredContainerTopDomain(ICFIntProtTopDomain argObj);

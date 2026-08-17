@@ -78,8 +78,8 @@ public interface ICFIntProtTopProject
 
 	public void setUpdatedAt( LocalDateTime value );
 
-	public CFLibDbKeyHash256 getPKey();
-	public void setPKey(CFLibDbKeyHash256 requiredId);
+	public ICFLibKeyHash256 getPKey();
+	public void setPKey(ICFLibKeyHash256 requiredId);
 	public List<ICFIntProtSubProject> getOptionalComponentsSubProject();
 
 	public CFLibDbKeyHash256 getRequiredId();
@@ -89,13 +89,13 @@ public interface ICFIntProtTopProject
 
 	public ICFSecPubTenant getRequiredOwnerTenant();
 
-	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId);
+	public void setRequiredOwnerTenant(ICFLibKeyHash256 argTenantId);
 
 	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
 
 	public ICFIntProtTopDomain getRequiredContainerParentSDom();
 
-	public void setRequiredContainerParentSDom(CFLibDbKeyHash256 argTopDomainId);
+	public void setRequiredContainerParentSDom(ICFLibKeyHash256 argTopDomainId);
 
 
 	public void setRequiredContainerParentSDom(ICFIntProtTopDomain argObj);
