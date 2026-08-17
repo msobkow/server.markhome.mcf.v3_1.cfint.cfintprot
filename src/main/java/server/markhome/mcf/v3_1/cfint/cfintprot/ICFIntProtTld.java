@@ -81,8 +81,8 @@ public interface ICFIntProtTld
 	public void setPKey(ICFLibKeyHash256 requiredId);
 	public List<ICFIntProtTopDomain> getOptionalComponentsTopDomain();
 
-	public CFLibDbKeyHash256 getRequiredId();
-	public void setRequiredId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredId();
+	public void setRequiredId( ICFLibKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
@@ -92,8 +92,8 @@ public interface ICFIntProtTld
 
 	public void setRequiredContainerTenant(ICFSecPubTenant argObj);
 
-	public CFLibDbKeyHash256 getRequiredTenantId();
-	public void setRequiredTenantId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredTenantId();
+	public void setRequiredTenantId( ICFLibKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalDescription();

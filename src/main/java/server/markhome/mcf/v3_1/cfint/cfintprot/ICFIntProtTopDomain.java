@@ -85,8 +85,8 @@ public interface ICFIntProtTopDomain
 
 	public List<ICFIntProtLicense> getOptionalComponentsLicense();
 
-	public CFLibDbKeyHash256 getRequiredId();
-	public void setRequiredId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredId();
+	public void setRequiredId( ICFLibKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
@@ -105,10 +105,10 @@ public interface ICFIntProtTopDomain
 
 	public void setRequiredContainerParentTld(ICFIntPubTld argObj);
 
-	public CFLibDbKeyHash256 getRequiredTenantId();
-	public void setRequiredTenantId( CFLibDbKeyHash256 value );
-	public CFLibDbKeyHash256 getRequiredTldId();
-	public void setRequiredTldId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredTenantId();
+	public void setRequiredTenantId( ICFLibKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredTldId();
+	public void setRequiredTldId( ICFLibKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalDescription();

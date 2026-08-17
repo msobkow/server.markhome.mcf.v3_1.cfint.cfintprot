@@ -46,8 +46,8 @@ import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
  */
 public interface ICFIntProtTopProjectByTopDomainIdxKey
 {
-	public CFLibDbKeyHash256 getRequiredTopDomainId();
-	public void setRequiredTopDomainId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredTopDomainId();
+	public void setRequiredTopDomainId( ICFLibKeyHash256 value );
 	@Override
 	public boolean equals( Object obj );
 

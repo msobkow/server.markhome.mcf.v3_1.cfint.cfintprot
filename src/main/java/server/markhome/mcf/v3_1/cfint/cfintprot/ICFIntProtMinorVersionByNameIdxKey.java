@@ -46,8 +46,8 @@ import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
  */
 public interface ICFIntProtMinorVersionByNameIdxKey
 {
-	public CFLibDbKeyHash256 getRequiredMajorVersionId();
-	public void setRequiredMajorVersionId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredMajorVersionId();
+	public void setRequiredMajorVersionId( ICFLibKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	@Override
