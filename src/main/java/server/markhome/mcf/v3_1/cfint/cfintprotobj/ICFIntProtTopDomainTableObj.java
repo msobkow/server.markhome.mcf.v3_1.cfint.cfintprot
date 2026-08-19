@@ -149,7 +149,7 @@ public interface ICFIntProtTopDomainTableObj
 	 *	@return	ICFIntProtTopDomainObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntProtTopDomainObj readTopDomainByIdIdx( CFLibDbKeyHash256 Id );
+	ICFIntProtTopDomainObj readTopDomainByIdIdx( ICFLibKeyHash256 Id );
 
 	/**
 	 *	Get the ICFIntProtTopDomainObj instance for the primary key attributes.
@@ -159,7 +159,7 @@ public interface ICFIntProtTopDomainTableObj
 	 *	@return	ICFIntProtTopDomainObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntProtTopDomainObj readTopDomainByIdIdx( CFLibDbKeyHash256 Id,
+	ICFIntProtTopDomainObj readTopDomainByIdIdx( ICFLibKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -170,7 +170,7 @@ public interface ICFIntProtTopDomainTableObj
 	 *	@return	List of List<ICFIntProtTopDomainObj> cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFIntProtTopDomainObj> readTopDomainByTenantIdx( CFLibDbKeyHash256 TenantId );
+	List<ICFIntProtTopDomainObj> readTopDomainByTenantIdx( ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Get the map of List<ICFIntProtTopDomainObj> instances sorted by their primary keys for the duplicate TenantIdx key.
@@ -180,7 +180,7 @@ public interface ICFIntProtTopDomainTableObj
 	 *	@return	List of List<ICFIntProtTopDomainObj> cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFIntProtTopDomainObj> readTopDomainByTenantIdx( CFLibDbKeyHash256 TenantId,
+	List<ICFIntProtTopDomainObj> readTopDomainByTenantIdx( ICFLibKeyHash256 TenantId,
 		boolean forceRead );
 
 	/**
@@ -191,7 +191,7 @@ public interface ICFIntProtTopDomainTableObj
 	 *	@return	List of List<ICFIntProtTopDomainObj> cached instances sorted by their primary keys for the duplicate TldIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFIntProtTopDomainObj> readTopDomainByTldIdx( CFLibDbKeyHash256 TldId );
+	List<ICFIntProtTopDomainObj> readTopDomainByTldIdx( ICFLibKeyHash256 TldId );
 
 	/**
 	 *	Get the map of List<ICFIntProtTopDomainObj> instances sorted by their primary keys for the duplicate TldIdx key.
@@ -201,7 +201,7 @@ public interface ICFIntProtTopDomainTableObj
 	 *	@return	List of List<ICFIntProtTopDomainObj> cached instances sorted by their primary keys for the duplicate TldIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFIntProtTopDomainObj> readTopDomainByTldIdx( CFLibDbKeyHash256 TldId,
+	List<ICFIntProtTopDomainObj> readTopDomainByTldIdx( ICFLibKeyHash256 TldId,
 		boolean forceRead );
 
 	/**
@@ -214,7 +214,7 @@ public interface ICFIntProtTopDomainTableObj
 	 *	@return	ICFIntProtTopDomainObj cached instance for the unique NameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntProtTopDomainObj readTopDomainByNameIdx(CFLibDbKeyHash256 TldId,
+	ICFIntProtTopDomainObj readTopDomainByNameIdx(ICFLibKeyHash256 TldId,
 		String Name );
 
 	/**
@@ -227,26 +227,26 @@ public interface ICFIntProtTopDomainTableObj
 	 *	@return	ICFIntProtTopDomainObj refreshed instance for the unique NameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntProtTopDomainObj readTopDomainByNameIdx(CFLibDbKeyHash256 TldId,
+	ICFIntProtTopDomainObj readTopDomainByNameIdx(ICFLibKeyHash256 TldId,
 		String Name,
 		boolean forceRead );
 
-	ICFIntProtTopDomainObj readCachedTopDomainByIdIdx( CFLibDbKeyHash256 Id );
+	ICFIntProtTopDomainObj readCachedTopDomainByIdIdx( ICFLibKeyHash256 Id );
 
-	List<List<ICFIntProtTopDomainObj>> readCachedTopDomainByTenantIdx( CFLibDbKeyHash256 TenantId );
+	List<List<ICFIntProtTopDomainObj>> readCachedTopDomainByTenantIdx( ICFLibKeyHash256 TenantId );
 
-	List<List<ICFIntProtTopDomainObj>> readCachedTopDomainByTldIdx( CFLibDbKeyHash256 TldId );
+	List<List<ICFIntProtTopDomainObj>> readCachedTopDomainByTldIdx( ICFLibKeyHash256 TldId );
 
-	ICFIntProtTopDomainObj readCachedTopDomainByNameIdx( CFLibDbKeyHash256 TldId,
+	ICFIntProtTopDomainObj readCachedTopDomainByNameIdx( ICFLibKeyHash256 TldId,
 		String Name );
 
-	void deepDisposeTopDomainByIdIdx( CFLibDbKeyHash256 Id );
+	void deepDisposeTopDomainByIdIdx( ICFLibKeyHash256 Id );
 
-	void deepDisposeTopDomainByTenantIdx( CFLibDbKeyHash256 TenantId );
+	void deepDisposeTopDomainByTenantIdx( ICFLibKeyHash256 TenantId );
 
-	void deepDisposeTopDomainByTldIdx( CFLibDbKeyHash256 TldId );
+	void deepDisposeTopDomainByTldIdx( ICFLibKeyHash256 TldId );
 
-	void deepDisposeTopDomainByNameIdx( CFLibDbKeyHash256 TldId,
+	void deepDisposeTopDomainByNameIdx( ICFLibKeyHash256 TldId,
 		String Name );
 
 	/**
@@ -264,21 +264,21 @@ public interface ICFIntProtTopDomainTableObj
 	 *
 	 *	@param	Id	The TopDomain key attribute of the instance generating the id.
 	 */
-	void deleteTopDomainByIdIdx( CFLibDbKeyHash256 Id );
+	void deleteTopDomainByIdIdx( ICFLibKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	TenantId	The TopDomain key attribute of the instance generating the id.
 	 */
-	void deleteTopDomainByTenantIdx( CFLibDbKeyHash256 TenantId );
+	void deleteTopDomainByTenantIdx( ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	TldId	The TopDomain key attribute of the instance generating the id.
 	 */
-	void deleteTopDomainByTldIdx( CFLibDbKeyHash256 TldId );
+	void deleteTopDomainByTldIdx( ICFLibKeyHash256 TldId );
 
 	/**
 	 *	Internal use only.
@@ -287,6 +287,6 @@ public interface ICFIntProtTopDomainTableObj
 	 *
 	 *	@param	Name	The TopDomain key attribute of the instance generating the id.
 	 */
-	void deleteTopDomainByNameIdx(CFLibDbKeyHash256 TldId,
+	void deleteTopDomainByNameIdx(ICFLibKeyHash256 TldId,
 		String Name );
 }

@@ -124,7 +124,7 @@ extends ICFIntPubTopProjectTable
 	 *	@param	TenantId	The TopProject key attribute of the instance generating the id.
 	 */
 	public void protdeleteTopProjectByTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argTenantId );
+		ICFLibKeyHash256 argTenantId );
 
 	/**
 	 *	Delete the TopProject instances identified by the key TenantIdx.
@@ -152,7 +152,7 @@ extends ICFIntPubTopProjectTable
 	 *	@param	TopDomainId	The TopProject key attribute of the instance generating the id.
 	 */
 	public void protdeleteTopProjectByTopDomainIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argTopDomainId );
+		ICFLibKeyHash256 argTopDomainId );
 
 	/**
 	 *	Delete the TopProject instances identified by the key TopDomainIdx.
@@ -182,7 +182,7 @@ extends ICFIntPubTopProjectTable
 	 *	@param	Name	The TopProject key attribute of the instance generating the id.
 	 */
 	public void protdeleteTopProjectByNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argTopDomainId,
+		ICFLibKeyHash256 argTopDomainId,
 		String argName );
 
 	/**
@@ -261,7 +261,7 @@ extends ICFIntPubTopProjectTable
 	 *		no such existing key value.
 	 */
 	public ICFIntProtTopProject protreadDerivedByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read an array of the derived TopProject record instances identified by the duplicate key TenantIdx.
@@ -273,7 +273,7 @@ extends ICFIntPubTopProjectTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFIntProtTopProject[] protreadDerivedByTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the derived TopProject record instances identified by the duplicate key TopDomainIdx.
@@ -285,7 +285,7 @@ extends ICFIntPubTopProjectTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFIntProtTopProject[] protreadDerivedByTopDomainIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TopDomainId );
+		ICFLibKeyHash256 TopDomainId );
 
 	/**
 	 *	Read the derived TopProject record instance identified by the unique key NameIdx.
@@ -300,7 +300,7 @@ extends ICFIntPubTopProjectTable
 	 *		no such existing key value.
 	 */
 	public ICFIntProtTopProject protreadDerivedByNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TopDomainId,
+		ICFLibKeyHash256 TopDomainId,
 		String Name );
 
 	/**
@@ -355,7 +355,7 @@ extends ICFIntPubTopProjectTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFIntProtTopProject protreadRecByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read an array of the specific TopProject record instances identified by the duplicate key TenantIdx.
@@ -369,7 +369,7 @@ extends ICFIntPubTopProjectTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFIntProtTopProject[] protreadRecByTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the specific TopProject record instances identified by the duplicate key TopDomainIdx.
@@ -383,7 +383,7 @@ extends ICFIntPubTopProjectTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFIntProtTopProject[] protreadRecByTopDomainIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TopDomainId );
+		ICFLibKeyHash256 TopDomainId );
 
 	/**
 	 *	Read the specific TopProject record instance identified by the unique key NameIdx.
@@ -400,6 +400,6 @@ extends ICFIntPubTopProjectTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFIntProtTopProject protreadRecByNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TopDomainId,
+		ICFLibKeyHash256 TopDomainId,
 		String Name );
 }

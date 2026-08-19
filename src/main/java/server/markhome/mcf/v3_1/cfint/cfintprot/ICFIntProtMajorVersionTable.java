@@ -124,7 +124,7 @@ extends ICFIntPubMajorVersionTable
 	 *	@param	TenantId	The MajorVersion key attribute of the instance generating the id.
 	 */
 	public void protdeleteMajorVersionByTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argTenantId );
+		ICFLibKeyHash256 argTenantId );
 
 	/**
 	 *	Delete the MajorVersion instances identified by the key TenantIdx.
@@ -152,7 +152,7 @@ extends ICFIntPubMajorVersionTable
 	 *	@param	SubProjectId	The MajorVersion key attribute of the instance generating the id.
 	 */
 	public void protdeleteMajorVersionBySubProjectIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argSubProjectId );
+		ICFLibKeyHash256 argSubProjectId );
 
 	/**
 	 *	Delete the MajorVersion instances identified by the key SubProjectIdx.
@@ -182,7 +182,7 @@ extends ICFIntPubMajorVersionTable
 	 *	@param	Name	The MajorVersion key attribute of the instance generating the id.
 	 */
 	public void protdeleteMajorVersionByNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argSubProjectId,
+		ICFLibKeyHash256 argSubProjectId,
 		String argName );
 
 	/**
@@ -261,7 +261,7 @@ extends ICFIntPubMajorVersionTable
 	 *		no such existing key value.
 	 */
 	public ICFIntProtMajorVersion protreadDerivedByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read an array of the derived MajorVersion record instances identified by the duplicate key TenantIdx.
@@ -273,7 +273,7 @@ extends ICFIntPubMajorVersionTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFIntProtMajorVersion[] protreadDerivedByTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the derived MajorVersion record instances identified by the duplicate key SubProjectIdx.
@@ -285,7 +285,7 @@ extends ICFIntPubMajorVersionTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFIntProtMajorVersion[] protreadDerivedBySubProjectIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 SubProjectId );
+		ICFLibKeyHash256 SubProjectId );
 
 	/**
 	 *	Read the derived MajorVersion record instance identified by the unique key NameIdx.
@@ -300,7 +300,7 @@ extends ICFIntPubMajorVersionTable
 	 *		no such existing key value.
 	 */
 	public ICFIntProtMajorVersion protreadDerivedByNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 SubProjectId,
+		ICFLibKeyHash256 SubProjectId,
 		String Name );
 
 	/**
@@ -355,7 +355,7 @@ extends ICFIntPubMajorVersionTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFIntProtMajorVersion protreadRecByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read an array of the specific MajorVersion record instances identified by the duplicate key TenantIdx.
@@ -369,7 +369,7 @@ extends ICFIntPubMajorVersionTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFIntProtMajorVersion[] protreadRecByTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the specific MajorVersion record instances identified by the duplicate key SubProjectIdx.
@@ -383,7 +383,7 @@ extends ICFIntPubMajorVersionTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFIntProtMajorVersion[] protreadRecBySubProjectIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 SubProjectId );
+		ICFLibKeyHash256 SubProjectId );
 
 	/**
 	 *	Read the specific MajorVersion record instance identified by the unique key NameIdx.
@@ -400,6 +400,6 @@ extends ICFIntPubMajorVersionTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFIntProtMajorVersion protreadRecByNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 SubProjectId,
+		ICFLibKeyHash256 SubProjectId,
 		String Name );
 }

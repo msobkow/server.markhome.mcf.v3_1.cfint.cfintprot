@@ -124,7 +124,7 @@ extends ICFIntPubTldTable
 	 *	@param	TenantId	The Tld key attribute of the instance generating the id.
 	 */
 	public void protdeleteTldByTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argTenantId );
+		ICFLibKeyHash256 argTenantId );
 
 	/**
 	 *	Delete the Tld instances identified by the key TenantIdx.
@@ -230,7 +230,7 @@ extends ICFIntPubTldTable
 	 *		no such existing key value.
 	 */
 	public ICFIntProtTld protreadDerivedByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read an array of the derived Tld record instances identified by the duplicate key TenantIdx.
@@ -242,7 +242,7 @@ extends ICFIntPubTldTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFIntProtTld[] protreadDerivedByTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Read the derived Tld record instance identified by the unique key NameIdx.
@@ -309,7 +309,7 @@ extends ICFIntPubTldTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFIntProtTld protreadRecByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read an array of the specific Tld record instances identified by the duplicate key TenantIdx.
@@ -323,7 +323,7 @@ extends ICFIntPubTldTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFIntProtTld[] protreadRecByTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Read the specific Tld record instance identified by the unique key NameIdx.

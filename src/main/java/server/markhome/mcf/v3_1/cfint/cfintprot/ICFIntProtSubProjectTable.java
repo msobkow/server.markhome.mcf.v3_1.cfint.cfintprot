@@ -124,7 +124,7 @@ extends ICFIntPubSubProjectTable
 	 *	@param	TenantId	The SubProject key attribute of the instance generating the id.
 	 */
 	public void protdeleteSubProjectByTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argTenantId );
+		ICFLibKeyHash256 argTenantId );
 
 	/**
 	 *	Delete the SubProject instances identified by the key TenantIdx.
@@ -152,7 +152,7 @@ extends ICFIntPubSubProjectTable
 	 *	@param	TopProjectId	The SubProject key attribute of the instance generating the id.
 	 */
 	public void protdeleteSubProjectByTopProjectIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argTopProjectId );
+		ICFLibKeyHash256 argTopProjectId );
 
 	/**
 	 *	Delete the SubProject instances identified by the key TopProjectIdx.
@@ -182,7 +182,7 @@ extends ICFIntPubSubProjectTable
 	 *	@param	Name	The SubProject key attribute of the instance generating the id.
 	 */
 	public void protdeleteSubProjectByNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argTopProjectId,
+		ICFLibKeyHash256 argTopProjectId,
 		String argName );
 
 	/**
@@ -261,7 +261,7 @@ extends ICFIntPubSubProjectTable
 	 *		no such existing key value.
 	 */
 	public ICFIntProtSubProject protreadDerivedByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read an array of the derived SubProject record instances identified by the duplicate key TenantIdx.
@@ -273,7 +273,7 @@ extends ICFIntPubSubProjectTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFIntProtSubProject[] protreadDerivedByTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the derived SubProject record instances identified by the duplicate key TopProjectIdx.
@@ -285,7 +285,7 @@ extends ICFIntPubSubProjectTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFIntProtSubProject[] protreadDerivedByTopProjectIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TopProjectId );
+		ICFLibKeyHash256 TopProjectId );
 
 	/**
 	 *	Read the derived SubProject record instance identified by the unique key NameIdx.
@@ -300,7 +300,7 @@ extends ICFIntPubSubProjectTable
 	 *		no such existing key value.
 	 */
 	public ICFIntProtSubProject protreadDerivedByNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TopProjectId,
+		ICFLibKeyHash256 TopProjectId,
 		String Name );
 
 	/**
@@ -355,7 +355,7 @@ extends ICFIntPubSubProjectTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFIntProtSubProject protreadRecByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read an array of the specific SubProject record instances identified by the duplicate key TenantIdx.
@@ -369,7 +369,7 @@ extends ICFIntPubSubProjectTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFIntProtSubProject[] protreadRecByTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the specific SubProject record instances identified by the duplicate key TopProjectIdx.
@@ -383,7 +383,7 @@ extends ICFIntPubSubProjectTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFIntProtSubProject[] protreadRecByTopProjectIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TopProjectId );
+		ICFLibKeyHash256 TopProjectId );
 
 	/**
 	 *	Read the specific SubProject record instance identified by the unique key NameIdx.
@@ -400,6 +400,6 @@ extends ICFIntPubSubProjectTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFIntProtSubProject protreadRecByNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TopProjectId,
+		ICFLibKeyHash256 TopProjectId,
 		String Name );
 }

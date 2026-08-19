@@ -124,7 +124,7 @@ extends ICFIntPubLicenseTable
 	 *	@param	TenantId	The License key attribute of the instance generating the id.
 	 */
 	public void protdeleteLicenseByLicnTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argTenantId );
+		ICFLibKeyHash256 argTenantId );
 
 	/**
 	 *	Delete the License instances identified by the key LicnTenantIdx.
@@ -152,7 +152,7 @@ extends ICFIntPubLicenseTable
 	 *	@param	TopDomainId	The License key attribute of the instance generating the id.
 	 */
 	public void protdeleteLicenseByDomainIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argTopDomainId );
+		ICFLibKeyHash256 argTopDomainId );
 
 	/**
 	 *	Delete the License instances identified by the key DomainIdx.
@@ -182,7 +182,7 @@ extends ICFIntPubLicenseTable
 	 *	@param	Name	The License key attribute of the instance generating the id.
 	 */
 	public void protdeleteLicenseByUNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argTopDomainId,
+		ICFLibKeyHash256 argTopDomainId,
 		String argName );
 
 	/**
@@ -261,7 +261,7 @@ extends ICFIntPubLicenseTable
 	 *		no such existing key value.
 	 */
 	public ICFIntProtLicense protreadDerivedByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read an array of the derived License record instances identified by the duplicate key LicnTenantIdx.
@@ -273,7 +273,7 @@ extends ICFIntPubLicenseTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFIntProtLicense[] protreadDerivedByLicnTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the derived License record instances identified by the duplicate key DomainIdx.
@@ -285,7 +285,7 @@ extends ICFIntPubLicenseTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFIntProtLicense[] protreadDerivedByDomainIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TopDomainId );
+		ICFLibKeyHash256 TopDomainId );
 
 	/**
 	 *	Read the derived License record instance identified by the unique key UNameIdx.
@@ -300,7 +300,7 @@ extends ICFIntPubLicenseTable
 	 *		no such existing key value.
 	 */
 	public ICFIntProtLicense protreadDerivedByUNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TopDomainId,
+		ICFLibKeyHash256 TopDomainId,
 		String Name );
 
 	/**
@@ -355,7 +355,7 @@ extends ICFIntPubLicenseTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFIntProtLicense protreadRecByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read an array of the specific License record instances identified by the duplicate key LicnTenantIdx.
@@ -369,7 +369,7 @@ extends ICFIntPubLicenseTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFIntProtLicense[] protreadRecByLicnTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the specific License record instances identified by the duplicate key DomainIdx.
@@ -383,7 +383,7 @@ extends ICFIntPubLicenseTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFIntProtLicense[] protreadRecByDomainIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TopDomainId );
+		ICFLibKeyHash256 TopDomainId );
 
 	/**
 	 *	Read the specific License record instance identified by the unique key UNameIdx.
@@ -400,6 +400,6 @@ extends ICFIntPubLicenseTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFIntProtLicense protreadRecByUNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TopDomainId,
+		ICFLibKeyHash256 TopDomainId,
 		String Name );
 }

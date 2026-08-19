@@ -124,7 +124,7 @@ extends ICFIntPubTopDomainTable
 	 *	@param	TenantId	The TopDomain key attribute of the instance generating the id.
 	 */
 	public void protdeleteTopDomainByTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argTenantId );
+		ICFLibKeyHash256 argTenantId );
 
 	/**
 	 *	Delete the TopDomain instances identified by the key TenantIdx.
@@ -152,7 +152,7 @@ extends ICFIntPubTopDomainTable
 	 *	@param	TldId	The TopDomain key attribute of the instance generating the id.
 	 */
 	public void protdeleteTopDomainByTldIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argTldId );
+		ICFLibKeyHash256 argTldId );
 
 	/**
 	 *	Delete the TopDomain instances identified by the key TldIdx.
@@ -182,7 +182,7 @@ extends ICFIntPubTopDomainTable
 	 *	@param	Name	The TopDomain key attribute of the instance generating the id.
 	 */
 	public void protdeleteTopDomainByNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argTldId,
+		ICFLibKeyHash256 argTldId,
 		String argName );
 
 	/**
@@ -261,7 +261,7 @@ extends ICFIntPubTopDomainTable
 	 *		no such existing key value.
 	 */
 	public ICFIntProtTopDomain protreadDerivedByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read an array of the derived TopDomain record instances identified by the duplicate key TenantIdx.
@@ -273,7 +273,7 @@ extends ICFIntPubTopDomainTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFIntProtTopDomain[] protreadDerivedByTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the derived TopDomain record instances identified by the duplicate key TldIdx.
@@ -285,7 +285,7 @@ extends ICFIntPubTopDomainTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFIntProtTopDomain[] protreadDerivedByTldIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TldId );
+		ICFLibKeyHash256 TldId );
 
 	/**
 	 *	Read the derived TopDomain record instance identified by the unique key NameIdx.
@@ -300,7 +300,7 @@ extends ICFIntPubTopDomainTable
 	 *		no such existing key value.
 	 */
 	public ICFIntProtTopDomain protreadDerivedByNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TldId,
+		ICFLibKeyHash256 TldId,
 		String Name );
 
 	/**
@@ -355,7 +355,7 @@ extends ICFIntPubTopDomainTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFIntProtTopDomain protreadRecByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read an array of the specific TopDomain record instances identified by the duplicate key TenantIdx.
@@ -369,7 +369,7 @@ extends ICFIntPubTopDomainTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFIntProtTopDomain[] protreadRecByTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the specific TopDomain record instances identified by the duplicate key TldIdx.
@@ -383,7 +383,7 @@ extends ICFIntPubTopDomainTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFIntProtTopDomain[] protreadRecByTldIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TldId );
+		ICFLibKeyHash256 TldId );
 
 	/**
 	 *	Read the specific TopDomain record instance identified by the unique key NameIdx.
@@ -400,6 +400,6 @@ extends ICFIntPubTopDomainTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFIntProtTopDomain protreadRecByNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TldId,
+		ICFLibKeyHash256 TldId,
 		String Name );
 }

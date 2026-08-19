@@ -149,7 +149,7 @@ public interface ICFIntProtMinorVersionTableObj
 	 *	@return	ICFIntProtMinorVersionObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntProtMinorVersionObj readMinorVersionByIdIdx( CFLibDbKeyHash256 Id );
+	ICFIntProtMinorVersionObj readMinorVersionByIdIdx( ICFLibKeyHash256 Id );
 
 	/**
 	 *	Get the ICFIntProtMinorVersionObj instance for the primary key attributes.
@@ -159,7 +159,7 @@ public interface ICFIntProtMinorVersionTableObj
 	 *	@return	ICFIntProtMinorVersionObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntProtMinorVersionObj readMinorVersionByIdIdx( CFLibDbKeyHash256 Id,
+	ICFIntProtMinorVersionObj readMinorVersionByIdIdx( ICFLibKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -170,7 +170,7 @@ public interface ICFIntProtMinorVersionTableObj
 	 *	@return	List of List<ICFIntProtMinorVersionObj> cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFIntProtMinorVersionObj> readMinorVersionByTenantIdx( CFLibDbKeyHash256 TenantId );
+	List<ICFIntProtMinorVersionObj> readMinorVersionByTenantIdx( ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Get the map of List<ICFIntProtMinorVersionObj> instances sorted by their primary keys for the duplicate TenantIdx key.
@@ -180,7 +180,7 @@ public interface ICFIntProtMinorVersionTableObj
 	 *	@return	List of List<ICFIntProtMinorVersionObj> cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFIntProtMinorVersionObj> readMinorVersionByTenantIdx( CFLibDbKeyHash256 TenantId,
+	List<ICFIntProtMinorVersionObj> readMinorVersionByTenantIdx( ICFLibKeyHash256 TenantId,
 		boolean forceRead );
 
 	/**
@@ -191,7 +191,7 @@ public interface ICFIntProtMinorVersionTableObj
 	 *	@return	List of List<ICFIntProtMinorVersionObj> cached instances sorted by their primary keys for the duplicate MajorVerIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFIntProtMinorVersionObj> readMinorVersionByMajorVerIdx( CFLibDbKeyHash256 MajorVersionId );
+	List<ICFIntProtMinorVersionObj> readMinorVersionByMajorVerIdx( ICFLibKeyHash256 MajorVersionId );
 
 	/**
 	 *	Get the map of List<ICFIntProtMinorVersionObj> instances sorted by their primary keys for the duplicate MajorVerIdx key.
@@ -201,7 +201,7 @@ public interface ICFIntProtMinorVersionTableObj
 	 *	@return	List of List<ICFIntProtMinorVersionObj> cached instances sorted by their primary keys for the duplicate MajorVerIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFIntProtMinorVersionObj> readMinorVersionByMajorVerIdx( CFLibDbKeyHash256 MajorVersionId,
+	List<ICFIntProtMinorVersionObj> readMinorVersionByMajorVerIdx( ICFLibKeyHash256 MajorVersionId,
 		boolean forceRead );
 
 	/**
@@ -214,7 +214,7 @@ public interface ICFIntProtMinorVersionTableObj
 	 *	@return	ICFIntProtMinorVersionObj cached instance for the unique NameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntProtMinorVersionObj readMinorVersionByNameIdx(CFLibDbKeyHash256 MajorVersionId,
+	ICFIntProtMinorVersionObj readMinorVersionByNameIdx(ICFLibKeyHash256 MajorVersionId,
 		String Name );
 
 	/**
@@ -227,26 +227,26 @@ public interface ICFIntProtMinorVersionTableObj
 	 *	@return	ICFIntProtMinorVersionObj refreshed instance for the unique NameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntProtMinorVersionObj readMinorVersionByNameIdx(CFLibDbKeyHash256 MajorVersionId,
+	ICFIntProtMinorVersionObj readMinorVersionByNameIdx(ICFLibKeyHash256 MajorVersionId,
 		String Name,
 		boolean forceRead );
 
-	ICFIntProtMinorVersionObj readCachedMinorVersionByIdIdx( CFLibDbKeyHash256 Id );
+	ICFIntProtMinorVersionObj readCachedMinorVersionByIdIdx( ICFLibKeyHash256 Id );
 
-	List<List<ICFIntProtMinorVersionObj>> readCachedMinorVersionByTenantIdx( CFLibDbKeyHash256 TenantId );
+	List<List<ICFIntProtMinorVersionObj>> readCachedMinorVersionByTenantIdx( ICFLibKeyHash256 TenantId );
 
-	List<List<ICFIntProtMinorVersionObj>> readCachedMinorVersionByMajorVerIdx( CFLibDbKeyHash256 MajorVersionId );
+	List<List<ICFIntProtMinorVersionObj>> readCachedMinorVersionByMajorVerIdx( ICFLibKeyHash256 MajorVersionId );
 
-	ICFIntProtMinorVersionObj readCachedMinorVersionByNameIdx( CFLibDbKeyHash256 MajorVersionId,
+	ICFIntProtMinorVersionObj readCachedMinorVersionByNameIdx( ICFLibKeyHash256 MajorVersionId,
 		String Name );
 
-	void deepDisposeMinorVersionByIdIdx( CFLibDbKeyHash256 Id );
+	void deepDisposeMinorVersionByIdIdx( ICFLibKeyHash256 Id );
 
-	void deepDisposeMinorVersionByTenantIdx( CFLibDbKeyHash256 TenantId );
+	void deepDisposeMinorVersionByTenantIdx( ICFLibKeyHash256 TenantId );
 
-	void deepDisposeMinorVersionByMajorVerIdx( CFLibDbKeyHash256 MajorVersionId );
+	void deepDisposeMinorVersionByMajorVerIdx( ICFLibKeyHash256 MajorVersionId );
 
-	void deepDisposeMinorVersionByNameIdx( CFLibDbKeyHash256 MajorVersionId,
+	void deepDisposeMinorVersionByNameIdx( ICFLibKeyHash256 MajorVersionId,
 		String Name );
 
 	/**
@@ -264,21 +264,21 @@ public interface ICFIntProtMinorVersionTableObj
 	 *
 	 *	@param	Id	The MinorVersion key attribute of the instance generating the id.
 	 */
-	void deleteMinorVersionByIdIdx( CFLibDbKeyHash256 Id );
+	void deleteMinorVersionByIdIdx( ICFLibKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	TenantId	The MinorVersion key attribute of the instance generating the id.
 	 */
-	void deleteMinorVersionByTenantIdx( CFLibDbKeyHash256 TenantId );
+	void deleteMinorVersionByTenantIdx( ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	MajorVersionId	The MinorVersion key attribute of the instance generating the id.
 	 */
-	void deleteMinorVersionByMajorVerIdx( CFLibDbKeyHash256 MajorVersionId );
+	void deleteMinorVersionByMajorVerIdx( ICFLibKeyHash256 MajorVersionId );
 
 	/**
 	 *	Internal use only.
@@ -287,6 +287,6 @@ public interface ICFIntProtMinorVersionTableObj
 	 *
 	 *	@param	Name	The MinorVersion key attribute of the instance generating the id.
 	 */
-	void deleteMinorVersionByNameIdx(CFLibDbKeyHash256 MajorVersionId,
+	void deleteMinorVersionByNameIdx(ICFLibKeyHash256 MajorVersionId,
 		String Name );
 }

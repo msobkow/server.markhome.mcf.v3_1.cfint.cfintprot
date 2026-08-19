@@ -124,7 +124,7 @@ extends ICFIntPubMinorVersionTable
 	 *	@param	TenantId	The MinorVersion key attribute of the instance generating the id.
 	 */
 	public void protdeleteMinorVersionByTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argTenantId );
+		ICFLibKeyHash256 argTenantId );
 
 	/**
 	 *	Delete the MinorVersion instances identified by the key TenantIdx.
@@ -152,7 +152,7 @@ extends ICFIntPubMinorVersionTable
 	 *	@param	MajorVersionId	The MinorVersion key attribute of the instance generating the id.
 	 */
 	public void protdeleteMinorVersionByMajorVerIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argMajorVersionId );
+		ICFLibKeyHash256 argMajorVersionId );
 
 	/**
 	 *	Delete the MinorVersion instances identified by the key MajorVerIdx.
@@ -182,7 +182,7 @@ extends ICFIntPubMinorVersionTable
 	 *	@param	Name	The MinorVersion key attribute of the instance generating the id.
 	 */
 	public void protdeleteMinorVersionByNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argMajorVersionId,
+		ICFLibKeyHash256 argMajorVersionId,
 		String argName );
 
 	/**
@@ -261,7 +261,7 @@ extends ICFIntPubMinorVersionTable
 	 *		no such existing key value.
 	 */
 	public ICFIntProtMinorVersion protreadDerivedByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read an array of the derived MinorVersion record instances identified by the duplicate key TenantIdx.
@@ -273,7 +273,7 @@ extends ICFIntPubMinorVersionTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFIntProtMinorVersion[] protreadDerivedByTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the derived MinorVersion record instances identified by the duplicate key MajorVerIdx.
@@ -285,7 +285,7 @@ extends ICFIntPubMinorVersionTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFIntProtMinorVersion[] protreadDerivedByMajorVerIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 MajorVersionId );
+		ICFLibKeyHash256 MajorVersionId );
 
 	/**
 	 *	Read the derived MinorVersion record instance identified by the unique key NameIdx.
@@ -300,7 +300,7 @@ extends ICFIntPubMinorVersionTable
 	 *		no such existing key value.
 	 */
 	public ICFIntProtMinorVersion protreadDerivedByNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 MajorVersionId,
+		ICFLibKeyHash256 MajorVersionId,
 		String Name );
 
 	/**
@@ -355,7 +355,7 @@ extends ICFIntPubMinorVersionTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFIntProtMinorVersion protreadRecByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read an array of the specific MinorVersion record instances identified by the duplicate key TenantIdx.
@@ -369,7 +369,7 @@ extends ICFIntPubMinorVersionTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFIntProtMinorVersion[] protreadRecByTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the specific MinorVersion record instances identified by the duplicate key MajorVerIdx.
@@ -383,7 +383,7 @@ extends ICFIntPubMinorVersionTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFIntProtMinorVersion[] protreadRecByMajorVerIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 MajorVersionId );
+		ICFLibKeyHash256 MajorVersionId );
 
 	/**
 	 *	Read the specific MinorVersion record instance identified by the unique key NameIdx.
@@ -400,6 +400,6 @@ extends ICFIntPubMinorVersionTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFIntProtMinorVersion protreadRecByNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 MajorVersionId,
+		ICFLibKeyHash256 MajorVersionId,
 		String Name );
 }
