@@ -48,7 +48,7 @@ import server.markhome.mcf.v3_1.cfint.cfintprot.*;
 import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 
 public class CFIntProtBuffTld
-	implements ICFIntTld, Comparable<Object>, Serializable
+	implements ICFIntProtTld, Comparable<Object>, Serializable
 {
 	protected ICFLibKeyHash256 requiredId;
 	protected int requiredRevision;
@@ -75,7 +75,7 @@ public class CFIntProtBuffTld
 	}
 
 	@Override
-	public void setJustProtPKey(ICFLibKeyHash256 requiredId) {
+	public void setPKey(ICFLibKeyHash256 requiredId) {
 		if(requiredId != null) {
 			this.requiredId = requiredId;
 		}
@@ -97,60 +97,60 @@ public class CFIntProtBuffTld
 	}
 
 	@Override
-	public List<ICFIntTopDomain> getOptionalComponentsTopDomain() {
+	public List<ICFIntProtTopDomain> getOptionalComponentsTopDomain() {
 		ICFIntSchema targetBackingCFInt = ICFIntSchema.getBackingCFInt();
 		if (targetBackingCFInt == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsTopDomain", 0, "ICFIntSchema.getBackingCFInt()");
 		}
-		ICFIntTopDomainTable targetTable = targetBackingCFInt.getTableTopDomain();
+		ICFIntProtTopDomainTable targetTable = targetBackingCFInt.getTableTopDomain();
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsTopDomain", 0, "ICFIntSchema.getBackingCFInt().getTableTopDomain()");
 		}
-		ICFIntTopDomain[] targetArr = targetTable.readDerivedByTldIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
+		ICFIntProtTopDomain[] targetArr = targetTable.readDerivedByTldIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
 		if( targetArr != null ) {
-			List<ICFIntTopDomain> results = new ArrayList<>(targetArr.length);
+			List<ICFIntProtTopDomain> results = new ArrayList<>(targetArr.length);
 			for (int idx = 0; idx < targetArr.length; idx++) {
 				results.add(targetArr[idx]);
 			}
 			return( results );
 		}
 		else {
-			List<ICFIntTopDomain> results = new ArrayList<>();
+			List<ICFIntProtTopDomain> results = new ArrayList<>();
 			return( results );
 		}
 	}
 
 	@Override
-	public List<ICFIntTopDomain> getOptionalComponentsTopDomain() {
+	public List<ICFIntProtTopDomain> getOptionalComponentsTopDomain() {
 		ICFIntSchema targetBackingCFInt = ICFIntSchema.getBackingCFInt();
 		if (targetBackingCFInt == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsTopDomain", 0, "ICFIntSchema.getBackingCFInt()");
 		}
-		ICFIntTopDomainTable targetTable = targetBackingCFInt.getTableTopDomain();
+		ICFIntProtTopDomainTable targetTable = targetBackingCFInt.getTableTopDomain();
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsTopDomain", 0, "ICFIntSchema.getBackingCFInt().getTableTopDomain()");
 		}
-		ICFIntTopDomain[] targetArr = targetTable.readDerivedByTldIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
+		ICFIntProtTopDomain[] targetArr = targetTable.readDerivedByTldIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
 		if( targetArr != null ) {
-			List<ICFIntTopDomain> results = new ArrayList<>(targetArr.length);
+			List<ICFIntProtTopDomain> results = new ArrayList<>(targetArr.length);
 			for (int idx = 0; idx < targetArr.length; idx++) {
 				results.add(targetArr[idx]);
 			}
 			return( results );
 		}
 		else {
-			List<ICFIntTopDomain> results = new ArrayList<>();
+			List<ICFIntProtTopDomain> results = new ArrayList<>();
 			return( results );
 		}
 	}
 
 	@Override
-	public List<ICFIntTopDomain> getOptionalComponentsTopDomain() {
+	public List<ICFIntProtTopDomain> getOptionalComponentsTopDomain() {
 		ICFIntSchema targetBackingCFInt = ICFIntSchema.getBackingCFInt();
 		if (targetBackingCFInt == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsTopDomain", 0, "ICFIntSchema.getBackingCFInt()");
 		}
-		ICFIntTopDomainTable targetTable = targetBackingCFInt.getTableTopDomain();
+		ICFIntProtTopDomainTable targetTable = targetBackingCFInt.getTableTopDomain();
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsTopDomain", 0, "ICFIntSchema.getBackingCFInt().getTableTopDomain()");
 		}
@@ -220,16 +220,16 @@ public class CFIntProtBuffTld
 
 	@Override
 	public int getClassCode() {
-		return( ICFIntTld.CLASS_CODE );
+		return( ICFIntProtTld.CLASS_CODE );
 	}
 
 	@Override
-	public ICFSecTenant getRequiredContainerTenant() {
+	public ICFSecProtTenant getRequiredContainerTenant() {
 		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
 		if (targetBackingCFSec == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerTenant", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		ICFSecTenantTable targetTable = targetBackingCFSec.getTableTenant();
+		ICFSecProtTenantTable targetTable = targetBackingCFSec.getTableTenant();
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerTenant", 0, "ICFSecSchema.getBackingCFSec().getTableTenant()");
 		}
@@ -238,24 +238,24 @@ public class CFIntProtBuffTld
 	}
 
 	@Override
-	public void setJustProtRequiredContainerTenant(ICFLibKeyHash256 argTenantId) {
+	public void setRequiredContainerTenant(ICFLibKeyHash256 argTenantId) {
 		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
 		if (targetBackingCFSec == null) {
-			throw new CFLibNullArgumentException(getClass(), "setJustProtRequiredContainerTenant-args", 0, "ICFSecSchema.getBackingCFSec()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerTenant-args", 0, "ICFSecSchema.getBackingCFSec()");
 		}
 		ICFSecProtTenantTable targetTable = targetBackingCFSec.getTableTenant();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setJustProtRequiredContainerTenant", 0, "ICFSecSchema.getBackingCFSec()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerTenant", 0, "ICFSecSchema.getBackingCFSec()");
 		}
 		ICFSecProtTenant found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argTenantId);
 		if (found == null) {
-			throw new CFLibNullArgumentException(getClass(), "setJustProtRequiredContainerTenant-args", 0, "found");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerTenant-args", 0, "found");
 		}
-		else if ((found instanceof ICFSecTenant) || (found instanceof ICFSecProtTenant) || (found instanceof ICFSecPubTenant)) {
+		else if ((found instanceof ICFSecProtTenant) || (found instanceof ICFSecProtTenant) || (found instanceof ICFSecPubTenant)) {
 		requiredTenantId = argTenantId;
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setJustProtRequiredContainerTenant-args", "found", found, "ICFSecTenantICFSecProtTenantICFSecPubTenant");
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerTenant-args", "found", found, "ICFSecProtTenantICFSecProtTenantICFSecPubTenant");
 		}
 	}
 
@@ -457,8 +457,8 @@ public class CFIntProtBuffTld
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntTldHPKey ) {
-			ICFIntProtTldHPKey rhs = (ICFIntTldHPKey)obj;
+		else if( obj instanceof ICFIntProtTldHPKey ) {
+			ICFIntProtTldHPKey rhs = (ICFIntProtTldHPKey)obj;
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
@@ -1094,7 +1094,7 @@ public class CFIntProtBuffTld
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFIntTldByTenantIdxKey rhs ) {
+		else if( obj instanceof ICFIntProtTldByTenantIdxKey rhs ) {
 			if (getRequiredTenantId() != null) {
 				if (rhs.getRequiredTenantId() != null) {
 					cmp = getRequiredTenantId().compareTo( rhs.getRequiredTenantId() );
@@ -1110,7 +1110,7 @@ public class CFIntProtBuffTld
 				return( -1 );
 			}			return( 0 );
 		}
-		else if( obj instanceof ICFIntTldByNameIdxKey rhs ) {
+		else if( obj instanceof ICFIntProtTldByNameIdxKey rhs ) {
 			if (getRequiredName() != null) {
 				if (rhs.getRequiredName() != null) {
 					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
@@ -1336,12 +1336,12 @@ public class CFIntProtBuffTld
 	}
 
 	@Override
-	public void setJustProt( ICFIntTld src ) {
+	public void set( ICFIntProtTld src ) {
 		setJustProtTld( src );
 	}
 
 	@Override
-	public void setJustProtTld( ICFIntTld src ) {
+	public void setTld( ICFIntProtTld src ) {
 		setJustProtRequiredId(src.getRequiredId());
 		setJustProtRequiredRevision( src.getRequiredRevision() );
 		setJustProtCreatedByUserId( src.getCreatedByUserId() );
@@ -1355,12 +1355,12 @@ public class CFIntProtBuffTld
 	}
 
 	@Override
-	public void setJustProt( ICFIntTldH src ) {
+	public void set( ICFIntProtTldH src ) {
 		setJustProtTld( src );
 	}
 
 	@Override
-	public void setJustProtTld( ICFIntTldH src ) {
+	public void setTld( ICFIntProtTldH src ) {
 		setJustProtRequiredId(src.getRequiredId());
 		setJustProtRequiredContainerTenant(src.getRequiredContainerTenant());
 		setJustProtRequiredTenantId(src.getRequiredTenantId());
@@ -1369,45 +1369,12 @@ public class CFIntProtBuffTld
 	}
 
 	@Override
-	public void setJustProt( ICFIntProtTld src ) {
+	public void set( ICFIntProtTld src ) {
 		setJustProtTld( src );
 	}
 
 	@Override
-	public void setJustProtTld( ICFIntProtTld src ) {
-		setJustProtRequiredId(src.getRequiredId());
-		setJustProtRequiredRevision( src.getRequiredRevision() );
-		setJustProtCreatedByUserId( src.getCreatedByUserId() );
-		setJustProtCreatedAt( src.getCreatedAt() );
-		setJustProtUpdatedByUserId( src.getUpdatedByUserId() );
-		setJustProtUpdatedAt( src.getUpdatedAt() );
-		setJustProtRequiredContainerTenant(src.getRequiredContainerTenant());
-		setJustProtRequiredTenantId(src.getRequiredTenantId());
-		setJustProtRequiredName(src.getRequiredName());
-		setJustProtOptionalDescription(src.getOptionalDescription());
-	}
-
-	@Override
-	public void setJustProt( ICFIntProtTldH src ) {
-		setJustProtTld( src );
-	}
-
-	@Override
-	public void setJustProtTld( ICFIntProtTldH src ) {
-		setJustProtRequiredId(src.getRequiredId());
-		setJustProtRequiredContainerTenant(src.getRequiredContainerTenant());
-		setJustProtRequiredTenantId(src.getRequiredTenantId());
-		setJustProtRequiredName(src.getRequiredName());
-		setJustProtOptionalDescription(src.getOptionalDescription());
-	}
-
-	@Override
-	public void setJustProt( ICFIntPubTld src ) {
-		setJustProtTld( src );
-	}
-
-	@Override
-	public void setJustProtTld( ICFIntPubTld src ) {
+	public void setTld( ICFIntProtTld src ) {
 		setJustProtRequiredId(src.getRequiredId());
 		setJustProtRequiredRevision( src.getRequiredRevision() );
 		setJustProtCreatedByUserId( src.getCreatedByUserId() );
@@ -1421,12 +1388,45 @@ public class CFIntProtBuffTld
 	}
 
 	@Override
-	public void setJustProt( ICFIntPubTldH src ) {
+	public void set( ICFIntProtTldH src ) {
 		setJustProtTld( src );
 	}
 
 	@Override
-	public void setJustProtTld( ICFIntPubTldH src ) {
+	public void setTld( ICFIntProtTldH src ) {
+		setJustProtRequiredId(src.getRequiredId());
+		setJustProtRequiredContainerTenant(src.getRequiredContainerTenant());
+		setJustProtRequiredTenantId(src.getRequiredTenantId());
+		setJustProtRequiredName(src.getRequiredName());
+		setJustProtOptionalDescription(src.getOptionalDescription());
+	}
+
+	@Override
+	public void set( ICFIntPubTld src ) {
+		setJustProtTld( src );
+	}
+
+	@Override
+	public void setTld( ICFIntPubTld src ) {
+		setJustProtRequiredId(src.getRequiredId());
+		setJustProtRequiredRevision( src.getRequiredRevision() );
+		setJustProtCreatedByUserId( src.getCreatedByUserId() );
+		setJustProtCreatedAt( src.getCreatedAt() );
+		setJustProtUpdatedByUserId( src.getUpdatedByUserId() );
+		setJustProtUpdatedAt( src.getUpdatedAt() );
+		setJustProtRequiredContainerTenant(src.getRequiredContainerTenant());
+		setJustProtRequiredTenantId(src.getRequiredTenantId());
+		setJustProtRequiredName(src.getRequiredName());
+		setJustProtOptionalDescription(src.getOptionalDescription());
+	}
+
+	@Override
+	public void set( ICFIntPubTldH src ) {
+		setJustProtTld( src );
+	}
+
+	@Override
+	public void setTld( ICFIntPubTldH src ) {
 		setJustProtRequiredId(src.getRequiredId());
 		setJustProtRequiredContainerTenant(src.getRequiredContainerTenant());
 		setJustProtRequiredTenantId(src.getRequiredTenantId());

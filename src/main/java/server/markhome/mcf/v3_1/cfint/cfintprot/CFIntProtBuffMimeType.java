@@ -48,7 +48,7 @@ import server.markhome.mcf.v3_1.cfint.cfintprot.*;
 import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 
 public class CFIntProtBuffMimeType
-	implements ICFIntMimeType, Comparable<Object>, Serializable
+	implements ICFIntProtMimeType, Comparable<Object>, Serializable
 {
 	protected int requiredMimeTypeId;
 	protected int requiredRevision;
@@ -73,7 +73,7 @@ public class CFIntProtBuffMimeType
 	}
 
 	@Override
-	public void setJustProtPKey(Integer requiredMimeTypeId) {
+	public void setPKey(Integer requiredMimeTypeId) {
 		if(requiredMimeTypeId != null) {
 			this.requiredMimeTypeId = requiredMimeTypeId;
 		}
@@ -149,7 +149,7 @@ public class CFIntProtBuffMimeType
 
 	@Override
 	public int getClassCode() {
-		return( ICFIntMimeType.CLASS_CODE );
+		return( ICFIntProtMimeType.CLASS_CODE );
 	}
 
 	@Override
@@ -281,8 +281,8 @@ public class CFIntProtBuffMimeType
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntMimeTypeHPKey ) {
-			ICFIntProtMimeTypeHPKey rhs = (ICFIntMimeTypeHPKey)obj;
+		else if( obj instanceof ICFIntProtMimeTypeHPKey ) {
+			ICFIntProtMimeTypeHPKey rhs = (ICFIntProtMimeTypeHPKey)obj;
 			if( getRequiredMimeTypeId() != rhs.getRequiredMimeTypeId() ) {
 				return( false );
 			}
@@ -667,7 +667,7 @@ public class CFIntProtBuffMimeType
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFIntMimeTypeByUNameIdxKey rhs ) {
+		else if( obj instanceof ICFIntProtMimeTypeByUNameIdxKey rhs ) {
 			if (getRequiredName() != null) {
 				if (rhs.getRequiredName() != null) {
 					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
@@ -825,12 +825,12 @@ public class CFIntProtBuffMimeType
 	}
 
 	@Override
-	public void setJustProt( ICFIntMimeType src ) {
+	public void set( ICFIntProtMimeType src ) {
 		setJustProtMimeType( src );
 	}
 
 	@Override
-	public void setJustProtMimeType( ICFIntMimeType src ) {
+	public void setMimeType( ICFIntProtMimeType src ) {
 		setJustProtRequiredMimeTypeId(src.getRequiredMimeTypeId());
 		setJustProtRequiredRevision( src.getRequiredRevision() );
 		setJustProtCreatedByUserId( src.getCreatedByUserId() );
@@ -842,53 +842,24 @@ public class CFIntProtBuffMimeType
 	}
 
 	@Override
-	public void setJustProt( ICFIntMimeTypeH src ) {
+	public void set( ICFIntProtMimeTypeH src ) {
 		setJustProtMimeType( src );
 	}
 
 	@Override
-	public void setJustProtMimeType( ICFIntMimeTypeH src ) {
+	public void setMimeType( ICFIntProtMimeTypeH src ) {
 		setJustProtRequiredMimeTypeId(src.getRequiredMimeTypeId());
 		setJustProtRequiredName(src.getRequiredName());
 		setJustProtOptionalFileTypes(src.getOptionalFileTypes());
 	}
 
 	@Override
-	public void setJustProt( ICFIntProtMimeType src ) {
+	public void set( ICFIntProtMimeType src ) {
 		setJustProtMimeType( src );
 	}
 
 	@Override
-	public void setJustProtMimeType( ICFIntProtMimeType src ) {
-		setJustProtRequiredMimeTypeId(src.getRequiredMimeTypeId());
-		setJustProtRequiredRevision( src.getRequiredRevision() );
-		setJustProtCreatedByUserId( src.getCreatedByUserId() );
-		setJustProtCreatedAt( src.getCreatedAt() );
-		setJustProtUpdatedByUserId( src.getUpdatedByUserId() );
-		setJustProtUpdatedAt( src.getUpdatedAt() );
-		setJustProtRequiredName(src.getRequiredName());
-		setJustProtOptionalFileTypes(src.getOptionalFileTypes());
-	}
-
-	@Override
-	public void setJustProt( ICFIntProtMimeTypeH src ) {
-		setJustProtMimeType( src );
-	}
-
-	@Override
-	public void setJustProtMimeType( ICFIntProtMimeTypeH src ) {
-		setJustProtRequiredMimeTypeId(src.getRequiredMimeTypeId());
-		setJustProtRequiredName(src.getRequiredName());
-		setJustProtOptionalFileTypes(src.getOptionalFileTypes());
-	}
-
-	@Override
-	public void setJustProt( ICFIntPubMimeType src ) {
-		setJustProtMimeType( src );
-	}
-
-	@Override
-	public void setJustProtMimeType( ICFIntPubMimeType src ) {
+	public void setMimeType( ICFIntProtMimeType src ) {
 		setJustProtRequiredMimeTypeId(src.getRequiredMimeTypeId());
 		setJustProtRequiredRevision( src.getRequiredRevision() );
 		setJustProtCreatedByUserId( src.getCreatedByUserId() );
@@ -900,12 +871,41 @@ public class CFIntProtBuffMimeType
 	}
 
 	@Override
-	public void setJustProt( ICFIntPubMimeTypeH src ) {
+	public void set( ICFIntProtMimeTypeH src ) {
 		setJustProtMimeType( src );
 	}
 
 	@Override
-	public void setJustProtMimeType( ICFIntPubMimeTypeH src ) {
+	public void setMimeType( ICFIntProtMimeTypeH src ) {
+		setJustProtRequiredMimeTypeId(src.getRequiredMimeTypeId());
+		setJustProtRequiredName(src.getRequiredName());
+		setJustProtOptionalFileTypes(src.getOptionalFileTypes());
+	}
+
+	@Override
+	public void set( ICFIntPubMimeType src ) {
+		setJustProtMimeType( src );
+	}
+
+	@Override
+	public void setMimeType( ICFIntPubMimeType src ) {
+		setJustProtRequiredMimeTypeId(src.getRequiredMimeTypeId());
+		setJustProtRequiredRevision( src.getRequiredRevision() );
+		setJustProtCreatedByUserId( src.getCreatedByUserId() );
+		setJustProtCreatedAt( src.getCreatedAt() );
+		setJustProtUpdatedByUserId( src.getUpdatedByUserId() );
+		setJustProtUpdatedAt( src.getUpdatedAt() );
+		setJustProtRequiredName(src.getRequiredName());
+		setJustProtOptionalFileTypes(src.getOptionalFileTypes());
+	}
+
+	@Override
+	public void set( ICFIntPubMimeTypeH src ) {
+		setJustProtMimeType( src );
+	}
+
+	@Override
+	public void setMimeType( ICFIntPubMimeTypeH src ) {
 		setJustProtRequiredMimeTypeId(src.getRequiredMimeTypeId());
 		setJustProtRequiredName(src.getRequiredName());
 		setJustProtOptionalFileTypes(src.getOptionalFileTypes());

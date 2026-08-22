@@ -48,7 +48,7 @@ import server.markhome.mcf.v3_1.cfint.cfintprot.*;
 import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 
 public class CFIntProtBuffURLProtocol
-	implements ICFIntURLProtocol, Comparable<Object>, Serializable
+	implements ICFIntProtURLProtocol, Comparable<Object>, Serializable
 {
 	protected int requiredURLProtocolId;
 	protected int requiredRevision;
@@ -75,7 +75,7 @@ public class CFIntProtBuffURLProtocol
 	}
 
 	@Override
-	public void setJustProtPKey(Integer requiredURLProtocolId) {
+	public void setPKey(Integer requiredURLProtocolId) {
 		if(requiredURLProtocolId != null) {
 			this.requiredURLProtocolId = requiredURLProtocolId;
 		}
@@ -151,7 +151,7 @@ public class CFIntProtBuffURLProtocol
 
 	@Override
 	public int getClassCode() {
-		return( ICFIntURLProtocol.CLASS_CODE );
+		return( ICFIntProtURLProtocol.CLASS_CODE );
 	}
 
 	@Override
@@ -304,8 +304,8 @@ public class CFIntProtBuffURLProtocol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntURLProtocolHPKey ) {
-			ICFIntProtURLProtocolHPKey rhs = (ICFIntURLProtocolHPKey)obj;
+		else if( obj instanceof ICFIntProtURLProtocolHPKey ) {
+			ICFIntProtURLProtocolHPKey rhs = (ICFIntProtURLProtocolHPKey)obj;
 			if( getRequiredURLProtocolId() != rhs.getRequiredURLProtocolId() ) {
 				return( false );
 			}
@@ -742,7 +742,7 @@ public class CFIntProtBuffURLProtocol
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFIntURLProtocolByUNameIdxKey rhs ) {
+		else if( obj instanceof ICFIntProtURLProtocolByUNameIdxKey rhs ) {
 			if (getRequiredName() != null) {
 				if (rhs.getRequiredName() != null) {
 					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
@@ -758,7 +758,7 @@ public class CFIntProtBuffURLProtocol
 				return( -1 );
 			}			return( 0 );
 		}
-		else if( obj instanceof ICFIntURLProtocolByIsSecureIdxKey rhs ) {
+		else if( obj instanceof ICFIntProtURLProtocolByIsSecureIdxKey rhs ) {
 			if( getRequiredIsSecure() ) {
 				if( ! rhs.getRequiredIsSecure() ) {
 					return( 1 );
@@ -940,12 +940,12 @@ public class CFIntProtBuffURLProtocol
 	}
 
 	@Override
-	public void setJustProt( ICFIntURLProtocol src ) {
+	public void set( ICFIntProtURLProtocol src ) {
 		setJustProtURLProtocol( src );
 	}
 
 	@Override
-	public void setJustProtURLProtocol( ICFIntURLProtocol src ) {
+	public void setURLProtocol( ICFIntProtURLProtocol src ) {
 		setJustProtRequiredURLProtocolId(src.getRequiredURLProtocolId());
 		setJustProtRequiredRevision( src.getRequiredRevision() );
 		setJustProtCreatedByUserId( src.getCreatedByUserId() );
@@ -958,12 +958,12 @@ public class CFIntProtBuffURLProtocol
 	}
 
 	@Override
-	public void setJustProt( ICFIntURLProtocolH src ) {
+	public void set( ICFIntProtURLProtocolH src ) {
 		setJustProtURLProtocol( src );
 	}
 
 	@Override
-	public void setJustProtURLProtocol( ICFIntURLProtocolH src ) {
+	public void setURLProtocol( ICFIntProtURLProtocolH src ) {
 		setJustProtRequiredURLProtocolId(src.getRequiredURLProtocolId());
 		setJustProtRequiredName(src.getRequiredName());
 		setJustProtRequiredDescription(src.getRequiredDescription());
@@ -971,43 +971,12 @@ public class CFIntProtBuffURLProtocol
 	}
 
 	@Override
-	public void setJustProt( ICFIntProtURLProtocol src ) {
+	public void set( ICFIntProtURLProtocol src ) {
 		setJustProtURLProtocol( src );
 	}
 
 	@Override
-	public void setJustProtURLProtocol( ICFIntProtURLProtocol src ) {
-		setJustProtRequiredURLProtocolId(src.getRequiredURLProtocolId());
-		setJustProtRequiredRevision( src.getRequiredRevision() );
-		setJustProtCreatedByUserId( src.getCreatedByUserId() );
-		setJustProtCreatedAt( src.getCreatedAt() );
-		setJustProtUpdatedByUserId( src.getUpdatedByUserId() );
-		setJustProtUpdatedAt( src.getUpdatedAt() );
-		setJustProtRequiredName(src.getRequiredName());
-		setJustProtRequiredDescription(src.getRequiredDescription());
-		setJustProtRequiredIsSecure(src.getRequiredIsSecure());
-	}
-
-	@Override
-	public void setJustProt( ICFIntProtURLProtocolH src ) {
-		setJustProtURLProtocol( src );
-	}
-
-	@Override
-	public void setJustProtURLProtocol( ICFIntProtURLProtocolH src ) {
-		setJustProtRequiredURLProtocolId(src.getRequiredURLProtocolId());
-		setJustProtRequiredName(src.getRequiredName());
-		setJustProtRequiredDescription(src.getRequiredDescription());
-		setJustProtRequiredIsSecure(src.getRequiredIsSecure());
-	}
-
-	@Override
-	public void setJustProt( ICFIntPubURLProtocol src ) {
-		setJustProtURLProtocol( src );
-	}
-
-	@Override
-	public void setJustProtURLProtocol( ICFIntPubURLProtocol src ) {
+	public void setURLProtocol( ICFIntProtURLProtocol src ) {
 		setJustProtRequiredURLProtocolId(src.getRequiredURLProtocolId());
 		setJustProtRequiredRevision( src.getRequiredRevision() );
 		setJustProtCreatedByUserId( src.getCreatedByUserId() );
@@ -1020,12 +989,43 @@ public class CFIntProtBuffURLProtocol
 	}
 
 	@Override
-	public void setJustProt( ICFIntPubURLProtocolH src ) {
+	public void set( ICFIntProtURLProtocolH src ) {
 		setJustProtURLProtocol( src );
 	}
 
 	@Override
-	public void setJustProtURLProtocol( ICFIntPubURLProtocolH src ) {
+	public void setURLProtocol( ICFIntProtURLProtocolH src ) {
+		setJustProtRequiredURLProtocolId(src.getRequiredURLProtocolId());
+		setJustProtRequiredName(src.getRequiredName());
+		setJustProtRequiredDescription(src.getRequiredDescription());
+		setJustProtRequiredIsSecure(src.getRequiredIsSecure());
+	}
+
+	@Override
+	public void set( ICFIntPubURLProtocol src ) {
+		setJustProtURLProtocol( src );
+	}
+
+	@Override
+	public void setURLProtocol( ICFIntPubURLProtocol src ) {
+		setJustProtRequiredURLProtocolId(src.getRequiredURLProtocolId());
+		setJustProtRequiredRevision( src.getRequiredRevision() );
+		setJustProtCreatedByUserId( src.getCreatedByUserId() );
+		setJustProtCreatedAt( src.getCreatedAt() );
+		setJustProtUpdatedByUserId( src.getUpdatedByUserId() );
+		setJustProtUpdatedAt( src.getUpdatedAt() );
+		setJustProtRequiredName(src.getRequiredName());
+		setJustProtRequiredDescription(src.getRequiredDescription());
+		setJustProtRequiredIsSecure(src.getRequiredIsSecure());
+	}
+
+	@Override
+	public void set( ICFIntPubURLProtocolH src ) {
+		setJustProtURLProtocol( src );
+	}
+
+	@Override
+	public void setURLProtocol( ICFIntPubURLProtocolH src ) {
 		setJustProtRequiredURLProtocolId(src.getRequiredURLProtocolId());
 		setJustProtRequiredName(src.getRequiredName());
 		setJustProtRequiredDescription(src.getRequiredDescription());
